@@ -236,48 +236,45 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <h2 class="font-display text-5xl text-text-dark">Every Month,<br/><span class="text-raspberry">A Little Universe</span></h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-8">
 
-          <!-- Card 1 -->
+          <!-- Card 1 — Art Print -->
           <div class="paper-card p-8 hover-lift">
             <div class="w-16 h-16 rounded-full bg-lip-gloss/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="4" width="32" height="32" rx="4" fill="#FA9DAA" opacity="0.3"/>
-                <rect x="8" y="8" width="24" height="24" rx="3" stroke="#D44A65" stroke-width="2" fill="none"/>
-                <line x1="12" y1="18" x2="28" y2="18" stroke="#D44A65" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="12" y1="22" x2="22" y2="22" stroke="#D44A65" stroke-width="1.5" stroke-linecap="round"/>
+                <rect x="6" y="8" width="28" height="24" rx="3" stroke="#D44A65" stroke-width="2" fill="none"/>
+                <path d="M6 28 L14 20 L20 26 L26 19 L34 28" stroke="#D44A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="13" cy="14" r="3" stroke="#FA9DAA" stroke-width="1.5" fill="none"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-text-dark mb-3">The Art Print</h3>
-            <p class="font-body text-text-muted leading-relaxed text-sm">A 5×7" archival-quality print on thick textured paper. Each issue features a brand new original illustration — exclusive, numbered, never reprinted.</p>
+            <h3 class="font-display text-2xl text-contrast mb-3">Art Print</h3>
+            <p class="font-body text-contrast-muted leading-relaxed text-sm">Exclusive monthly collectible artwork designed around the current theme and emotional mood of the month.</p>
           </div>
 
-          <!-- Card 2 -->
+          <!-- Card 2 — Handwritten Letter -->
           <div class="paper-card p-8 hover-lift">
             <div class="w-16 h-16 rounded-full bg-tangerine/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <path d="M20 6 C20 6 8 14 8 24 C8 30 13 35 20 35 C27 35 32 30 32 24 C32 14 20 6 20 6Z" fill="#FF9243" opacity="0.3"/>
-                <path d="M20 8 C20 8 10 15 10 24 C10 29 14 33 20 33" stroke="#D44A65" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <circle cx="17" cy="22" r="2" fill="#D44A65"/>
-                <circle cx="23" cy="24" r="1.5" fill="#D44A65"/>
+                <path d="M8 12 L20 24 L32 12" stroke="#FF9243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="8" y="10" width="24" height="18" rx="2" stroke="#FF9243" stroke-width="2" fill="none"/>
+                <path d="M8 10 L20 23 L32 10" stroke="#FF9243" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-text-dark mb-3">Hand Painted Original</h3>
-            <p class="font-body text-text-muted leading-relaxed text-sm">A real, tiny, one-of-a-kind painting made by my actual hands. No prints, no copies — just a small, unique artwork created with love and messy brushes.</p>
+            <h3 class="font-display text-2xl text-contrast mb-3">Handwritten Letter</h3>
+            <p class="font-body text-contrast-muted leading-relaxed text-sm">Inspiration behind the piece, creative thoughts, personal reflections, and current life updates from the studio.</p>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Card 3 — Surprise Gift -->
           <div class="paper-card p-8 hover-lift">
-            <div class="w-16 h-16 rounded-full bg-soft-lavender/30 flex items-center justify-center mb-5">
+            <div class="w-16 h-16 rounded-full bg-vine-green/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <path d="M8 10 L28 10 L32 18 L28 34 L12 34 L8 18 Z" fill="#D5C6E8" opacity="0.4"/>
-                <path d="M10 12 L26 12 L29 18 L26 32 L14 32 L10 18 Z" stroke="#D44A65" stroke-width="1.5" fill="none"/>
-                <line x1="16" y1="20" x2="24" y2="20" stroke="#D44A65" stroke-width="1" stroke-linecap="round"/>
-                <line x1="16" y1="24" x2="22" y2="24" stroke="#D44A65" stroke-width="1" stroke-linecap="round"/>
+                <path d="M20 8 C20 8 10 15 10 24 C10 29 14 33 20 33" stroke="#A8BB3E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="17" cy="22" r="2" fill="#A8BB3E"/>
+                <circle cx="23" cy="24" r="1.5" fill="#A8BB3E"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-text-dark mb-3">Stickers & Letter</h3>
-            <p class="font-body text-text-muted leading-relaxed text-sm">A sheet of die-cut stickers from this month's artwork, plus a handwritten letter on real paper sharing the story, inspiration, and a little bit of my heart.</p>
+            <h3 class="font-display text-2xl text-contrast mb-3">Surprise Gift</h3>
+            <p class="font-body text-contrast-muted leading-relaxed text-sm">Every month includes an extra surprise such as a sticker set, bookmark, colouring sheet, mini activity, or build-your-own creative insert.</p>
           </div>
 
         </div>
@@ -361,7 +358,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════
          LOVE LETTERS / TESTIMONIALS
     ══════════════════════════════════════════ -->
     <section id="love-letters" class="py-24 px-6 grad-love relative">
@@ -372,7 +369,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
         <div class="text-center mb-14">
           <span class="section-label block mb-3">Love Letters</span>
-          <h2 class="font-display text-5xl text-text-dark">
+          <h2 class="font-display text-5xl text-contrast">
             What Collectors <span class="text-raspberry">Say</span>
           </h2>
         </div>
@@ -381,29 +378,39 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Testimonial 1 -->
           <div class="paper-card p-7 relative washi-left">
-            <p class="font-retro italic text-text-dark leading-relaxed mb-5">
+            <p class="font-retro italic text-contrast leading-relaxed mb-5">
               "Opening my Oopsie Daisy box is genuinely the highlight of my month. The handwriting on the letter alone made me cry. It feels like receiving a gift from a friend who really gets me."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-lip-gloss flex items-center justify-center text-white font-heading font-bold text-sm">M</div>
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
+                alt="Mia R."
+                class="w-11 h-11 rounded-full object-cover border-2 border-lip-gloss/40 shadow-md"
+                loading="lazy"
+              />
               <div>
-                <p class="font-heading font-bold text-sm text-text-dark">Mia R.</p>
-                <p class="font-body text-xs text-text-muted">Vancouver, BC · 4 issues</p>
+                <p class="font-heading font-bold text-sm text-contrast">Mia R.</p>
+                <p class="font-body text-xs text-contrast-muted">Collector · 4 issues</p>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="paper-card p-7 relative washi-left" style="--tw-border-opacity: 0.08;">
+          <div class="paper-card p-7 relative" style="position:relative;">
             <div style="position:absolute;top:-10px;left:-5px;width:80px;height:22px;background:repeating-linear-gradient(-45deg,rgba(168,187,62,0.5),rgba(168,187,62,0.5) 4px,rgba(168,187,62,0.2) 4px,rgba(168,187,62,0.2) 8px);border-radius:2px;transform:rotate(8deg);"></div>
-            <p class="font-retro italic text-text-dark leading-relaxed mb-5">
+            <p class="font-retro italic text-contrast leading-relaxed mb-5">
               "I have a gallery wall just for my Oopsie Daisy prints now. My apartment feels like a museum of things I actually love. The hand-painted pieces are insane, how is it so good?"
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-soft-lavender flex items-center justify-center text-white font-heading font-bold text-sm">J</div>
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face"
+                alt="Jess T."
+                class="w-11 h-11 rounded-full object-cover border-2 border-vine-green/40 shadow-md"
+                loading="lazy"
+              />
               <div>
-                <p class="font-heading font-bold text-sm text-text-dark">Jess T.</p>
-                <p class="font-body text-xs text-text-muted">Toronto, ON · 8 issues</p>
+                <p class="font-heading font-bold text-sm text-contrast">Jess T.</p>
+                <p class="font-body text-xs text-contrast-muted">Collector · 8 issues</p>
               </div>
             </div>
           </div>
@@ -411,14 +418,19 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <!-- Testimonial 3 -->
           <div class="paper-card p-7 relative">
             <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(245,157,170,0.5),rgba(245,157,170,0.5) 4px,rgba(245,157,170,0.2) 4px,rgba(245,157,170,0.2) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
-            <p class="font-retro italic text-text-dark leading-relaxed mb-5">
+            <p class="font-retro italic text-contrast leading-relaxed mb-5">
               "The matcha one was so specific and personal to my life that I genuinely don't know how you understood me that well. This is internet magic. I love it here."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-pale-mint flex items-center justify-center text-white font-heading font-bold text-sm">S</div>
+              <img
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face"
+                alt="Sam K."
+                class="w-11 h-11 rounded-full object-cover border-2 border-tangerine/40 shadow-md"
+                loading="lazy"
+              />
               <div>
-                <p class="font-heading font-bold text-sm text-text-dark">Sam K.</p>
-                <p class="font-body text-xs text-text-muted">Montreal, QC · 6 issues</p>
+                <p class="font-heading font-bold text-sm text-contrast">Sam K.</p>
+                <p class="font-body text-xs text-contrast-muted">Collector · 6 issues</p>
               </div>
             </div>
           </div>
@@ -426,14 +438,19 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <!-- Testimonial 4 -->
           <div class="paper-card p-7 relative">
             <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(255,146,67,0.4),rgba(255,146,67,0.4) 4px,rgba(255,146,67,0.15) 4px,rgba(255,146,67,0.15) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
-            <p class="font-retro italic text-text-dark leading-relaxed mb-5">
+            <p class="font-retro italic text-contrast leading-relaxed mb-5">
               "Gave a 3-month subscription to my sister as a birthday gift and now she's obsessed too. We've started collecting together. It's kind of the sweetest thing."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-sky-blue flex items-center justify-center text-white font-heading font-bold text-sm">A</div>
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+                alt="Ava L."
+                class="w-11 h-11 rounded-full object-cover border-2 border-soft-lavender/50 shadow-md"
+                loading="lazy"
+              />
               <div>
-                <p class="font-heading font-bold text-sm text-text-dark">Ava L.</p>
-                <p class="font-body text-xs text-text-muted">Calgary, AB · 3 issues</p>
+                <p class="font-heading font-bold text-sm text-contrast">Ava L.</p>
+                <p class="font-body text-xs text-contrast-muted">Collector · 3 issues</p>
               </div>
             </div>
           </div>
@@ -472,7 +489,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             <div class="issue-num flex-shrink-0 bg-cake-batter">2</div>
             <div>
               <h3 class="font-display text-2xl text-text-dark mb-1">Your Box Ships</h3>
-              <p class="font-body text-text-muted text-sm">On the 1st of every month, your box ships out — tracked, wrapped with care, sealed with a little wax sticker. Free shipping across Canada.</p>
+              <p class="font-body text-text-muted text-sm">On the 1st of every month, your box ships out — tracked, wrapped with care, sealed with a little wax sticker. Ships worldwide.</p>
             </div>
           </div>
 
@@ -490,16 +507,27 @@ import ImageCarousel from '../components/ImageCarousel.astro';
     </section>
 
     <!-- ══════════════════════════════════════════
-         JOIN / PRICING
+         JOIN / PRICING — dreamy pink/lip-gloss aesthetic
     ══════════════════════════════════════════ -->
-    <section id="join" class="py-28 px-6 grad-join relative overflow-hidden">
+    <section id="join" class="py-28 px-6 relative overflow-hidden">
 
-      <!-- Floating decorative stickers bg -->
-      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-20" style="color:#FA9DAA;">✿</div>
-      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-20" style="color:#FF9243;">❀</div>
-      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-15" style="color:#A8BB3E;">✿</div>
-      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-15" style="color:#D5C6E8;">✧</div>
-      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-20" style="color:#B5D4EB;">★</div>
+      <!-- Dreamy pink background layers -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#FCE8EC] via-[#FDF6EC] to-[#FBE8D0]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#FA9DAA]/20 via-transparent to-[#F7E4C4]/30"></div>
+      <!-- Soft blob accents -->
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute top-10 left-[-100px] w-96 h-96 bg-lip-gloss/15 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-10 right-[-80px] w-80 h-80 bg-tangerine/15 rounded-full blur-[100px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-soft-lavender/10 rounded-full blur-[120px]"></div>
+      </div>
+
+      <!-- Floating decorative flowers -->
+      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-40" style="color:#D44A65;">✿</div>
+      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-40" style="color:#FA9DAA;">❀</div>
+      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-30" style="color:#A8BB3E;">✿</div>
+      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-25" style="color:#FF9243;">✧</div>
+      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-35" style="color:#D5C6E8;">★</div>
+      <div class="absolute bottom-40 left-20 text-3xl animate-pulse-soft opacity-30" style="color:#FA9DAA;">~</div>
 
       <div class="max-w-5xl mx-auto relative z-10">
         <div class="text-center mb-16">
@@ -507,39 +535,39 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             <span class="text-lip-gloss text-sm">✿</span>
             <span class="section-label text-lip-gloss">Join the Club</span>
           </span>
-          <h2 class="font-display text-6xl text-white mb-3">
-            Start Your <span class="text-lip-gloss">Collection</span>
+          <h2 class="font-display text-6xl text-contrast mb-3">
+            Start Your <span class="text-raspberry">Collection</span>
           </h2>
-          <p class="font-retro italic text-white/50 text-lg">Cancel anytime. No drama. Just art.</p>
+          <p class="font-retro italic text-contrast-muted text-lg">Cancel anytime. No drama. Just art.</p>
         </div>
 
         <!-- 3-Column Pricing -->
         <div class="grid md:grid-cols-3 gap-6">
 
           <!-- Monthly -->
-          <div class="pricing-card p-8 text-center relative">
+          <div class="bg-white/90 border-2 border-lip-gloss/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-lip-gloss/10">
             <div class="membership-badge mb-5 mx-auto">Monthly</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
-              <span class="font-display text-5xl text-white">$8</span>
-              <span class="font-display text-3xl text-lip-gloss">.88</span>
+              <span class="font-display text-5xl text-contrast">$8</span>
+              <span class="font-display text-3xl text-raspberry">.88</span>
             </div>
-            <p class="font-heading text-white/40 text-xs mb-1">per month</p>
-            <p class="font-body text-white/30 text-xs mb-8">Billed monthly · Cancel anytime</p>
+            <p class="font-heading text-contrast-muted text-xs mb-1">per month</p>
+            <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed monthly · Cancel anytime</p>
             <ul class="text-left space-y-3 mb-8">
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss font-bold">✦</span> Full archival art print
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
+                <span class="text-raspberry font-bold">✦</span> Full archival art print
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss font-bold">✦</span> Hand painted original
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
+                <span class="text-raspberry font-bold">✦</span> Hand painted original
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss font-bold">✦</span> Sticker sheet
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
+                <span class="text-raspberry font-bold">✦</span> Sticker sheet
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss font-bold">✦</span> Handwritten love letter
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
+                <span class="text-raspberry font-bold">✦</span> Handwritten love letter
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss font-bold">✦</span> Free Canadian shipping
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
+                <span class="text-raspberry font-bold">✦</span> Shipping worldwide
               </li>
             </ul>
             <a href="#" class="sticker-btn sticker-btn-pink w-full text-center block">
@@ -548,31 +576,31 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           </div>
 
           <!-- 3-Month -->
-          <div class="pricing-card pricing-card-featured p-8 text-center relative">
+          <div class="bg-white/95 border-2 border-raspberry/40 rounded-3xl p-8 text-center relative hover-lift shadow-xl shadow-raspberry/15">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-raspberry text-white font-heading font-bold text-xs px-5 py-1.5 rounded-full shadow-lg">
               Most Popular
             </div>
             <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#D44A65,#FF9243);">3 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
-              <span class="font-display text-5xl text-white">$24</span>
+              <span class="font-display text-5xl text-contrast">$24</span>
               <span class="font-display text-3xl text-tangerine">.44</span>
             </div>
-            <p class="font-heading text-white/40 text-xs mb-1">$8.15/box · Save 8%</p>
-            <p class="font-body text-white/30 text-xs mb-8">Billed as $24.44 every 3 months</p>
+            <p class="font-heading text-contrast-muted text-xs mb-1">$8.15/box · Save 8%</p>
+            <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed as $24.44 every 3 months</p>
             <ul class="text-left space-y-3 mb-8">
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-tangerine font-bold">✦</span> Everything in monthly
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-tangerine font-bold">✦</span> Priority shipping
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-tangerine font-bold">✦</span> Early access to new drops
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-tangerine font-bold">✦</span> Bonus sticker pack
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-tangerine font-bold">✦</span> Handwritten thank-you card
               </li>
             </ul>
@@ -582,31 +610,31 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           </div>
 
           <!-- 6-Month -->
-          <div class="pricing-card p-8 text-center relative">
+          <div class="bg-white/90 border-2 border-vine-green/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-vine-green/10">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vine-green text-white font-heading font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
               Best Value
             </div>
             <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#A8BB3E,#6BCB77);">6 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
-              <span class="font-display text-5xl text-white">$46</span>
+              <span class="font-display text-5xl text-contrast">$46</span>
               <span class="font-display text-3xl text-vine-green">.66</span>
             </div>
-            <p class="font-heading text-white/40 text-xs mb-1">$7.78/box · Save 12%</p>
-            <p class="font-body text-white/30 text-xs mb-8">Billed as $46.66 every 6 months</p>
+            <p class="font-heading text-contrast-muted text-xs mb-1">$7.78/box · Save 12%</p>
+            <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed as $46.66 every 6 months</p>
             <ul class="text-left space-y-3 mb-8">
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-vine-green font-bold">✦</span> Everything in 3-month
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-vine-green font-bold">✦</span> Collector's packaging
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-vine-green font-bold">✦</span> Exclusive archive access
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-vine-green font-bold">✦</span> Double bonus stickers
               </li>
-              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast">
                 <span class="text-vine-green font-bold">✦</span> First look at new issues
               </li>
             </ul>
@@ -618,53 +646,187 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
 
         <!-- Club perks strip -->
-        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm font-heading text-white/40">
-          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Secure checkout</span>
-          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Cancel anytime</span>
-          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Free shipping Canada</span>
-          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Made with love</span>
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm font-heading text-contrast-muted">
+          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Secure checkout</span>
+          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Cancel anytime</span>
+          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Worldwide shipping</span>
+          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Made with love</span>
         </div>
 
-        <p class="text-center text-white/20 text-xs mt-6 font-body">
-          Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-lip-gloss underline hover:text-white transition-colors">hello@oopsiedaisy.art</a>
+        <p class="text-center text-contrast-muted/60 text-xs mt-6 font-body">
+          Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-raspberry underline hover:text-raspberry/70 transition-colors">hello@oopsiedaisy.art</a>
         </p>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════
-         ABOUT / MEET THE ARTIST
+         ABOUT / BEHIND THE SCENES / MEET THE MAKER
     ══════════════════════════════════════════ -->
     <section class="py-24 px-6 grad-about relative overflow-hidden">
-      <!-- Blob decorations -->
+
+      <!-- Background decorations -->
       <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 blob-lavender rounded-full blur-[80px] animate-blob float-delay-2"></div>
-      <div class="absolute top-0 right-0 text-[180px] text-vine-green/8 font-display leading-none select-none pointer-events-none">✿</div>
 
-      <div class="max-w-2xl mx-auto text-center relative z-10">
-        <span class="section-label block mb-4">Meet the Maker</span>
+      <div class="max-w-5xl mx-auto relative z-10">
 
-        <div class="w-24 h-24 rounded-full bg-lip-gloss/20 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-4xl text-raspberry">❀</span>
+        <!-- Section header -->
+        <div class="text-center mb-16">
+          <span class="section-label block mb-3">Behind the Studio</span>
+          <h2 class="font-display text-5xl text-contrast mb-3">
+            Hi, I'm <span class="text-raspberry">Tylah</span>
+          </h2>
+          <p class="font-retro italic text-contrast-muted text-lg">
+            Artist, printmaker, and obsessive flower sketcher — making each issue from my studio with messy hands and a whole lot of care.
+          </p>
         </div>
 
-        <h2 class="font-display text-4xl text-contrast mb-4">Hi, I'm Tylah</h2>
-        <p class="font-retro italic text-contrast-muted text-lg mb-6">Artist, designer, and obsessive art-supply collector based in Canada.</p>
+        <!-- ── EDITORIAL COLLAGE LAYOUT ── -->
 
-        <p class="font-body text-contrast-muted leading-relaxed mb-6">
-          Oopsie Daisy started because I wanted to create something that felt like receiving a letter from your most creative friend — personal, unexpected, and made entirely by hand.
-        </p>
-        <p class="font-body text-contrast-muted leading-relaxed mb-8">
-          Every print, every painting, every sticker — I make it all. No factories, no dropshipping, no shortcuts. Just me, my brushes, a whole lot of matcha, and way too many reference photos of flowers.
-        </p>
+        <!-- Row 1: Main portrait + text side-by-side -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
 
-        <!-- Decorative flower strip -->
-        <div class="inline-flex items-center gap-3 text-2xl">
-          <span class="text-raspberry/50">✿</span>
-          <span class="text-tangerine/50">❀</span>
-          <span class="text-vine-green/50">✿</span>
-          <span class="text-raspberry/50">❀</span>
-          <span class="text-tangerine/50">✿</span>
+          <!-- Portrait / Studio image -->
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/10 border-2 border-lip-gloss/20">
+              <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=750&fit=crop"
+                alt="Tylah's studio workspace with watercolors and flowers"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <!-- Washi tape decoration -->
+            <div class="absolute -top-3 -left-3 w-24 h-6 rounded-sm"
+              style="background:repeating-linear-gradient(45deg,rgba(250,157,170,0.6),rgba(250,157,170,0.6) 3px,rgba(250,157,170,0.2) 3px,rgba(250,157,170,0.2) 6px);transform:rotate(-8deg);box-shadow:2px 2px 8px rgba(0,0,0,0.1);">
+            </div>
+            <!-- Floating sticker -->
+            <div class="absolute -bottom-4 -right-4 bg-white/90 border border-lip-gloss/30 rounded-2xl px-3 py-2 shadow-lg">
+              <p class="font-retro italic text-xs text-contrast-muted">My happy place ✿</p>
+            </div>
+          </div>
+
+          <!-- Introduction text -->
+          <div>
+            <h3 class="font-display text-3xl text-contrast mb-4">The Story Behind<br/><span class="text-raspberry">Oopsie Daisy</span></h3>
+            <p class="font-body text-contrast-muted leading-relaxed mb-4">
+              Oopsie Daisy started with a simple idea: what if receiving art felt just as special as the art itself? A package that feels like unwrapping a letter from your most creative friend — personal, unexpected, and made entirely by hand.
+            </p>
+            <p class="font-body text-contrast-muted leading-relaxed mb-6">
+              I design, paint, print, package, and write every single issue myself. No factories, no shortcuts — just me, my brushes, a whole lot of matcha, and way too many reference photos of flowers.
+            </p>
+            <!-- Process tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-raspberry text-xs font-heading">Hand-drawn</span>
+              <span class="px-3 py-1 rounded-full bg-tangerine/15 text-tangerine text-xs font-heading">Watercolor</span>
+              <span class="px-3 py-1 rounded-full bg-vine-green/15 text-vine-green text-xs font-heading">Archival Print</span>
+              <span class="px-3 py-1 rounded-full bg-soft-lavender/20 text-purple-600 text-xs font-heading">Handwritten</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Row 2: Process images (3-column collage) -->
+        <div class="grid grid-cols-3 gap-4 mb-8">
+
+          <!-- Sketching / creative process -->
+          <div class="relative group cursor-pointer">
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
+              <img
+                src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=300&h=300&fit=crop"
+                alt="Sketching process"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
+              <p class="font-heading text-xs text-contrast">✏️ First sketches</p>
+            </div>
+          </div>
+
+          <!-- Painting / watercolor -->
+          <div class="relative group cursor-pointer -mt-4">
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
+              <img
+                src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=300&h=300&fit=crop"
+                alt="Watercolor painting process"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
+              <p class="font-heading text-xs text-contrast">🎨 Painting in watercolor</p>
+            </div>
+          </div>
+
+          <!-- Packaging / mailing -->
+          <div class="relative group cursor-pointer">
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
+              <img
+                src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=300&h=300&fit=crop"
+                alt="Packaging and wrapping the print orders"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
+              <p class="font-heading text-xs text-contrast">📦 Wrapping with care</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 3: Quote + studio detail + inspiration -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+          <!-- Studio quote card -->
+          <div class="paper-card p-8 relative">
+            <div class="absolute top-0 right-0 text-6xl text-raspberry/10 select-none pointer-events-none">❀</div>
+            <h4 class="font-display text-xl text-contrast mb-3">A Day in the Studio</h4>
+            <p class="font-body text-contrast-muted leading-relaxed text-sm mb-4">
+              My mornings start with coffee and a chaotic desk scan. Then it's sketching, painting, scanning, printing, signing, packaging — sometimes all in the same day, sometimes across several. Every step is done by hand.
+            </p>
+            <p class="font-retro italic text-raspberry text-sm">
+              "I believe the imperfections in hand-made things are what make them perfect."
+            </p>
+          </div>
+
+          <!-- Inspiration + tools -->
+          <div class="paper-card p-8">
+            <h4 class="font-display text-xl text-contrast mb-3">Inspiration & Tools</h4>
+            <p class="font-body text-contrast-muted leading-relaxed text-sm mb-4">
+              My work is inspired by vintage botanical illustrations, 1970s florist shop aesthetics, emotional digital collage, and the feeling of flipping through a favourite magazine on a Sunday morning.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
+                <span class="text-raspberry text-xs">✿</span> Watercolour on cotton rag paper
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
+                <span class="text-raspberry text-xs">✿</span> Archival pigment printing
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
+                <span class="text-raspberry text-xs">✿</span> Hand-drawn typography & lettering
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
+                <span class="text-raspberry text-xs">✿</span> Recycled & earth-friendly packaging
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Decorative closing flower strip -->
+        <div class="text-center pt-4">
+          <div class="inline-flex items-center gap-3 text-2xl">
+            <span class="text-raspberry/40">✿</span>
+            <span class="text-tangerine/40">❀</span>
+            <span class="text-vine-green/40">✿</span>
+            <span class="text-lip-gloss/40">❀</span>
+            <span class="text-raspberry/40">✿</span>
+            <span class="text-tangerine/40">❀</span>
+            <span class="text-vine-green/40">✿</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
