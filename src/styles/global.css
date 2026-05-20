@@ -864,7 +864,7 @@ h1, h2, h3, h4, h5 {
    ROTATING IMAGE GALLERY
 ══════════════════════════════════════════════════════════════ */
 .archive-gallery-wrap { overflow: hidden; position: relative; }
-.archive-gallery-strip { display: flex; align-items: center; gap: 2rem; width: max-content; will-change: transform; padding: 0.5rem 0; }
-.rotate-img-wrap { flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
-.rotate-img-wrap:hover { transform: rotate(0deg) scale(1.03) !important; }
-@media (max-width: 640px) { .rotate-img-wrap { width: 13rem; } }
+.archive-gallery-strip { display: flex; align-items: center; gap: 1.5rem; width: max-content; will-change: transform; padding: 0.5rem 0; }
+.rotate-img-wrap { width: 14rem; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+.rotate-img-wrap:hover { transform: rotate(0deg) scale(1.04) !important; }
+@media (max-width: 640px) { .rotate-img-wrap { width: 11rem; } }
