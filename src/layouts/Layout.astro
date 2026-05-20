@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'A monthly surprise art box delivered to your door. Hand painted prints, cute stickers, and personal letters — everything made with love.' } = Astro.props;
+const { title, description = 'Oopsie Daisy — A monthly collectible print club. Hand painted originals, stickers & love letters delivered to your door across Canada.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +17,9 @@ const { title, description = 'A monthly surprise art box delivered to your door.
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <div class="grain-overlay"></div>
