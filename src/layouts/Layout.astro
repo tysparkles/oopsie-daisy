@@ -25,7 +25,22 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
     <div class="grain-overlay"></div>
     <slot />
   
+
 <script>
+  // ─── Archive Gallery — arrow nav (hover auto-scroll is CSS-only) ───
+  const strip = document.getElementById('archive-gallery-strip');
+  const leftBtn = document.getElementById('gallery-left');
+  const rightBtn = document.getElementById('gallery-right');
+  if (strip && leftBtn && rightBtn) {
+    const cardW = (18 * 16) + (2 * 16);
+    leftBtn.addEventListener('click', () => {
+      strip.closest('.archive-gallery-wrap').scrollLeft -= cardW;
+    });
+    rightBtn.addEventListener('click', () => {
+      strip.closest('.archive-gallery-wrap').scrollLeft += cardW;
+    });
+  }
+
   // ─── Scroll Reveal ───
   const revealEls = document.querySelectorAll('.scroll-reveal');
   if (revealEls.length > 0) {
@@ -49,6 +64,7 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
     });
   }, { passive: true });
 </script>
+
 
 </body>
 </html>

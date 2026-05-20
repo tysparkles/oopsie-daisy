@@ -750,3 +750,58 @@ h1, h2, h3, h4, h5 {
   animation: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   ARCHIVE GALLERY — HOVER AUTO-SCROLL
+══════════════════════════════════════════════════════════════ */
+
+@keyframes gallery-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.archive-gallery-wrap {
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+}
+
+.archive-gallery-strip {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: gallery-scroll 26s linear infinite;
+  padding: 0.5rem 0;
+}
+
+.archive-gallery-wrap:hover .archive-gallery-strip {
+  animation-play-state: paused;
+}
+
+.archive-card-scroll {
+  width: 18rem;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.archive-card-scroll:hover {
+  transform: rotate(0deg) scale(1.03) !important;
+}
+
+.gallery-nav-btn {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.gallery-nav-btn:hover {
+  transform: scale(1.15) rotate(var(--rot, 5deg));
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(8px); }
+}
+.scroll-hint-arrow {
+  animation: scroll-hint 1.8s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .archive-card-scroll { width: 15rem; }
+}
