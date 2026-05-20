@@ -26,8 +26,8 @@ export default {
         'text-raspberry':'#D44A65',
       },
       fontFamily: {
-        display: ['Retro Mother', 'cursive'],
-        retro:   ['Retro Mother', 'cursive'],
+        display: ['Fat Kat', 'cursive'],
+        retro:   ['Fat Kat', 'cursive'],
         heading: ['Poppins', 'sans-serif'],
         body:    ['Nunito', 'sans-serif'],
       },
