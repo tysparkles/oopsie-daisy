@@ -206,7 +206,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <!-- To use your own images: replace the src values below with paths like /media/prints/your-image.jpg -->
           <div>
             <ImageCarousel items={[{
-              print: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+              print: '/media/prints/cherry blossom.png',
               process: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
               package: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&q=80',
               label: 'Cherry Blossom Season',
@@ -306,15 +306,18 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Archive item 1 -->
           <div class="group">
-            <div class="aspect-[3/4] bg-gradient-to-br from-peach-cream to-lip-gloss/30 rounded-2xl border-2 border-text-dark/10 overflow-hidden relative mb-4 hover-lift">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="text-5xl mb-2">❀</div>
-                  <span class="font-heading text-xs tracking-widest uppercase text-text-muted">May 2025</span>
-                </div>
-              </div>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-raspberry/10 border-2 border-lip-gloss/20">
+              <img
+                src="/media/prints/hf_20260520_174439_ee87b8ce-e96a-4ff6-9763-884c97d44394.png"
+                alt="Matcha & Mornings — May 2025 print"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
               <!-- Sold out stamp -->
               <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
+              <!-- Washi tape corner -->
+              <div class="absolute top-0 left-0 w-16 h-5"
+                style="background:repeating-linear-gradient(45deg,rgba(168,187,62,0.5),rgba(168,187,62,0.5) 3px,rgba(168,187,62,0.2) 3px,rgba(168,187,62,0.2) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
             </div>
             <h4 class="font-display text-xl text-text-dark">Matcha & Mornings</h4>
             <p class="font-body text-xs text-text-muted mt-1">Warm pastry still life · Coffee cup study · Strawberry stickers</p>
@@ -506,28 +509,30 @@ import ImageCarousel from '../components/ImageCarousel.astro';
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         JOIN / PRICING — dreamy pink/lip-gloss aesthetic
+<!-- ══════════════════════════════════════════
+         JOIN / PRICING — deep raspberry, high contrast conversion section
     ══════════════════════════════════════════ -->
     <section id="join" class="py-28 px-6 relative overflow-hidden">
 
-      <!-- Dreamy pink background layers -->
-      <div class="absolute inset-0 bg-gradient-to-br from-[#FCE8EC] via-[#FDF6EC] to-[#FBE8D0]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#FA9DAA]/20 via-transparent to-[#F7E4C4]/30"></div>
-      <!-- Soft blob accents -->
-      <div class="absolute top-0 left-0 w-full h-full">
-        <div class="absolute top-10 left-[-100px] w-96 h-96 bg-lip-gloss/15 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-10 right-[-80px] w-80 h-80 bg-tangerine/15 rounded-full blur-[100px]"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-soft-lavender/10 rounded-full blur-[120px]"></div>
+      <!-- Deep layered pink/raspberry background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#C93652] via-[#D44A65] to-[#B8304F]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a0510]/60 via-transparent to-[#2d0a1a]/40"></div>
+      <!-- Dramatic blob layers -->
+      <div class="absolute inset-0">
+        <div class="absolute top-0 left-[-120px] w-[500px] h-[500px] bg-[#FA9DAA]/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-[-80px] w-[400px] h-[400px] bg-[#FF9243]/15 rounded-full blur-[100px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FCE8EC]/5 rounded-full blur-[150px]"></div>
       </div>
 
-      <!-- Floating decorative flowers -->
-      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-40" style="color:#D44A65;">✿</div>
-      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-40" style="color:#FA9DAA;">❀</div>
-      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-30" style="color:#A8BB3E;">✿</div>
-      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-25" style="color:#FF9243;">✧</div>
-      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-35" style="color:#D5C6E8;">★</div>
-      <div class="absolute bottom-40 left-20 text-3xl animate-pulse-soft opacity-30" style="color:#FA9DAA;">~</div>
+      <!-- Grain texture overlay -->
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22/...');background-size:200px 200px;pointer-events:none;"></div>
+
+      <!-- Floating decorative flowers (brighter for dark bg) -->
+      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-50" style="color:#FCE8EC;">✿</div>
+      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-50" style="color:#FA9DAA;">❀</div>
+      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-35" style="color:#FFD6A5;">✿</div>
+      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-35" style="color:#FCE8EC;">✧</div>
+      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-45" style="color:#D5C6E8;">★</div>
 
       <div class="max-w-5xl mx-auto relative z-10">
         <div class="text-center mb-16">
@@ -725,110 +730,243 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           </div>
         </div>
 
-        <!-- Row 2: Process images (3-column collage) -->
-        <div class="grid grid-cols-3 gap-4 mb-8">
+        <!-- ── THE STORY BEHIND OOPSIE DAISY ── -->
+        <div class="mt-16">
 
-          <!-- Sketching / creative process -->
-          <div class="relative group cursor-pointer">
-            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
-              <img
-                src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=300&h=300&fit=crop"
-                alt="Sketching process"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+          <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" style="background:rgba(250,157,170,0.15);border:1px solid rgba(250,157,170,0.3);">
+              <span class="text-raspberry text-sm">✿</span>
+              <span class="section-label text-raspberry">Behind the Scenes</span>
             </div>
-            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
-              <p class="font-heading text-xs text-contrast">✏️ First sketches</p>
-            </div>
+            <h3 class="font-display text-4xl text-contrast">The Story Behind<br/><span class="text-raspberry">Oopsie Daisy</span></h3>
           </div>
 
-          <!-- Painting / watercolor -->
-          <div class="relative group cursor-pointer -mt-4">
-            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
-              <img
-                src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=300&h=300&fit=crop"
-                alt="Watercolor painting process"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+          <!-- Story carousel -->
+          <div class="relative max-w-3xl mx-auto">
+            <div class="story-carousel" id="story-carousel">
+
+              <!-- Slide 1: First Sketches -->
+              <div class="story-slide active" data-slide="0">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/15 border-2 border-lip-gloss/20">
+                  <img
+                    src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=700&h=875&fit=crop"
+                    alt="First sketches — loose ideas and messy thumbnails"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-6 text-center">
+                  <div class="inline-flex items-center gap-2 bg-lip-gloss/10 rounded-full px-4 py-1.5 mb-3">
+                    <span class="text-raspberry text-sm">✏️</span>
+                    <span class="font-heading text-xs text-raspberry font-bold tracking-wider uppercase">First Sketches</span>
+                  </div>
+                  <p class="font-body text-sm text-contrast-muted leading-relaxed max-w-sm mx-auto">
+                    Loose ideas, messy thumbnails, and the beginning of each monthly collection — where every print starts with a scribble on a napkin.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 2: Watercolor Painting -->
+              <div class="story-slide" data-slide="1">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/15 border-2 border-lip-gloss/20">
+                  <img
+                    src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=700&h=875&fit=crop"
+                    alt="Painting in watercolor — layering textures and colour palettes"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-6 text-center">
+                  <div class="inline-flex items-center gap-2 bg-tangerine/10 rounded-full px-4 py-1.5 mb-3">
+                    <span class="text-tangerine text-sm">🎨</span>
+                    <span class="font-heading text-xs text-tangerine font-bold tracking-wider uppercase">Watercolor Painting</span>
+                  </div>
+                  <p class="font-body text-sm text-contrast-muted leading-relaxed max-w-sm mx-auto">
+                    Layering textures, colour palettes, and imperfect hand-made details — no two paintings are ever exactly the same.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 3: Packaging -->
+              <div class="story-slide" data-slide="2">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/15 border-2 border-lip-gloss/20">
+                  <img
+                    src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=700&h=875&fit=crop"
+                    alt="Wrapping each order with care"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-6 text-center">
+                  <div class="inline-flex items-center gap-2 bg-vine-green/10 rounded-full px-4 py-1.5 mb-3">
+                    <span class="text-vine-green text-sm">📦</span>
+                    <span class="font-heading text-xs text-vine-green font-bold tracking-wider uppercase">Wrapping with Care</span>
+                  </div>
+                  <p class="font-body text-sm text-contrast-muted leading-relaxed max-w-sm mx-auto">
+                    Stickers, tissue paper, handwritten notes, and collectible extras — each package is wrapped like a gift for a friend.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 4: A Day in the Studio -->
+              <div class="story-slide" data-slide="3">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/15 border-2 border-lip-gloss/20">
+                  <img
+                    src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&h=875&fit=crop"
+                    alt="A day in the studio"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-6 text-center">
+                  <div class="inline-flex items-center gap-2 bg-raspberry/10 rounded-full px-4 py-1.5 mb-3">
+                    <span class="text-raspberry text-sm">☕</span>
+                    <span class="font-heading text-xs text-raspberry font-bold tracking-wider uppercase">A Day in the Studio</span>
+                  </div>
+                  <p class="font-body text-sm text-contrast-muted leading-relaxed max-w-sm mx-auto mb-3">
+                    Mornings begin with coffee and a chaotic desk scan. Then sketching, painting, scanning, printing, signing, and packaging — sometimes all in one day, sometimes slowly across several.
+                  </p>
+                  <p class="font-retro italic text-raspberry text-sm px-4 py-2 rounded-xl" style="background:rgba(212,74,101,0.08);">
+                    "I believe the imperfections in hand-made things are what make them perfect."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 5: Inspiration & Tools -->
+              <div class="story-slide" data-slide="4">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/15 border-2 border-lip-gloss/20">
+                  <img
+                    src="https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=700&h=875&fit=crop"
+                    alt="Inspiration — botanical illustrations and vintage florals"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-6 text-center">
+                  <div class="inline-flex items-center gap-2 bg-soft-lavender/20 rounded-full px-4 py-1.5 mb-3">
+                    <span class="text-purple-500 text-sm">✿</span>
+                    <span class="font-heading text-xs text-purple-500 font-bold tracking-wider uppercase">Inspiration & Tools</span>
+                  </div>
+                  <p class="font-body text-sm text-contrast-muted leading-relaxed max-w-sm mx-auto mb-4">
+                    Inspired by vintage botanical illustrations, 1970s florist shop aesthetics, emotional collage, and the feeling of flipping through your favourite magazine on a slow Sunday morning.
+                  </p>
+                  <div class="flex flex-wrap justify-center gap-2 max-w-xs mx-auto">
+                    <span class="px-3 py-1 rounded-full bg-lip-gloss/10 text-raspberry text-xs font-body">✿ Watercolour on cotton rag</span>
+                    <span class="px-3 py-1 rounded-full bg-raspberry/10 text-raspberry text-xs font-body">✿ Archival pigment printing</span>
+                    <span class="px-3 py-1 rounded-full bg-tangerine/10 text-tangerine text-xs font-body">✿ Hand-drawn lettering</span>
+                    <span class="px-3 py-1 rounded-full bg-vine-green/10 text-vine-green text-xs font-body">✿ Recycled packaging</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
-              <p class="font-heading text-xs text-contrast">🎨 Painting in watercolor</p>
+
+            <!-- Carousel controls -->
+            <div class="flex items-center justify-center gap-6 mt-8">
+              <button class="story-prev w-10 h-10 rounded-full border-2 border-lip-gloss/30 flex items-center justify-center text-raspberry hover:bg-lip-gloss hover:text-white hover:border-lip-gloss transition-all duration-300" aria-label="Previous">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+
+              <!-- Dot indicators -->
+              <div class="flex items-center gap-3" id="story-dots">
+                <button class="story-dot active w-2.5 h-2.5 rounded-full bg-raspberry transition-all duration-300" data-dot="0" aria-label="Slide 1"></button>
+                <button class="story-dot w-2.5 h-2.5 rounded-full bg-lip-gloss/40 transition-all duration-300" data-dot="1" aria-label="Slide 2"></button>
+                <button class="story-dot w-2.5 h-2.5 rounded-full bg-lip-gloss/40 transition-all duration-300" data-dot="2" aria-label="Slide 3"></button>
+                <button class="story-dot w-2.5 h-2.5 rounded-full bg-lip-gloss/40 transition-all duration-300" data-dot="3" aria-label="Slide 4"></button>
+                <button class="story-dot w-2.5 h-2.5 rounded-full bg-lip-gloss/40 transition-all duration-300" data-dot="4" aria-label="Slide 5"></button>
+              </div>
+
+              <button class="story-next w-10 h-10 rounded-full border-2 border-lip-gloss/30 flex items-center justify-center text-raspberry hover:bg-lip-gloss hover:text-white hover:border-lip-gloss transition-all duration-300" aria-label="Next">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
             </div>
+
+            <!-- Swipe hint -->
+            <p class="text-center mt-3 text-xs font-heading text-contrast-muted/50">swipe or tap to explore the story ✿</p>
+
           </div>
-
-          <!-- Packaging / mailing -->
-          <div class="relative group cursor-pointer">
-            <div class="aspect-square rounded-2xl overflow-hidden shadow-md border border-cream/50">
-              <img
-                src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=300&h=300&fit=crop"
-                alt="Packaging and wrapping the print orders"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="absolute bottom-2 left-2 right-2 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2">
-              <p class="font-heading text-xs text-contrast">📦 Wrapping with care</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Row 3: Quote + studio detail + inspiration -->
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-
-          <!-- Studio quote card -->
-          <div class="paper-card p-8 relative">
-            <div class="absolute top-0 right-0 text-6xl text-raspberry/10 select-none pointer-events-none">❀</div>
-            <h4 class="font-display text-xl text-contrast mb-3">A Day in the Studio</h4>
-            <p class="font-body text-contrast-muted leading-relaxed text-sm mb-4">
-              My mornings start with coffee and a chaotic desk scan. Then it's sketching, painting, scanning, printing, signing, packaging — sometimes all in the same day, sometimes across several. Every step is done by hand.
-            </p>
-            <p class="font-retro italic text-raspberry text-sm">
-              "I believe the imperfections in hand-made things are what make them perfect."
-            </p>
-          </div>
-
-          <!-- Inspiration + tools -->
-          <div class="paper-card p-8">
-            <h4 class="font-display text-xl text-contrast mb-3">Inspiration & Tools</h4>
-            <p class="font-body text-contrast-muted leading-relaxed text-sm mb-4">
-              My work is inspired by vintage botanical illustrations, 1970s florist shop aesthetics, emotional digital collage, and the feeling of flipping through a favourite magazine on a Sunday morning.
-            </p>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
-                <span class="text-raspberry text-xs">✿</span> Watercolour on cotton rag paper
-              </li>
-              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
-                <span class="text-raspberry text-xs">✿</span> Archival pigment printing
-              </li>
-              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
-                <span class="text-raspberry text-xs">✿</span> Hand-drawn typography & lettering
-              </li>
-              <li class="flex items-center gap-2 font-body text-sm text-contrast-muted">
-                <span class="text-raspberry text-xs">✿</span> Recycled & earth-friendly packaging
-              </li>
-            </ul>
-          </div>
-
         </div>
 
         <!-- Decorative closing flower strip -->
-        <div class="text-center pt-4">
+        <div class="text-center pt-12">
           <div class="inline-flex items-center gap-3 text-2xl">
             <span class="text-raspberry/40">✿</span>
             <span class="text-tangerine/40">❀</span>
             <span class="text-vine-green/40">✿</span>
             <span class="text-lip-gloss/40">❀</span>
             <span class="text-raspberry/40">✿</span>
-            <span class="text-tangerine/40">❀</span>
-            <span class="text-vine-green/40">✿</span>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- ── STORY CAROUSEL SCRIPTS ── -->
+    <script>
+      (function() {
+        const carousel = document.getElementById('story-carousel');
+        const slides = carousel ? carousel.querySelectorAll('.story-slide') : [];
+        const dots = document.querySelectorAll('.story-dot');
+        const prevBtn = document.querySelector('.story-prev');
+        const nextBtn = document.querySelector('.story-next');
+        let current = 0;
+        let startX = 0;
+
+        function goTo(index) {
+          if (!slides.length) return;
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          dots[current].style.background = 'rgba(250,157,170,0.4)';
+          dots[current].classList.remove('bg-raspberry');
+          dots[current].classList.add('bg-lip-gloss/40');
+          dots[current].style.transform = '';
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+          dots[current].style.background = '#D44A65';
+          dots[current].classList.remove('bg-lip-gloss/40');
+          dots[current].classList.add('bg-raspberry');
+          dots[current].style.transform = 'scale(1.4)';
+        }
+
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', () => goTo(i));
+        });
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+        // Swipe
+        const track = carousel;
+        if (track) {
+          track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+          track.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 50) { dx < 0 ? goTo(current + 1) : goTo(current - 1); }
+          }, { passive: true });
+        }
+
+        // Keyboard nav
+        document.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') goTo(current - 1);
+          if (e.key === 'ArrowRight') goTo(current + 1);
+        });
+      })();
+    </script>
+
+    <!-- ── STORY CAROUSEL STYLES ── -->
+    <style>
+      .story-slide {
+        display: none;
+        animation: storyFadeIn 0.5s ease forwards;
+      }
+      .story-slide.active {
+        display: block;
+      }
+      @keyframes storyFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
 
     <!-- ══════════════════════════════════════════
          FOOTER
