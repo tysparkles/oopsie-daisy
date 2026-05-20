@@ -38,32 +38,31 @@ h1, h2, h3, h4, h5 {
 }
 @keyframes drift {
   0%, 100% { transform: translateX(0) translateY(0); }
-  25%       { transform: translateX(8px) translateY(-6px); }
-  50%       { transform: translateX(-5px) translateY(-12px); }
-  75%       { transform: translateX(3px) translateY(-4px); }
+  25%  { transform: translateX(10px) translateY(-8px); }
+  50%  { transform: translateX(-4px) translateY(-14px); }
+  75%  { transform: translateX(6px) translateY(-6px); }
 }
 @keyframes wiggle {
-  0%, 100% { transform: rotate(-2deg); }
-  50%       { transform: rotate(2deg); }
+  0%, 100% { transform: rotate(-3deg); }
+  50%       { transform: rotate(3deg); }
 }
 @keyframes pulse-soft {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50%       { opacity: 1; transform: scale(1.03); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.05); }
 }
 @keyframes blob {
   0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
 }
-@keyframes squiggle {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(4px) rotate(2deg); }
-  50%  { transform: translateX(0) rotate(0deg); }
-  75%  { transform: translateX(-4px) rotate(-2deg); }
-  100% { transform: translateX(0); }
+@keyframes star-pop {
+  0%   { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  50%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
 }
-@keyframes star-spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ─── Animations ─── */
@@ -74,13 +73,49 @@ h1, h2, h3, h4, h5 {
 .animate-wiggle      { animation: wiggle 4s ease-in-out infinite; }
 .animate-pulse-soft  { animation: pulse-soft 4s ease-in-out infinite; }
 .animate-blob        { animation: blob 8s ease-in-out infinite; }
-.animate-squiggle    { animation: squiggle 6s ease-in-out infinite; }
-.animate-star-spin   { animation: star-spin 20s linear infinite; }
+.animate-star-pop    { animation: star-pop 3s ease-in-out infinite; }
 
 .float-delay-1 { animation-delay: 1s; }
 .float-delay-2 { animation-delay: 2s; }
 .float-delay-3 { animation-delay: 3s; }
 .float-delay-4 { animation-delay: 4s; }
+
+/* ─── Scroll-driven gradient sections ─── */
+/* Hero: warm cream + blush pink */
+.grad-hero {
+  background: linear-gradient(180deg, #FDF6EC 0%, #FDF6EC 40%, #FCE8EC 100%);
+  background-attachment: fixed;
+}
+/* What's inside: cake batter warm */
+.grad-inside {
+  background: linear-gradient(180deg, #FCE8EC 0%, #FBE8D0 50%, #F7E4C4 100%);
+  background-attachment: fixed;
+}
+/* Archive: soft lavender + sky */
+.grad-archive {
+  background: linear-gradient(180deg, #F7E4C4 0%, #EDE4F5 50%, #D5E4F0 100%);
+  background-attachment: fixed;
+}
+/* Love letters: blush + peach */
+.grad-love {
+  background: linear-gradient(180deg, #D5E4F0 0%, #FCE8EC 50%, #F9D5C0 100%);
+  background-attachment: fixed;
+}
+/* How it works: pale mint + cream */
+.grad-how {
+  background: linear-gradient(180deg, #F9D5C0 0%, #E8F5E8 50%, #FDF6EC 100%);
+  background-attachment: fixed;
+}
+/* Join/pricing: dreamy purple-pink gradient */
+.grad-join {
+  background: linear-gradient(135deg, #3D2B2B 0%, #5C3A5C 30%, #7A4A6A 60%, #8B5A7A 100%);
+  background-attachment: fixed;
+}
+/* About: soft mint cream */
+.grad-about {
+  background: linear-gradient(180deg, #FDF6EC 0%, #E8F0E0 100%);
+  background-attachment: fixed;
+}
 
 /* ─── Grain overlay ─── */
 .grain-overlay {
@@ -102,170 +137,69 @@ h1, h2, h3, h4, h5 {
   border-radius: 50px;
   border: 3px solid #3D2B2B;
   box-shadow: 4px 4px 0 #3D2B2B;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
 }
 .sticker-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #3D2B2B;
+  transform: translate(-2px, -4px) rotate(-1deg);
+  box-shadow: 7px 8px 0 #3D2B2B;
 }
 .sticker-btn:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #3D2B2B;
 }
+.sticker-btn-pink {
+  background: #FA9DAA;
+  color: #fff;
+  border-color: #D44A65;
+  box-shadow: 4px 4px 0 #D44A65;
+}
+.sticker-btn-pink:hover {
+  background: #D44A65;
+  box-shadow: 7px 8px 0 #A83050;
+}
+.sticker-btn-orange {
+  background: #FF9243;
+  color: #fff;
+  border-color: #C46020;
+  box-shadow: 4px 4px 0 #C46020;
+}
+.sticker-btn-orange:hover {
+  background: #C46020;
+  box-shadow: 7px 8px 0 #8B3A10;
+}
+.sticker-btn-green {
+  background: #A8BB3E;
+  color: #fff;
+  border-color: #6B7A0A;
+  box-shadow: 4px 4px 0 #6B7A0A;
+}
+.sticker-btn-green:hover {
+  background: #6B7A0A;
+  box-shadow: 7px 8px 0 #3D4A05;
+}
 
 /* ─── Paper card ─── */
 .paper-card {
-  background: #FDF6EC;
-  border: 2px solid rgba(61,43,43,0.12);
-  border-radius: 16px;
-  box-shadow: 4px 4px 0 rgba(61,43,43,0.06);
+  background: rgba(255,253,248,0.85);
+  border: 2px solid rgba(61,43,43,0.10);
+  border-radius: 20px;
+  box-shadow: 4px 4px 0 rgba(61,43,43,0.06), 0 1px 3px rgba(0,0,0,0.04);
   position: relative;
+  backdrop-filter: blur(8px);
 }
 .paper-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 16px;
-  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D44A65' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 20px;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D44A65' fill-opacity='0.025'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
 
-/* ─── Blob shape ─── */
-.blob {
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-}
-
-/* ─── Squiggle decoration ─── */
-.squiggle {
-  display: inline-block;
-}
-
-/* ─── Decorative star ─── */
-.star {
-  display: inline-block;
-}
-
-/* ─── Section label (small caps style) ─── */
-.section-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #D44A65;
-}
-
-/* ─── Rainbow divider ─── */
-.rainbow-divider {
-  height: 3px;
-  background: linear-gradient(90deg, #FA9DAA, #FF9243, #F7E4C4, #A8BB3E, #B5D4EB, #D5C6E8, #FA9DAA);
-  border-radius: 2px;
-}
-
-/* ─── Scrollbar ─── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #FDF6EC; }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #FA9DAA, #D44A65);
-  border-radius: 3px;
-}
-
-/* ─── Selection ─── */
-::selection {
-  background: #FA9DAA;
-  color: white;
-}
-
-/* ─── Focus ─── */
-:focus-visible {
-  outline: 2px solid #D44A65;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* ─── Ribbon / tape effect ─── */
-.tape {
-  position: relative;
-}
-.tape::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-2deg);
-  width: 60px;
-  height: 20px;
-  background: rgba(247,228,196,0.7);
-  border-radius: 2px;
-  backdrop-filter: blur(2px);
-}
-
-/* ─── Stamp / chop ─── */
-.stamp {
-  border: 3px solid currentColor;
-  border-radius: 4px;
-  padding: 4px 10px;
-  display: inline-block;
-  transform: rotate(-3deg);
-  opacity: 0.8;
-}
-
-/* ─── Washi tape strips ─── */
-.washi-left {
-  position: relative;
-}
-.washi-left::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -5px;
-  width: 80px;
-  height: 22px;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(168,187,62,0.5),
-    rgba(168,187,62,0.5) 4px,
-    rgba(168,187,62,0.2) 4px,
-    rgba(168,187,62,0.2) 8px
-  );
-  transform: rotate(8deg);
-  border-radius: 2px;
-}
-
-/* ─── Hover lift ─── */
-.hover-lift {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.3s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(212,74,101,0.15);
-}
-
-/* ─── Cut-out text ─── */
-.cutout-text {
-  text-shadow: 2px 2px 0 #FDF6EC,
-               -1px -1px 0 #FDF6EC,
-               2px -1px 0 #FDF6EC,
-               -1px 2px 0 #FDF6EC;
-}
-
-/* ─── Magazine pull-quote ─── */
-.pull-quote {
-  font-family: 'Fraunces', serif;
-  font-size: 1.5rem;
-  font-style: italic;
-  color: #D44A65;
-  border-left: 4px solid #FF9243;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-  line-height: 1.5;
-}
-
-/* ─── Decorative number circle ─── */
+/* ─── Issue number circle ─── */
 .issue-num {
   width: 64px;
   height: 64px;
@@ -281,3 +215,197 @@ h1, h2, h3, h4, h5 {
   background: #FDF6EC;
   flex-shrink: 0;
 }
+
+/* ─── Section label ─── */
+.section-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #D44A65;
+}
+
+/* ─── Rainbow divider ─── */
+.rainbow-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #FA9DAA, #FF9243, #F7E4C4, #A8BB3E, #B5D4EB, #D5C6E8, #FA9DAA);
+  background-size: 200% 100%;
+  animation: gradient-shift 4s ease infinite;
+  border-radius: 2px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FDF6EC; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FA9DAA, #D44A65);
+  border-radius: 3px;
+}
+
+/* ─── Selection ─── */
+::selection { background: #FA9DAA; color: white; }
+
+/* ─── Focus ─── */
+:focus-visible { outline: 2px solid #D44A65; outline-offset: 2px; border-radius: 4px; }
+
+/* ─── Hover lift ─── */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px) rotate(0.5deg);
+  box-shadow: 0 16px 40px rgba(212,74,101,0.14);
+}
+
+/* ─── Pull quote ─── */
+.pull-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #D44A65;
+  border-left: 4px solid #FF9243;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ─── Stamp / chop ─── */
+.stamp {
+  border: 2.5px solid currentColor;
+  border-radius: 4px;
+  padding: 3px 9px;
+  display: inline-block;
+  transform: rotate(-3deg);
+  opacity: 0.85;
+}
+
+/* ─── Washi tape strips ─── */
+.washi-left {
+  position: relative;
+}
+.washi-tape-green {
+  position: absolute;
+  top: -10px; left: -5px;
+  width: 80px; height: 22px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(168,187,62,0.55),
+    rgba(168,187,62,0.55) 4px,
+    rgba(168,187,62,0.18) 4px,
+    rgba(168,187,62,0.18) 8px
+  );
+  border-radius: 2px;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+.washi-tape-pink {
+  position: absolute;
+  top: -10px; right: 20px;
+  width: 80px; height: 22px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(245,157,170,0.55),
+    rgba(245,157,170,0.55) 4px,
+    rgba(245,157,170,0.18) 4px,
+    rgba(245,157,170,0.18) 8px
+  );
+  border-radius: 2px;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+.washi-tape-orange {
+  position: absolute;
+  top: -10px; right: 20px;
+  width: 80px; height: 22px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,146,67,0.45),
+    rgba(255,146,67,0.45) 4px,
+    rgba(255,146,67,0.15) 4px,
+    rgba(255,146,67,0.15) 8px
+  );
+  border-radius: 2px;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+
+/* ─── Pricing card ─── */
+.pricing-card {
+  background: rgba(255,253,248,0.12);
+  border: 2px solid rgba(255,255,255,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.pricing-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  border-color: rgba(255,255,255,0.35);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+}
+.pricing-card-featured {
+  background: rgba(250,157,170,0.15);
+  border: 2px solid rgba(250,157,170,0.4);
+}
+.pricing-card-featured:hover {
+  border-color: rgba(250,157,170,0.7);
+}
+
+/* ─── Club membership badge ─── */
+.membership-badge {
+  background: linear-gradient(135deg, #FA9DAA, #FF9243);
+  border-radius: 16px;
+  padding: 3px 12px;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* ─── Decorative flower accent ─── */
+.flower-accent {
+  display: inline-block;
+  color: #D44A65;
+  opacity: 0.6;
+}
+
+/* ─── Floating sticker decoration ─── */
+.floating-sticker {
+  position: absolute;
+  padding: 8px 14px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #D44A65;
+  transform: rotate(var(--rotate, -6deg));
+  pointer-events: none;
+}
+
+/* ─── Pastel blob background element ─── */
+.blob-pink {
+  background: radial-gradient(circle, rgba(250,157,170,0.3) 0%, transparent 70%);
+}
+.blob-peach {
+  background: radial-gradient(circle, rgba(249,213,192,0.4) 0%, transparent 70%);
+}
+.blob-lavender {
+  background: radial-gradient(circle, rgba(213,198,232,0.35) 0%, transparent 70%);
+}
+.blob-mint {
+  background: radial-gradient(circle, rgba(197,228,203,0.35) 0%, transparent 70%);
+}
+.blob-sky {
+  background: radial-gradient(circle, rgba(181,212,235,0.35) 0%, transparent 70%);
+}
+.blob-yellow {
+  background: radial-gradient(circle, rgba(247,228,196,0.5) 0%, transparent 70%);
+}
+
+/* ─── Text contrast helpers ─── */
+.text-contrast { color: #3D2B2B; }
+.text-contrast-muted { color: #5C4040; }

@@ -41,7 +41,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          HERO
     ══════════════════════════════════════════ -->
-    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6">
+    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6 grad-hero">
 
       <!-- Background blobs -->
       <div class="absolute top-20 left-[-80px] w-96 h-96 bg-lip-gloss/20 rounded-full blur-[80px] animate-blob"></div>
@@ -218,7 +218,10 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          WHAT'S INSIDE THE BOX
     ══════════════════════════════════════════ -->
-    <section class="py-20 px-6 bg-cake-batter/40 relative">
+    <section class="py-20 px-6 grad-inside relative overflow-hidden">
+      <!-- Pastel blob decorations -->
+      <div class="absolute top-10 right-20 w-72 h-72 blob-pink rounded-full blur-[80px] animate-blob"></div>
+      <div class="absolute bottom-10 left-10 w-60 h-60 blob-peach rounded-full blur-[70px] animate-blob float-delay-2"></div>
       <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23D44A65%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
       <div class="max-w-5xl mx-auto relative z-10">
 
@@ -278,10 +281,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          ARCHIVE / PAST DROPS
     ══════════════════════════════════════════ -->
-    <section id="archive" class="py-24 px-6 relative overflow-hidden">
-
+    <section id="archive" class="py-24 px-6 grad-archive relative overflow-hidden">
+      <!-- Blob decorations -->
+      <div class="absolute top-0 right-0 w-80 h-80 blob-lavender rounded-full blur-[100px] animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 blob-sky rounded-full blur-[80px] animate-blob float-delay-3"></div>
       <!-- Decorative bg -->
-      <div class="absolute top-0 right-0 text-[200px] text-lip-gloss/[0.04] font-display leading-none select-none pointer-events-none">❀</div>
+      <div class="absolute top-0 right-0 text-[200px] text-raspberry/5 font-display leading-none select-none pointer-events-none">❀</div>
 
       <div class="max-w-5xl mx-auto">
         <div class="flex items-center gap-4 mb-4">
@@ -353,7 +358,10 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          LOVE LETTERS / TESTIMONIALS
     ══════════════════════════════════════════ -->
-    <section id="love-letters" class="py-24 px-6 bg-raspberry/5 relative">
+    <section id="love-letters" class="py-24 px-6 grad-love relative">
+      <!-- Blob decorations -->
+      <div class="absolute top-0 left-0 w-72 h-72 blob-pink rounded-full blur-[90px] animate-blob"></div>
+      <div class="absolute bottom-0 right-0 w-60 h-60 blob-lavender rounded-full blur-[70px] animate-blob float-delay-2"></div>
       <div class="max-w-4xl mx-auto">
 
         <div class="text-center mb-14">
@@ -431,9 +439,10 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          HOW IT WORKS
     ══════════════════════════════════════════ -->
-    <section class="py-24 px-6 relative">
-      <!-- Decorative blob -->
-      <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-tangerine/10 rounded-full blur-[80px] animate-blob"></div>
+    <section class="py-24 px-6 grad-how relative overflow-hidden">
+      <!-- Blob decorations -->
+      <div class="absolute -bottom-20 -left-20 w-72 h-72 blob-mint rounded-full blur-[90px] animate-blob"></div>
+      <div class="absolute top-10 right-20 w-60 h-60 blob-yellow rounded-full blur-[70px] animate-blob float-delay-2"></div>
 
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-14">
@@ -477,95 +486,141 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          JOIN / PRICING
     ══════════════════════════════════════════ -->
-    <section id="join" class="py-28 px-6 bg-text-dark text-white relative overflow-hidden">
+    <section id="join" class="py-28 px-6 grad-join relative overflow-hidden">
 
-      <!-- Background decorative -->
-      <div class="absolute inset-0 opacity-5">
-        <div class="absolute top-10 left-10 text-[150px] text-white font-display">✿</div>
-        <div class="absolute bottom-10 right-10 text-[150px] text-white font-display">❀</div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] text-white font-display">✧</div>
-      </div>
+      <!-- Floating decorative stickers bg -->
+      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-20" style="color:#FA9DAA;">✿</div>
+      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-20" style="color:#FF9243;">❀</div>
+      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-15" style="color:#A8BB3E;">✿</div>
+      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-15" style="color:#D5C6E8;">✧</div>
+      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-20" style="color:#B5D4EB;">★</div>
 
-      <div class="max-w-4xl mx-auto relative z-10">
-        <div class="text-center mb-14">
-          <span class="section-label block mb-3 text-lip-gloss">Join the Club</span>
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(250,157,170,0.15);border:1px solid rgba(250,157,170,0.3);">
+            <span class="text-lip-gloss text-sm">✿</span>
+            <span class="section-label text-lip-gloss">Join the Club</span>
+          </span>
           <h2 class="font-display text-6xl text-white mb-3">
             Start Your <span class="text-lip-gloss">Collection</span>
           </h2>
-          <p class="font-retro italic text-white/60 text-lg">Skip or cancel anytime. No drama. Just art.</p>
+          <p class="font-retro italic text-white/50 text-lg">Cancel anytime. No drama. Just art.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <!-- 3-Column Pricing -->
+        <div class="grid md:grid-cols-3 gap-6">
 
-          <!-- Monthly plan -->
-          <div class="bg-white/5 border-2 border-white/20 rounded-3xl p-8 hover-lift">
-            <div class="section-label text-lip-gloss mb-4">Monthly</div>
-            <div class="flex items-baseline gap-1 mb-1">
-              <span class="font-display text-6xl text-white">$38</span>
-              <span class="font-heading text-white/50 text-sm">/box</span>
+          <!-- Monthly -->
+          <div class="pricing-card p-8 text-center relative">
+            <div class="membership-badge mb-5 mx-auto">Monthly</div>
+            <div class="flex items-baseline justify-center gap-1 mb-1">
+              <span class="font-display text-5xl text-white">$8</span>
+              <span class="font-display text-3xl text-lip-gloss">.88</span>
             </div>
-            <p class="font-body text-white/40 text-xs mb-6">Billed monthly · Cancel anytime</p>
-            <ul class="space-y-3 mb-8">
+            <p class="font-heading text-white/40 text-xs mb-1">per month</p>
+            <p class="font-body text-white/30 text-xs mb-8">Billed monthly · Cancel anytime</p>
+            <ul class="text-left space-y-3 mb-8">
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss">✦</span> Full archival art print
+                <span class="text-lip-gloss font-bold">✦</span> Full archival art print
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss">✦</span> Hand painted original
+                <span class="text-lip-gloss font-bold">✦</span> Hand painted original
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss">✦</span> Sticker sheet
+                <span class="text-lip-gloss font-bold">✦</span> Sticker sheet
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss">✦</span> Handwritten love letter
+                <span class="text-lip-gloss font-bold">✦</span> Handwritten love letter
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-lip-gloss">✦</span> Free Canadian shipping
+                <span class="text-lip-gloss font-bold">✦</span> Free Canadian shipping
               </li>
             </ul>
-            <a href="#" class="sticker-btn w-full text-center block bg-lip-gloss text-white">
+            <a href="#" class="sticker-btn sticker-btn-pink w-full text-center block">
               Subscribe Monthly
             </a>
           </div>
 
-          <!-- 3-Month plan -->
-          <div class="bg-white/10 border-2 border-lip-gloss/60 rounded-3xl p-8 hover-lift relative">
-            <!-- Badge -->
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-tangerine text-white font-heading font-bold text-xs px-4 py-1 rounded-full">
-              BEST VALUE
+          <!-- 3-Month -->
+          <div class="pricing-card pricing-card-featured p-8 text-center relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-raspberry text-white font-heading font-bold text-xs px-5 py-1.5 rounded-full shadow-lg">
+              Most Popular
             </div>
-            <div class="section-label text-tangerine mb-4">3-Month Bundle</div>
-            <div class="flex items-baseline gap-1 mb-1">
-              <span class="font-display text-6xl text-white">$33</span>
-              <span class="font-heading text-white/50 text-sm">/box</span>
+            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#D44A65,#FF9243);">3 Months</div>
+            <div class="flex items-baseline justify-center gap-1 mb-1">
+              <span class="font-display text-5xl text-white">$24</span>
+              <span class="font-display text-3xl text-tangerine">.44</span>
             </div>
-            <p class="font-body text-white/40 text-xs mb-1">Save $15 · Billed as $99 every 3 months</p>
-            <p class="font-heading text-xs font-bold text-tangerine mb-6">✦ Save $15 total</p>
-            <ul class="space-y-3 mb-8">
+            <p class="font-heading text-white/40 text-xs mb-1">$8.15/box · Save 8%</p>
+            <p class="font-body text-white/30 text-xs mb-8">Billed as $24.44 every 3 months</p>
+            <ul class="text-left space-y-3 mb-8">
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-tangerine">✦</span> Everything in monthly
+                <span class="text-tangerine font-bold">✦</span> Everything in monthly
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-tangerine">✦</span> Priority shipping
+                <span class="text-tangerine font-bold">✦</span> Priority shipping
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-tangerine">✦</span> Early access to new drops
+                <span class="text-tangerine font-bold">✦</span> Early access to new drops
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-tangerine">✦</span> Bonus sticker pack each month
+                <span class="text-tangerine font-bold">✦</span> Bonus sticker pack
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-white/80">
-                <span class="text-tangerine">✦</span> Handwritten thank-you card
+                <span class="text-tangerine font-bold">✦</span> Handwritten thank-you card
               </li>
             </ul>
-            <a href="#" class="sticker-btn w-full text-center block bg-tangerine text-white">
+            <a href="#" class="sticker-btn sticker-btn-orange w-full text-center block">
               Subscribe for 3 Months
+            </a>
+          </div>
+
+          <!-- 6-Month -->
+          <div class="pricing-card p-8 text-center relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vine-green text-white font-heading font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
+              Best Value
+            </div>
+            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#A8BB3E,#6BCB77);">6 Months</div>
+            <div class="flex items-baseline justify-center gap-1 mb-1">
+              <span class="font-display text-5xl text-white">$46</span>
+              <span class="font-display text-3xl text-vine-green">.66</span>
+            </div>
+            <p class="font-heading text-white/40 text-xs mb-1">$7.78/box · Save 12%</p>
+            <p class="font-body text-white/30 text-xs mb-8">Billed as $46.66 every 6 months</p>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+                <span class="text-vine-green font-bold">✦</span> Everything in 3-month
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+                <span class="text-vine-green font-bold">✦</span> Collector's packaging
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+                <span class="text-vine-green font-bold">✦</span> Exclusive archive access
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+                <span class="text-vine-green font-bold">✦</span> Double bonus stickers
+              </li>
+              <li class="flex items-center gap-2 font-body text-sm text-white/80">
+                <span class="text-vine-green font-bold">✦</span> First look at new issues
+              </li>
+            </ul>
+            <a href="#" class="sticker-btn sticker-btn-green w-full text-center block">
+              Subscribe for 6 Months
             </a>
           </div>
 
         </div>
 
-        <p class="text-center text-white/30 text-xs mt-8 font-body">
-          Secure checkout · Cancel anytime · Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-lip-gloss underline">hello@oopsiedaisy.art</a>
+        <!-- Club perks strip -->
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm font-heading text-white/40">
+          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Secure checkout</span>
+          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Cancel anytime</span>
+          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Free shipping Canada</span>
+          <span class="flex items-center gap-1"><span class="text-lip-gloss">✦</span> Made with love</span>
+        </div>
+
+        <p class="text-center text-white/20 text-xs mt-6 font-body">
+          Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-lip-gloss underline hover:text-white transition-colors">hello@oopsiedaisy.art</a>
         </p>
       </div>
     </section>
@@ -573,31 +628,36 @@ import Layout from '../layouts/Layout.astro';
     <!-- ══════════════════════════════════════════
          ABOUT / MEET THE ARTIST
     ══════════════════════════════════════════ -->
-    <section class="py-24 px-6 bg-cake-batter/60 relative overflow-hidden">
-      <div class="absolute top-0 right-0 text-[180px] text-vine-green/10 font-display leading-none select-none">✿</div>
+    <section class="py-24 px-6 grad-about relative overflow-hidden">
+      <!-- Blob decorations -->
+      <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 blob-lavender rounded-full blur-[80px] animate-blob float-delay-2"></div>
+      <div class="absolute top-0 right-0 text-[180px] text-vine-green/8 font-display leading-none select-none pointer-events-none">✿</div>
 
       <div class="max-w-2xl mx-auto text-center relative z-10">
         <span class="section-label block mb-4">Meet the Maker</span>
 
-        <div class="w-20 h-20 rounded-full bg-lip-gloss/30 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">✿</span>
+        <div class="w-24 h-24 rounded-full bg-lip-gloss/20 mx-auto mb-6 flex items-center justify-center">
+          <span class="text-4xl text-raspberry">❀</span>
         </div>
 
-        <h2 class="font-display text-4xl text-text-dark mb-4">Hi, I'm Tylah</h2>
-        <p class="font-retro italic text-text-muted text-lg mb-6">Artist, designer, and obsessive art-supply collector based in Canada.</p>
+        <h2 class="font-display text-4xl text-contrast mb-4">Hi, I'm Tylah</h2>
+        <p class="font-retro italic text-contrast-muted text-lg mb-6">Artist, designer, and obsessive art-supply collector based in Canada.</p>
 
-        <p class="font-body text-text-muted leading-relaxed mb-6">
+        <p class="font-body text-contrast-muted leading-relaxed mb-6">
           Oopsie Daisy started because I wanted to create something that felt like receiving a letter from your most creative friend — personal, unexpected, and made entirely by hand.
         </p>
-        <p class="font-body text-text-muted leading-relaxed mb-8">
+        <p class="font-body text-contrast-muted leading-relaxed mb-8">
           Every print, every painting, every sticker — I make it all. No factories, no dropshipping, no shortcuts. Just me, my brushes, a whole lot of matcha, and way too many reference photos of flowers.
         </p>
 
-        <div class="inline-flex gap-4 text-2xl">
-          <span class="text-raspberry/60">🍵</span>
-          <span class="text-vine-green/60">✿</span>
-          <span class="text-tangerine/60">❀</span>
-          <span class="text-raspberry/60">🇨🇦</span>
+        <!-- Decorative flower strip -->
+        <div class="inline-flex items-center gap-3 text-2xl">
+          <span class="text-raspberry/50">✿</span>
+          <span class="text-tangerine/50">❀</span>
+          <span class="text-vine-green/50">✿</span>
+          <span class="text-raspberry/50">❀</span>
+          <span class="text-tangerine/50">✿</span>
         </div>
       </div>
     </section>
