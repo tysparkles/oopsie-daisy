@@ -310,68 +310,105 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           The Collection
         </h2>
 
-        <div class="grid md:grid-cols-3 gap-8">
 
-          <!-- Archive item 1 — MATCHA 2 -->
-          <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-dusty-pink/10 border-2 border-coral-pink/20 paper-tilt paper-peel">
-              <img
-                src="/media/prints/girl .png"
-                alt="Matcha & Mornings — May 2025 print"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <!-- Sold out stamp -->
-              <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
-              <!-- Washi tape corner -->
-              <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(138,132,84,0.6),rgba(138,132,84,0.6) 3px,rgba(231,199,175,0.32) 3px,rgba(231,199,175,0.32) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+
+        <!-- ── EDITORIAL GALLERY (drag-scroll) ── -->
+        <div class="relative">
+          <!-- Arrow nav -->
+          <button id="gallery-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-warm-cream/90 border-2 border-coral-pink/40 text-coral-pink shadow-lg hover:bg-coral-pink hover:text-white transition-all duration-300 hover:rotate(-5deg) hover:scale-110 flex items-center justify-center" aria-label="Scroll left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button id="gallery-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-warm-cream/90 border-2 border-coral-pink/40 text-coral-pink shadow-lg hover:bg-coral-pink hover:text-white transition-all duration-300 hover:rotate(5deg) hover:scale-110 flex items-center justify-center" aria-label="Scroll right">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <!-- Drag-scroll container -->
+          <div id="archive-gallery" class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-4" style="scroll-padding:16px;-webkit-overflow-scrolling:touch;cursor:grab;" onmousedown="this.style.cursor='grabbing'" onmouseup="this.style.cursor='grab'">
+            <!-- Card 1 — Girl / May 2025 — slight left tilt -->
+            <div class="archive-card snap-start shrink-0 group" style="transform:rotate(-1.5deg);">
+              <div class="w-64 sm:w-72 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-dusty-pink/15 border-2 border-coral-pink/20 paper-tilt" style="transform:rotate(1deg);">
+                <img src="/media/prints/girl .png" alt="Matcha & Mornings — May 2025 print" class="w-full h-full object-cover" loading="lazy"/>
+                <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
+                <div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(138,132,84,0.6),rgba(138,132,84,0.6) 3px,rgba(231,199,175,0.32) 3px,rgba(231,199,175,0.32) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                <div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow">
+                  <p class="text-[10px] font-marykate text-coral-pink mb-0.5">May 2025</p>
+                  <p class="font-body text-[10px] text-text-muted">✦ Sold Out</p>
+                </div>
+              </div>
+              <div class="pt-3 px-1">
+                <h4 class="font-display text-xl text-text-dark">Matcha & Mornings</h4>
+                <p class="font-body text-xs text-text-muted mt-1">Warm pastry still life · Coffee cup study · Strawberry stickers</p>
+                <p class="text-[10px] font-marykate italic text-dusty-pink/60 mt-1">Issue No. 3</p>
+              </div>
             </div>
-            <h4 class="font-display text-xl text-text-dark">Matcha & Mornings</h4>
-            <p class="font-body text-xs text-text-muted mt-1">Warm pastry still life · Coffee cup study · Strawberry stickers</p>
+
+            <!-- Card 2 — Tulip / April 2025 — straight -->
+            <div class="archive-card snap-start shrink-0 group" style="transform:rotate(0.5deg);">
+              <div class="w-64 sm:w-72 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-coral-pink/15 border-2 border-coral-pink/20 paper-tilt" style="transform:rotate(-0.5deg);">
+                <img src="/media/prints/tulip selfie.png" alt="Sunday Reset — April 2025 print" class="w-full h-full object-cover" loading="lazy"/>
+                <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
+                <div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(212,92,116,0.5),rgba(212,92,116,0.5) 3px,rgba(231,199,175,0.30) 3px,rgba(231,199,175,0.30) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                <div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow">
+                  <p class="text-[10px] font-marykate text-coral-pink mb-0.5">April 2025</p>
+                  <p class="font-body text-[10px] text-text-muted">✦ Sold Out</p>
+                </div>
+              </div>
+              <div class="pt-3 px-1">
+                <h4 class="font-display text-xl text-text-dark">Sunday Reset</h4>
+                <p class="font-body text-xs text-text-muted mt-1">Soft mornings · Tulip study · Self-care stickers</p>
+                <p class="text-[10px] font-marykate italic text-dusty-pink/60 mt-1">Issue No. 2</p>
+              </div>
+            </div>
+
+            <!-- Card 3 — Toast / March 2025 — slight right tilt -->
+            <div class="archive-card snap-start shrink-0 group" style="transform:rotate(1.5deg);">
+              <div class="w-64 sm:w-72 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-burnt-cinnamon/15 border-2 border-burnt-cinnamon/20 paper-tilt" style="transform:rotate(-1deg);">
+                <img src="/media/prints/toastt.png" alt="First Bloom — March 2025 print" class="w-full h-full object-cover" loading="lazy"/>
+                <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
+                <div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(222,123,91,0.58),rgba(222,123,91,0.58) 3px,rgba(231,199,175,0.28) 3px,rgba(231,199,175,0.28) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                <div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow">
+                  <p class="text-[10px] font-marykate text-coral-pink mb-0.5">March 2025</p>
+                  <p class="font-body text-[10px] text-text-muted">✦ Sold Out</p>
+                </div>
+              </div>
+              <div class="pt-3 px-1">
+                <h4 class="font-display text-xl text-text-dark">First Bloom</h4>
+                <p class="font-body text-xs text-text-muted mt-1">Wildflower collage · Pressed flower card · Leaf stickers</p>
+                <p class="text-[10px] font-marykate italic text-dusty-pink/60 mt-1">Issue No. 1</p>
+              </div>
+            </div>
+
+            <!-- Extra card — "more coming" teaser -->
+            <div class="archive-card snap-start shrink-0 flex items-center justify-center" style="transform:rotate(-0.5deg);">
+              <div class="w-64 sm:w-72 aspect-[3/4] rounded-2xl border-2 border-dashed border-coral-pink/30 bg-warm-cream/40 flex flex-col items-center justify-center gap-4 text-center px-6 py-8">
+                <svg width="40" height="40" viewBox="0 0 50 50" fill="none" class="animate-flower-sway">
+                  <circle cx="25" cy="25" r="6" fill="#A55230" opacity="0.6"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(0 25 25)"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(60 25 25)"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(120 25 25)"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(180 25 25)"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(240 25 25)"/>
+                  <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" opacity="0.6" transform="rotate(300 25 25)"/>
+                  <circle cx="25" cy="25" r="6" fill="#A55230" opacity="0.6"/>
+                </svg>
+                <p class="font-display text-lg text-dusty-pink/70 leading-snug">New Issues<br/>Every Month</p>
+                <p class="font-marykate italic text-xs text-text-muted/70">Join to start your collection</p>
+                <a href="#join" class="sticker-btn sticker-btn-pink text-xs !py-2 !px-5 mt-2">Join the Club</a>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Archive item 2 — Tulip Selfie → Sunday Reset -->
-          <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-coral-pink/10 border-2 border-coral-pink/20">
-              <img
-                src="/media/prints/tulip selfie.png"
-                alt="Sunday Reset — April 2025 print"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <!-- Sold out stamp -->
-              <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
-              <!-- Washi tape corner -->
-              <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(212,92,116,0.5),rgba(212,92,116,0.5) 3px,rgba(231,199,175,0.30) 3px,rgba(231,199,175,0.30) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+          <!-- Scroll progress indicator -->
+          <div class="mt-4 flex items-center justify-center gap-3">
+            <div class="h-1.5 bg-coral-pink/20 rounded-full w-48 overflow-hidden">
+              <div id="gallery-progress-bar" class="h-full bg-coral-pink rounded-full transition-all duration-300" style="width:33%;"></div>
             </div>
-            <h4 class="font-display text-xl text-text-dark">Sunday Reset</h4>
-            <p class="font-body text-xs text-text-muted mt-1">Soft mornings · Tulip study · Self-care stickers</p>
+            <p class="text-[10px] font-heading text-text-muted/60">drag to browse · scroll to explore</p>
           </div>
-
-          <!-- Archive item 3 — First Bloom → Toast -->
-          <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-burnt-cinnamon/10 border-2 border-burnt-cinnamon/20">
-              <img
-                src="/media/prints/toastt.png"
-                alt="First Bloom — March 2025 print"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <!-- Sold out stamp -->
-              <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
-              <!-- Washi tape corner -->
-              <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(222,123,91,0.58),rgba(222,123,91,0.58) 3px,rgba(231,199,175,0.28) 3px,rgba(231,199,175,0.28) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
-            </div>
-            <h4 class="font-display text-xl text-text-dark">First Bloom</h4>
-            <p class="font-body text-xs text-text-muted mt-1">Wildflower collage · Pressed flower card · Leaf stickers</p>
-          </div>
-
         </div>
 
-        <div class="text-center mt-10">
+        <div class="text-center mt-8">
           <p class="font-marykate italic text-text-muted text-lg">More issues added every month — join to collect them all.</p>
         </div>
       </div>
