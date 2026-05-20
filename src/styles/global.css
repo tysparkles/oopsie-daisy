@@ -235,7 +235,37 @@ h1, h2, h3, h4, h5 {
   border-radius: 2px;
 }
 
-/* ─── Scrollbar ─── */
+/* ─── Hero Video / Image Background ─── */
+.hero-media-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Blur + colour grade — remove or adjust to taste */
+  filter: brightness(0.55) saturate(1.2);
+  /* dreamy blur — lower = sharper, 8-15px = soft blur feel */
+}
+/* When a video/image is present, fade out blobs slightly */
+.hero-media-bg ~ .absolute {
+  opacity: 0.4;
+}
+.hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(253,246,236,0.55) 0%,
+    rgba(253,246,236,0.20) 30%,
+    rgba(253,246,236,0.10) 60%,
+    rgba(253,246,236,0.70) 100%
+  );
+}
+
+/* ─── Custom scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #FDF6EC; }
 ::-webkit-scrollbar-thumb {
