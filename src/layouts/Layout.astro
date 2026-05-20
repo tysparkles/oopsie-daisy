@@ -27,19 +27,84 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
   
 
 <script>
-  // ─── Archive Gallery — arrow nav (hover auto-scroll is CSS-only) ───
-  const strip = document.getElementById('archive-gallery-strip');
-  const leftBtn = document.getElementById('gallery-left');
-  const rightBtn = document.getElementById('gallery-right');
-  if (strip && leftBtn && rightBtn) {
-    const cardW = (18 * 16) + (2 * 16);
-    leftBtn.addEventListener('click', () => {
-      strip.closest('.archive-gallery-wrap').scrollLeft -= cardW;
+  // ─── Endless Archive Gallery ───
+  (function() {
+    const wrap   = document.getElementById('archive-gallery-wrap');
+    const strip  = document.getElementById('archive-gallery-strip');
+    const leftBtn  = document.getElementById('gallery-left');
+    const rightBtn = document.getElementById('gallery-right');
+
+    if (!wrap || !strip) return;
+
+    let pos       = 0;
+    let speed     = 1.2;    // px per frame
+    let isHovered = false;
+    let rafId     = null;
+
+    // Arrow buttons — scroll by one card width
+    function cardW() { return (window.innerWidth < 640 ? 15 : 18) * 16 + 2 * 16; }
+
+    if (leftBtn) {
+      leftBtn.addEventListener('click', () => {
+        wrap.scrollLeft -= cardW();
+      });
+    }
+    if (rightBtn) {
+      rightBtn.addEventListener('click', () => {
+        wrap.scrollLeft += cardW();
+      });
+    }
+
+    // Hover → pause auto-scroll, allow manual
+    wrap.addEventListener('mouseenter', () => { isHovered = true; cancelAnimationFrame(rafId); });
+    wrap.addEventListener('mouseleave', () => {
+      isHovered = false;
+      cancelAnimationFrame(rafId);
+      tick();
     });
-    rightBtn.addEventListener('click', () => {
-      strip.closest('.archive-gallery-wrap').scrollLeft += cardW;
-    });
-  }
+
+    // Also allow touch swipe to pause
+    wrap.addEventListener('touchstart', () => { isHovered = true; cancelAnimationFrame(rafId); }, { passive: true });
+    wrap.addEventListener('touchend',  () => { isHovered = false; tick(); }, { passive: true });
+
+    // Infinite loop: when strip scrolls to end, jump back seamlessly
+    wrap.addEventListener('scroll', () => {
+      const maxScroll = strip.scrollWidth - wrap.clientWidth;
+      if (wrap.scrollLeft >= maxScroll - 10) {
+        wrap.scrollLeft = 1; // jump just 1px in to avoid blank flash
+      }
+      if (wrap.scrollLeft <= 0) {
+        wrap.scrollLeft = maxScroll - wrap.clientWidth - 1;
+      }
+    }, { passive: true });
+
+    // Auto-scroll tick
+    function tick() {
+      if (!isHovered) {
+        pos += speed;
+        const maxScroll = strip.scrollWidth - wrap.clientWidth;
+        if (pos >= maxScroll) pos = 1; // jump back (same trick as scroll event)
+        wrap.scrollLeft = pos;
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Dot indicator update
+    const dots = document.querySelectorAll('#gallery-dots span');
+    if (dots.length > 0) {
+      wrap.addEventListener('scroll', () => {
+        const max   = strip.scrollWidth - wrap.clientWidth;
+        const ratio = max > 0 ? wrap.scrollLeft / max : 0;
+        const activeIdx = Math.min(Math.floor(ratio * dots.length), dots.length - 1);
+        dots.forEach((d, i) => {
+          d.classList.toggle('dot-active', i === activeIdx);
+          d.classList.toggle('bg-coral-pink', i === activeIdx);
+          d.classList.toggle('bg-coral-pink/30', i !== activeIdx);
+        });
+      }, { passive: true });
+    }
+  })();
 
   // ─── Scroll Reveal ───
   const revealEls = document.querySelectorAll('.scroll-reveal');
@@ -55,12 +120,12 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
     revealEls.forEach(el => observer.observe(el));
   }
 
-  // ─── Petal parallax on scroll ───
+  // ─── Petal parallax ───
   const petals = document.querySelectorAll('.animate-petal-fall');
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     petals.forEach((p, i) => {
-      p.style.transform = `translateY(${scrolled * (0.05 + i * 0.02)}px)`;
+      p.style.transform = 'translateY(' + (scrolled * (0.05 + i * 0.02)) + 'px)';
     });
   }, { passive: true });
 </script>
