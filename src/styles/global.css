@@ -22,13 +22,13 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Retro Mother', cursive;
+  font-family: 'Fat Kat', cursive;
 }
 
 /* ─── Utility ─── */
-.font-display { font-family: 'Retro Mother', cursive; }
+.font-display { font-family: 'Fat Kat', cursive; }
 .font-heading { font-family: 'Poppins', sans-serif; }
-.font-retro   { font-family: 'Fraunces', serif; }
+.font-retro   { font-family: 'Fat Kat', cursive; }
 
 /* ─── Keyframes ─── */
 @keyframes float {
