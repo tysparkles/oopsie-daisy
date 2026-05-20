@@ -860,3 +860,12 @@ h1, h2, h3, h4, h5 {
   .archive-card-scroll,
   .archive-join-card { width: 15rem; }
 }
+/* ══════════════════════════════════════════════════════════════
+   ROTATING IMAGE GALLERY
+══════════════════════════════════════════════════════════════ */
+.archive-gallery-wrap { overflow: hidden; position: relative; }
+.archive-gallery-strip { display: flex; align-items: center; gap: 1.5rem; width: max-content; will-change: transform; }
+.rotate-img-wrap { width: 16rem; height: 20rem; flex-shrink: 0; border-radius: 1.5rem; overflow: hidden; border: 2px solid rgba(212,92,116,0.2); box-shadow: 0 8px 32px rgba(90,50,30,0.1); background: #f5ede4; }
+.rotate-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.rotate-img-wrap:hover .rotate-img { transform: scale(1.05); }
+@media (max-width: 640px) { .rotate-img-wrap { width: 13rem; height: 16rem; } }
