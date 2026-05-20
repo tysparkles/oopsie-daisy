@@ -4,35 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ─── Core paper palette ───
-        'cake-batter':  '#F7E4C4',
-        'warm-white':   '#FDF6EC',
-        'warm-cream':   '#F6DFC6',
-        'tan':          '#D4BB9D',
-
-        // ─── Brand colours ───
-        'dusty-pink':    '#D45C74',
-        'raspberry':     '#D44A65',
-        'lip-gloss':     '#FA9DAA',
-        'coral-pink':    '#DE7B5B',
-        'tangerine':     '#FF9243',
-        'burnt-cinnamon':'#A55230',
-        'olive-green':   '#8A8454',
-        'vine-green':    '#A8BB3E',
-
-        // ─── Accents ───
-        'sky-lavender': '#C5B5D4',
-        'sky-blue':      '#B5D4EB',
-        'soft-lavender': '#D5C6E8',
-        'pale-mint':     '#C5E4CB',
-        'soft-peach':    '#F9D5C0',
-        'pale-rose':    '#E8C4B8',
-
-        // ─── Text ───
-        'espresso':      '#4A4356',
-        'text-dark':     '#3D2B2B',
-        'text-muted':    '#7A6464',
-        'text-raspberry':'#D44A65',
+        'tan': '#D4BB9D',
+        'dusty-pink': '#D45C74',
+        'coral-pink': '#DE7B5B',
+        'burnt-cinnamon': '#A55230',
+        'olive-green': '#8A8454',
+        'espresso': '#4A4336',
+        'warm-cream': '#E7C7AF',
+        'text-dark': '#4A4336',
+        'text-muted': '#6E5D50',
       },
       fontFamily: {
         display:   ['Fat Kat', 'cursive'],

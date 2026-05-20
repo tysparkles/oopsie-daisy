@@ -6,7 +6,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 <Layout title="Oopsie Daisy — Monthly Print Club">
 
   <!-- ── STICKY NAV ── -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-warm-white/90 backdrop-blur-md border-b-2 border-lip-gloss/30">
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-warm-cream/15" style="background:linear-gradient(180deg,rgba(74,67,54,0.62),rgba(74,67,54,0.28) 70%,rgba(74,67,54,0));backdrop-filter:blur(10px);">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <a href="/" class="flex items-center gap-2 group">
         <!-- Mini daisy SVG logo -->
@@ -24,15 +24,15 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <circle cx="23" cy="23" r="2" fill="#D4BB9D" opacity="0.6"/>
         </svg>
         <div>
-          <span class="font-display text-xl text-text-dark leading-none">Oopsie Daisy</span>
-          <span class="block font-heading text-[9px] font-bold tracking-[0.25em] text-dusty-pink uppercase -mt-1">Monthly Print Club</span>
+          <span class="font-display text-xl text-warm-cream leading-none" style="text-shadow:0 2px 14px rgba(74,67,54,0.42);">Oopsie Daisy</span>
+          <span class="block font-heading text-[9px] font-bold tracking-[0.25em] text-warm-cream/85 uppercase -mt-1" style="text-shadow:0 2px 12px rgba(74,67,54,0.35);">Monthly Print Club</span>
         </div>
       </a>
       <div class="flex gap-6 items-center text-sm font-heading font-semibold">
-        <a href="#this-month" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">This Month</a>
-        <a href="#archive" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">Archive</a>
-        <a href="#love-letters" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">Love Letters</a>
-        <a href="#join" class="sticker-btn bg-dusty-pink text-white text-xs !py-2 !px-5 hover:bg-dusty-pink/90">Join the Club</a>
+        <a href="#this-month" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">This Month</a>
+        <a href="#archive" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">Archive</a>
+        <a href="#love-letters" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">Love Letters</a>
+        <a href="#join" class="sticker-btn bg-warm-cream text-espresso text-xs !py-2 !px-5">Join the Club</a>
       </div>
     </div>
   </nav>
@@ -42,7 +42,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
     <!-- ══════════════════════════════════════════
          HERO
     ══════════════════════════════════════════ -->
-    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6" style="background: linear-gradient(160deg, #FDF6EC 0%, #FCE8EC 38%, #FA9DAA 72%, #FF9243 100%);">
+    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 44%, #D45C74 82%, #A55230 100%);">
 
       <!-- ── HERO VIDEO / IMAGE BACKGROUND ── -->
       <!-- TO USE: Replace the src below with your video URL or local path like /media/hero-video.mp4 -->
@@ -62,9 +62,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
       <div class="hero-media-overlay"></div>
 
       <!-- Background blobs (shown when no hero media) -->
-      <div class="absolute top-20 left-[-80px] w-96 h-96 bg-lip-gloss/20 rounded-full blur-[80px] animate-blob"></div>
-      <div class="absolute bottom-20 right-[-60px] w-80 h-80 bg-sky-blue/30 rounded-full blur-[80px] animate-blob float-delay-2"></div>
-      <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-soft-lavender/25 rounded-full blur-[60px] animate-blob float-delay-4"></div>
+      <div class="absolute top-20 left-[-80px] w-96 h-96 bg-coral-pink/20 rounded-full blur-[80px] animate-blob"></div>
+      <div class="absolute bottom-20 right-[-60px] w-80 h-80 bg-warm-cream/25 rounded-full blur-[80px] animate-blob float-delay-2"></div>
+      <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-burnt-cinnamon/10 rounded-full blur-[60px] animate-blob float-delay-4"></div>
 
       <!-- Floating decorative elements -->
       <div class="absolute top-36 left-12 text-5xl animate-float-slow">✿</div>
@@ -119,10 +119,10 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <!-- Social proof sticker -->
         <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-3">
           <div class="flex -space-x-2">
-            <div class="w-7 h-7 rounded-full bg-lip-gloss border-2 border-white/60 text-xs flex items-center justify-center">T</div>
-            <div class="w-7 h-7 rounded-full bg-soft-lavender border-2 border-white/60 text-xs flex items-center justify-center">M</div>
-            <div class="w-7 h-7 rounded-full bg-pale-mint border-2 border-white/60 text-xs flex items-center justify-center">S</div>
-            <div class="w-7 h-7 rounded-full bg-sky-blue border-2 border-white/60 text-xs flex items-center justify-center">J</div>
+            <div class="w-7 h-7 rounded-full bg-coral-pink border-2 border-white/60 text-xs flex items-center justify-center">T</div>
+            <div class="w-7 h-7 rounded-full bg-warm-cream border-2 border-white/60 text-xs flex items-center justify-center">M</div>
+            <div class="w-7 h-7 rounded-full bg-olive-green border-2 border-white/60 text-xs flex items-center justify-center">S</div>
+            <div class="w-7 h-7 rounded-full bg-warm-cream border-2 border-white/60 text-xs flex items-center justify-center">J</div>
           </div>
           <span class="text-sm font-heading font-semibold text-white/85">
             1,200+ collectors across Canada
@@ -136,22 +136,22 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="w-px h-8 bg-gradient-to-b from-text-muted/40 to-transparent"></div>
       </div>
     </section>
-    <section id="this-month" class="py-24 px-6 relative">
+    <section id="this-month" class="py-28 px-6 relative" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 58%, #DE7B5B 100%);">
       <!-- Background decorative -->
-      <div class="absolute top-10 right-10 text-[120px] text-lip-gloss/10 font-display leading-none select-none pointer-events-none">✿</div>
-      <div class="absolute bottom-20 left-0 w-64 h-64 bg-sky-blue/10 rounded-full blur-[60px] animate-blob"></div>
+      <div class="absolute top-10 right-10 text-[120px] text-coral-pink/10 font-display leading-none select-none pointer-events-none">✿</div>
+      <div class="absolute bottom-20 left-0 w-64 h-64 bg-dusty-pink/10 rounded-full blur-[60px] animate-blob"></div>
 
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-4 mb-8">
           <span class="section-label">This Month's Issue</span>
-          <span class="flex-1 h-[2px] bg-lip-gloss/30 rounded"></span>
+          <span class="flex-1 h-[2px] bg-coral-pink/30 rounded"></span>
           <span class="stamp text-dusty-pink font-heading text-xs font-bold">JUNE 2025</span>
         </div>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-center">
-          <!-- Left: Text content (2/5 width) -->
-          <div class="lg:col-span-2">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <!-- Left: Text content -->
+          <div class="lg:col-span-5">
             <h2 class="font-display text-5xl md:text-6xl text-contrast mb-4 leading-[0.95]">
               Cherry<br/>
               <span class="text-dusty-pink">Blossom</span><br/>
@@ -167,11 +167,11 @@ import ImageCarousel from '../components/ImageCarousel.astro';
                 <span class="font-body text-contrast">5×7" archival art print — cherry blossom still life</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-tangerine font-heading font-bold">✦</span>
+                <span class="text-burnt-cinnamon font-heading font-bold">✦</span>
                 <span class="font-body text-contrast">Mini hand-painted koi fish on textured paper</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-vine-green font-heading font-bold">✦</span>
+                <span class="text-olive-green font-heading font-bold">✦</span>
                 <span class="font-body text-contrast">Die-cut cherry blossom sticker sheet × 12</span>
               </div>
               <div class="flex items-center gap-3">
@@ -193,7 +193,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Right: Image Carousel (3/5 width) -->
           <!-- To use your own images: replace the src values below with paths like /media/prints/your-image.jpg -->
-          <div class="lg:col-span-3">
+          <div class="lg:col-span-7">
             <ImageCarousel items={[{
               print: '/media/prints/cherry blossom.png',
               process: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
@@ -209,11 +209,11 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <section class="py-20 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #FDF6EC 0%, #F9D5C0 52%, #C5E4CB 100%);">
+    <section class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #E7C7AF 0%, #D4BB9D 58%, #DE7B5B 100%);">
       <!-- Pastel blob decorations -->
       <div class="absolute top-10 right-20 w-72 h-72 blob-pink rounded-full blur-[80px] animate-blob"></div>
       <div class="absolute bottom-10 left-10 w-60 h-60 blob-peach rounded-full blur-[70px] animate-blob float-delay-2"></div>
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23D44A65%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%234A4336%22%20fill-opacity%3D%220.035%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
       <div class="max-w-5xl mx-auto relative z-10">
 
         <div class="text-center mb-14">
@@ -225,7 +225,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Card 1 — Art Print -->
           <div class="paper-card p-8 hover-lift">
-            <div class="w-16 h-16 rounded-full bg-lip-gloss/20 flex items-center justify-center mb-5">
+            <div class="w-16 h-16 rounded-full bg-coral-pink/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
                 <rect x="6" y="8" width="28" height="24" rx="3" stroke="#D45C74" stroke-width="2" fill="none"/>
                 <path d="M6 28 L14 20 L20 26 L26 19 L34 28" stroke="#D45C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -238,7 +238,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Card 2 — Handwritten Letter -->
           <div class="paper-card p-8 hover-lift">
-            <div class="w-16 h-16 rounded-full bg-tangerine/20 flex items-center justify-center mb-5">
+            <div class="w-16 h-16 rounded-full bg-burnt-cinnamon/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
                 <path d="M8 12 L20 24 L32 12" stroke="#A55230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <rect x="8" y="10" width="24" height="18" rx="2" stroke="#A55230" stroke-width="2" fill="none"/>
@@ -251,7 +251,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Card 3 — Surprise Gift -->
           <div class="paper-card p-8 hover-lift">
-            <div class="w-16 h-16 rounded-full bg-vine-green/20 flex items-center justify-center mb-5">
+            <div class="w-16 h-16 rounded-full bg-olive-green/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
                 <path d="M20 8 C20 8 10 15 10 24 C10 29 14 33 20 33" stroke="#8A8454" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <circle cx="17" cy="22" r="2" fill="#8A8454"/>
@@ -265,17 +265,17 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <section id="archive" class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #F7E4C4 0%, #D5C6E8 55%, #B5D4EB 100%);">
+    <section id="archive" class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 56%, #D45C74 100%);">
       <!-- Blob decorations -->
-      <div class="absolute top-0 right-0 w-80 h-80 blob-lavender rounded-full blur-[100px] animate-blob"></div>
-      <div class="absolute bottom-0 left-0 w-64 h-64 blob-sky rounded-full blur-[80px] animate-blob float-delay-3"></div>
+      <div class="absolute top-0 right-0 w-80 h-80 blob-coral rounded-full blur-[100px] animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 blob-cinnamon rounded-full blur-[80px] animate-blob float-delay-3"></div>
       <!-- Decorative bg -->
       <div class="absolute top-0 right-0 text-[200px] text-dusty-pink/5 font-display leading-none select-none pointer-events-none">❀</div>
 
       <div class="max-w-5xl mx-auto">
         <div class="flex items-center gap-4 mb-4">
           <span class="section-label">Club Archive</span>
-          <span class="flex-1 h-[2px] bg-lip-gloss/30 rounded"></span>
+          <span class="flex-1 h-[2px] bg-coral-pink/30 rounded"></span>
           <span class="font-heading text-xs text-text-muted">Past Print Drops</span>
         </div>
 
@@ -287,7 +287,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Archive item 1 — MATCHA 2 -->
           <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-raspberry/10 border-2 border-lip-gloss/20">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-dusty-pink/10 border-2 border-coral-pink/20">
               <img
                 src="/media/prints/MATCHA 2.png"
                 alt="Matcha & Mornings — May 2025 print"
@@ -298,7 +298,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
               <!-- Washi tape corner -->
               <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(168,187,62,0.5),rgba(168,187,62,0.5) 3px,rgba(168,187,62,0.2) 3px,rgba(168,187,62,0.2) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                style="background:repeating-linear-gradient(45deg,rgba(138,132,84,0.6),rgba(138,132,84,0.6) 3px,rgba(231,199,175,0.32) 3px,rgba(231,199,175,0.32) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
             </div>
             <h4 class="font-display text-xl text-text-dark">Matcha & Mornings</h4>
             <p class="font-body text-xs text-text-muted mt-1">Warm pastry still life · Coffee cup study · Strawberry stickers</p>
@@ -306,7 +306,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Archive item 2 — Tulip Selfie → Sunday Reset -->
           <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-lip-gloss/10 border-2 border-lip-gloss/20">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-coral-pink/10 border-2 border-coral-pink/20">
               <img
                 src="/media/prints/tulip selfie.png"
                 alt="Sunday Reset — April 2025 print"
@@ -317,7 +317,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
               <!-- Washi tape corner -->
               <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(250,157,170,0.5),rgba(250,157,170,0.5) 3px,rgba(250,157,170,0.2) 3px,rgba(250,157,170,0.2) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                style="background:repeating-linear-gradient(45deg,rgba(212,92,116,0.5),rgba(212,92,116,0.5) 3px,rgba(231,199,175,0.30) 3px,rgba(231,199,175,0.30) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
             </div>
             <h4 class="font-display text-xl text-text-dark">Sunday Reset</h4>
             <p class="font-body text-xs text-text-muted mt-1">Soft mornings · Tulip study · Self-care stickers</p>
@@ -325,7 +325,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Archive item 3 — First Bloom → Toast -->
           <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-tangerine/10 border-2 border-tangerine/20">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-burnt-cinnamon/10 border-2 border-burnt-cinnamon/20">
               <img
                 src="/media/prints/toastt.png"
                 alt="First Bloom — March 2025 print"
@@ -336,7 +336,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-white/80">SOLD OUT</div>
               <!-- Washi tape corner -->
               <div class="absolute top-0 left-0 w-16 h-5"
-                style="background:repeating-linear-gradient(45deg,rgba(255,146,67,0.5),rgba(255,146,67,0.5) 3px,rgba(255,146,67,0.2) 3px,rgba(255,146,67,0.2) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
+                style="background:repeating-linear-gradient(45deg,rgba(222,123,91,0.58),rgba(222,123,91,0.58) 3px,rgba(231,199,175,0.28) 3px,rgba(231,199,175,0.28) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div>
             </div>
             <h4 class="font-display text-xl text-text-dark">First Bloom</h4>
             <p class="font-body text-xs text-text-muted mt-1">Wildflower collage · Pressed flower card · Leaf stickers</p>
@@ -349,11 +349,11 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <section class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #FDF6EC 0%, #E8F0E0 100%);">
+    <section class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 100%);">
 
       <!-- Background decorations -->
-      <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
-      <div class="absolute bottom-0 left-0 w-64 h-64 blob-lavender rounded-full blur-[80px] animate-blob float-delay-2"></div>
+      <div class="absolute top-0 right-0 w-80 h-80 blob-olive rounded-full blur-[100px] animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 blob-peach rounded-full blur-[80px] animate-blob float-delay-2"></div>
 
       <div class="max-w-5xl mx-auto relative z-10">
 
@@ -375,7 +375,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Portrait / Studio image -->
           <div class="relative">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/10 border-2 border-lip-gloss/20">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-dusty-pink/10 border-2 border-coral-pink/20">
               <img
                 src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=750&fit=crop"
                 alt="Tylah's studio workspace with watercolors and flowers"
@@ -385,10 +385,10 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             </div>
             <!-- Washi tape decoration -->
             <div class="absolute -top-3 -left-3 w-24 h-6 rounded-sm"
-              style="background:repeating-linear-gradient(45deg,rgba(250,157,170,0.6),rgba(250,157,170,0.6) 3px,rgba(250,157,170,0.2) 3px,rgba(250,157,170,0.2) 6px);transform:rotate(-8deg);box-shadow:2px 2px 8px rgba(0,0,0,0.1);">
+              style="background:repeating-linear-gradient(45deg,rgba(212,92,116,0.6),rgba(212,92,116,0.6) 3px,rgba(231,199,175,0.30) 3px,rgba(231,199,175,0.30) 6px);transform:rotate(-8deg);box-shadow:2px 2px 8px rgba(74,67,54,0.12);">
             </div>
             <!-- Floating sticker -->
-            <div class="absolute -bottom-4 -right-4 bg-white/90 border border-lip-gloss/30 rounded-2xl px-3 py-2 shadow-lg">
+            <div class="absolute -bottom-4 -right-4 bg-warm-cream/90 border border-coral-pink/30 rounded-2xl px-3 py-2 shadow-lg">
               <p class="font-retro italic text-xs text-contrast-muted">My happy place ✿</p>
             </div>
           </div>
@@ -404,43 +404,45 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             </p>
             <!-- Process tags -->
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-dusty-pink text-xs font-heading">Hand-drawn</span>
-              <span class="px-3 py-1 rounded-full bg-tangerine/15 text-tangerine text-xs font-heading">Watercolor</span>
-              <span class="px-3 py-1 rounded-full bg-vine-green/15 text-vine-green text-xs font-heading">Archival Print</span>
-              <span class="px-3 py-1 rounded-full bg-soft-lavender/20 text-purple-600 text-xs font-heading">Handwritten</span>
-</div>
+              <span class="px-3 py-1 rounded-full bg-coral-pink/15 text-dusty-pink text-xs font-heading">Hand-drawn</span>
+              <span class="px-3 py-1 rounded-full bg-burnt-cinnamon/15 text-burnt-cinnamon text-xs font-heading">Watercolor</span>
+              <span class="px-3 py-1 rounded-full bg-olive-green/15 text-olive-green text-xs font-heading">Archival Print</span>
+              <span class="px-3 py-1 rounded-full bg-warm-cream/30 text-espresso text-xs font-heading">Handwritten</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section id="join" class="py-28 px-6 relative overflow-hidden">
 
-      <!-- Deep layered pink/raspberry background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-[#C93652] via-[#D45C74] to-[#B8304F]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#1a0510]/60 via-transparent to-[#2d0a1a]/40"></div>
+      <!-- Deep layered pink/dusty-pink background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#D4BB9D] via-[#D45C74] to-[#A55230]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#4A4336]/60 via-transparent to-[#4A4336]/40"></div>
       <!-- Dramatic blob layers -->
       <div class="absolute inset-0">
         <div class="absolute top-0 left-[-120px] w-[500px] h-[500px] bg-[#DE7B5B]/20 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-0 right-[-80px] w-[400px] h-[400px] bg-[#A55230]/15 rounded-full blur-[100px]"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FCE8EC]/5 rounded-full blur-[150px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#E7C7AF]/8 rounded-full blur-[150px]"></div>
       </div>
 
       <!-- Grain texture overlay -->
       <div class="absolute inset-0 opacity-[0.04]" style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22/...');background-size:200px 200px;pointer-events:none;"></div>
 
       <!-- Floating decorative flowers (brighter for dark bg) -->
-      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-50" style="color:#FCE8EC;">✿</div>
+      <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-50" style="color:#E7C7AF;">✿</div>
       <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-50" style="color:#DE7B5B;">❀</div>
-      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-35" style="color:#FFD6A5;">✿</div>
-      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-35" style="color:#FCE8EC;">✧</div>
-      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-45" style="color:#D5C6E8;">★</div>
+      <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-35" style="color:#E7C7AF;">✿</div>
+      <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-35" style="color:#E7C7AF;">✧</div>
+      <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-45" style="color:#E7C7AF;">★</div>
 
       <div class="max-w-5xl mx-auto relative z-10">
         <div class="text-center mb-16">
-          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(250,157,170,0.15);border:1px solid rgba(250,157,170,0.3);">
-            <span class="text-lip-gloss text-sm">✿</span>
-            <span class="section-label text-lip-gloss">Join the Club</span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(231,199,175,0.15);border:1px solid rgba(231,199,175,0.32);">
+            <span class="text-coral-pink text-sm">✿</span>
+            <span class="section-label text-coral-pink">Join the Club</span>
           </span>
           <h2 class="font-display text-6xl text-white mb-3">
-            Start Your <span class="text-cake-batter">Collection</span>
+            Start Your <span class="text-warm-cream">Collection</span>
           </h2>
           <p class="font-marykate italic text-white/75 text-lg">Cancel anytime. No drama. Just art.</p>
         </div>
@@ -449,7 +451,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="grid md:grid-cols-3 gap-6">
 
           <!-- Monthly -->
-          <div class="bg-white/90 border-2 border-lip-gloss/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-lip-gloss/10">
+          <div class="bg-warm-cream/90 border-2 border-coral-pink/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-coral-pink/10">
             <div class="membership-badge mb-5 mx-auto">Monthly</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$8</span>
@@ -480,32 +482,32 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           </div>
 
           <!-- 3-Month -->
-          <div class="bg-white/95 border-2 border-raspberry/40 rounded-3xl p-8 text-center relative hover-lift shadow-xl shadow-raspberry/15">
+          <div class="bg-white/95 border-2 border-dusty-pink/40 rounded-3xl p-8 text-center relative hover-lift shadow-xl shadow-dusty-pink/15">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-dusty-pink text-white font-heading font-bold text-xs px-5 py-1.5 rounded-full shadow-lg">
               Most Popular
             </div>
             <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#D45C74,#A55230);">3 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$24</span>
-              <span class="font-display text-3xl text-tangerine">.44</span>
+              <span class="font-display text-3xl text-burnt-cinnamon">.44</span>
             </div>
             <p class="font-heading text-contrast-muted text-xs mb-1">$8.15/box · Save 8%</p>
             <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed as $24.44 every 3 months</p>
             <ul class="text-left space-y-3 mb-8">
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-tangerine font-bold">✦</span> Everything in monthly
+                <span class="text-burnt-cinnamon font-bold">✦</span> Everything in monthly
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-tangerine font-bold">✦</span> Priority shipping
+                <span class="text-burnt-cinnamon font-bold">✦</span> Priority shipping
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-tangerine font-bold">✦</span> Early access to new drops
+                <span class="text-burnt-cinnamon font-bold">✦</span> Early access to new drops
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-tangerine font-bold">✦</span> Bonus sticker pack
+                <span class="text-burnt-cinnamon font-bold">✦</span> Bonus sticker pack
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-tangerine font-bold">✦</span> Handwritten thank-you card
+                <span class="text-burnt-cinnamon font-bold">✦</span> Handwritten thank-you card
               </li>
             </ul>
             <a href="#" class="sticker-btn sticker-btn-orange w-full text-center block">
@@ -514,32 +516,32 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           </div>
 
           <!-- 6-Month -->
-          <div class="bg-white/90 border-2 border-vine-green/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-vine-green/10">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vine-green text-white font-heading font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
+          <div class="bg-warm-cream/90 border-2 border-olive-green/30 rounded-3xl p-8 text-center relative hover-lift shadow-lg shadow-olive-green/10">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-olive-green text-white font-heading font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
               Best Value
             </div>
-            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#8A8454,#6BCB77);">6 Months</div>
+            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#8A8454,#8A8454);">6 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$46</span>
-              <span class="font-display text-3xl text-vine-green">.66</span>
+              <span class="font-display text-3xl text-olive-green">.66</span>
             </div>
             <p class="font-heading text-contrast-muted text-xs mb-1">$7.78/box · Save 12%</p>
             <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed as $46.66 every 6 months</p>
             <ul class="text-left space-y-3 mb-8">
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-vine-green font-bold">✦</span> Everything in 3-month
+                <span class="text-olive-green font-bold">✦</span> Everything in 3-month
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-vine-green font-bold">✦</span> Collector's packaging
+                <span class="text-olive-green font-bold">✦</span> Collector's packaging
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-vine-green font-bold">✦</span> Exclusive archive access
+                <span class="text-olive-green font-bold">✦</span> Exclusive archive access
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-vine-green font-bold">✦</span> Double bonus stickers
+                <span class="text-olive-green font-bold">✦</span> Double bonus stickers
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-vine-green font-bold">✦</span> First look at new issues
+                <span class="text-olive-green font-bold">✦</span> First look at new issues
               </li>
             </ul>
             <a href="#" class="sticker-btn sticker-btn-green w-full text-center block">
@@ -562,10 +564,10 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </p>
       </div>
     </section>
-    <section id="love-letters" class="py-24 px-6 relative" style="background: linear-gradient(160deg, #FDF6EC 0%, #FA9DAA 48%, #FF9243 100%);">
+    <section id="love-letters" class="py-24 px-6 relative" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 45%, #DE7B5B 100%);">
       <!-- Blob decorations -->
       <div class="absolute top-0 left-0 w-72 h-72 blob-pink rounded-full blur-[90px] animate-blob"></div>
-      <div class="absolute bottom-0 right-0 w-60 h-60 blob-lavender rounded-full blur-[70px] animate-blob float-delay-2"></div>
+      <div class="absolute bottom-0 right-0 w-60 h-60 blob-peach rounded-full blur-[70px] animate-blob float-delay-2"></div>
       <div class="max-w-4xl mx-auto">
 
         <div class="text-center mb-14">
@@ -586,7 +588,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <img
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
                 alt="Mia R."
-                class="w-11 h-11 rounded-full object-cover border-2 border-lip-gloss/40 shadow-md"
+                class="w-11 h-11 rounded-full object-cover border-2 border-coral-pink/40 shadow-md"
                 loading="lazy"
               />
               <div>
@@ -598,7 +600,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Testimonial 2 -->
           <div class="paper-card p-7 relative" style="position:relative;">
-            <div style="position:absolute;top:-10px;left:-5px;width:80px;height:22px;background:repeating-linear-gradient(-45deg,rgba(168,187,62,0.5),rgba(168,187,62,0.5) 4px,rgba(168,187,62,0.2) 4px,rgba(168,187,62,0.2) 8px);border-radius:2px;transform:rotate(8deg);"></div>
+            <div style="position:absolute;top:-10px;left:-5px;width:80px;height:22px;background:repeating-linear-gradient(-45deg,rgba(138,132,84,0.6),rgba(138,132,84,0.6) 4px,rgba(231,199,175,0.28) 4px,rgba(231,199,175,0.28) 8px);border-radius:2px;transform:rotate(8deg);"></div>
             <p class="font-marykate italic text-contrast leading-relaxed mb-5">
               "I have a gallery wall just for my Oopsie Daisy prints now. My apartment feels like a museum of things I actually love. The hand-painted pieces are insane, how is it so good?"
             </p>
@@ -606,7 +608,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face"
                 alt="Jess T."
-                class="w-11 h-11 rounded-full object-cover border-2 border-vine-green/40 shadow-md"
+                class="w-11 h-11 rounded-full object-cover border-2 border-olive-green/40 shadow-md"
                 loading="lazy"
               />
               <div>
@@ -618,7 +620,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Testimonial 3 -->
           <div class="paper-card p-7 relative">
-            <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(245,157,170,0.5),rgba(245,157,170,0.5) 4px,rgba(245,157,170,0.2) 4px,rgba(245,157,170,0.2) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
+            <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(212,92,116,0.5),rgba(212,92,116,0.5) 4px,rgba(231,199,175,0.24) 4px,rgba(231,199,175,0.24) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
             <p class="font-marykate italic text-contrast leading-relaxed mb-5">
               "The matcha one was so specific and personal to my life that I genuinely don't know how you understood me that well. This is internet magic. I love it here."
             </p>
@@ -626,7 +628,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <img
                 src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face"
                 alt="Sam K."
-                class="w-11 h-11 rounded-full object-cover border-2 border-tangerine/40 shadow-md"
+                class="w-11 h-11 rounded-full object-cover border-2 border-burnt-cinnamon/40 shadow-md"
                 loading="lazy"
               />
               <div>
@@ -638,7 +640,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Testimonial 4 -->
           <div class="paper-card p-7 relative">
-            <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(255,146,67,0.4),rgba(255,146,67,0.4) 4px,rgba(255,146,67,0.15) 4px,rgba(255,146,67,0.15) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
+            <div style="position:absolute;top:-10px;right:20px;width:80px;height:22px;background:repeating-linear-gradient(45deg,rgba(165,82,48,0.5),rgba(165,82,48,0.5) 4px,rgba(222,123,91,0.22) 4px,rgba(222,123,91,0.22) 8px);border-radius:2px;transform:rotate(-5deg);"></div>
             <p class="font-marykate italic text-contrast leading-relaxed mb-5">
               "Gave a 3-month subscription to my sister as a birthday gift and now she's obsessed too. We've started collecting together. It's kind of the sweetest thing."
             </p>
@@ -646,7 +648,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
               <img
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
                 alt="Ava L."
-                class="w-11 h-11 rounded-full object-cover border-2 border-soft-lavender/50 shadow-md"
+                class="w-11 h-11 rounded-full object-cover border-2 border-warm-cream/50 shadow-md"
                 loading="lazy"
               />
               <div>
@@ -678,14 +680,14 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             </svg>
             <div>
               <span class="font-display text-lg text-white">Oopsie Daisy</span>
-              <span class="block font-heading text-[9px] tracking-[0.2em] uppercase text-lip-gloss">Monthly Print Club</span>
+              <span class="block font-heading text-[9px] tracking-[0.2em] uppercase text-coral-pink">Monthly Print Club</span>
             </div>
           </div>
           <div class="flex gap-6 text-sm font-heading">
-            <a href="#join" class="hover:text-lip-gloss transition-colors">Subscribe</a>
-            <a href="#this-month" class="hover:text-lip-gloss transition-colors">This Month</a>
-            <a href="#archive" class="hover:text-lip-gloss transition-colors">Archive</a>
-            <a href="mailto:hello@oopsiedaisy.art" class="hover:text-lip-gloss transition-colors">Contact</a>
+            <a href="#join" class="hover:text-coral-pink transition-colors">Subscribe</a>
+            <a href="#this-month" class="hover:text-coral-pink transition-colors">This Month</a>
+            <a href="#archive" class="hover:text-coral-pink transition-colors">Archive</a>
+            <a href="mailto:hello@oopsiedaisy.art" class="hover:text-coral-pink transition-colors">Contact</a>
           </div>
         </div>
         <div class="mt-8 pt-6 border-t border-white/10 text-center text-white/25 text-xs font-body">
