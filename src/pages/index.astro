@@ -1,0 +1,348 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Oopsie Daisy — Art Club">
+  <!-- Rainbow ribbon nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b-4 border-transparent rainbow-border">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <!-- Cherry logo mark -->
+        <svg class="w-9 h-9" viewBox="0 0 40 40" fill="none">
+          <circle cx="14" cy="28" r="10" fill="#FF6B8A"/>
+          <circle cx="26" cy="26" r="10" fill="#FF6B8A"/>
+          <path d="M20 2 C20 2 18 12 12 16" stroke="#6BCB77" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M20 2 C20 2 22 12 28 14" stroke="#6BCB77" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <ellipse cx="20" cy="2" rx="4" ry="2" fill="#6BCB77"/>
+        </svg>
+        <span class="font-display font-bold text-xl tracking-tight text-text-dark">
+          Oopsie <span class="text-rainbow-red">Daisy</span>
+        </span>
+      </div>
+      <div class="flex gap-6 text-sm font-body font-semibold text-text-muted">
+        <a href="#how-it-works" class="hover:text-rainbow-red transition-colors">How it works</a>
+        <a href="#whats-inside" class="hover:text-rainbow-red transition-colors">What's inside</a>
+        <a href="#subscribe" class="px-5 py-2 bg-rainbow-red text-white rounded-full hover:bg-rainbow-red/90 transition-all hover:scale-105">Subscribe</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative overflow-hidden">
+      <!-- Background blobs -->
+      <div class="absolute top-20 left-[-60px] w-72 h-72 bg-rainbow-pink/20 rounded-full blur-3xl float"></div>
+      <div class="absolute bottom-20 right-[-40px] w-96 h-96 bg-rainbow-yellow/20 rounded-full blur-3xl float float-delay-2"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rainbow-purple/10 rounded-full blur-3xl float float-delay-1"></div>
+
+      <!-- Floating cherry & flower accents -->
+      <div class="absolute top-32 right-16 text-6xl float">🍒</div>
+      <div class="absolute top-48 left-12 text-5xl float float-delay-2">🌸</div>
+      <div class="absolute bottom-40 left-20 text-4xl float float-delay-3">✨</div>
+      <div class="absolute bottom-32 right-24 text-5xl float float-delay-1">🌷</div>
+      <div class="absolute top-40 right-1/4 text-3xl sticker-bounce">💌</div>
+
+      <div class="relative z-10 max-w-2xl">
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-rainbow-purple/10 rounded-full mb-8">
+          <span class="w-2 h-2 rounded-full bg-rainbow-purple animate-pulse"></span>
+          <span class="text-sm font-semibold text-rainbow-purple tracking-wide uppercase">Canada's cutest art club</span>
+        </div>
+
+        <h1 class="font-display font-bold text-5xl md:text-7xl leading-tight mb-6">
+          A surprise
+          <span class="rainbow-text">art party</span>
+          <br />in your mailbox
+          <br />every single month
+        </h1>
+
+        <p class="text-text-muted text-lg md:text-xl max-w-lg mx-auto mb-10 leading-relaxed font-body">
+          Hand painted prints, adorable stickers & sweet little letters — all wrapped up and shipped with love. Made for the matcha-sipping, gallery-loving, funky-little-art-collector in you.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#subscribe" class="px-10 py-4 bg-rainbow-red text-white font-display font-bold rounded-full text-lg hover:bg-rainbow-red/90 transition-all hover:scale-105 wiggle">
+            Join the club ✨
+          </a>
+          <a href="#how-it-works" class="text-text-muted font-semibold hover:text-rainbow-purple transition-colors flex items-center gap-2">
+            See how it works
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+
+        <!-- Rating / social proof -->
+        <div class="mt-12 flex flex-col items-center gap-2">
+          <div class="flex gap-1 text-2xl">⭐⭐⭐⭐⭐</div>
+          <p class="text-text-muted text-sm">Loved by 1,200+ little art collectors across Canada</p>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted">
+        <span class="text-xs tracking-widest uppercase">scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-text-muted to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- ── WHAT'S IN THE BOX ── -->
+    <section id="whats-inside" class="py-28 px-6 bg-warm-white relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rainbow-yellow/10 via-transparent to-transparent"></div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <span class="text-xs tracking-[0.3em] text-rainbow-green uppercase font-semibold mb-4 block">Every box includes</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-text-dark">
+            What's waiting inside 🍒
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1: Print -->
+          <div class="bg-cream border-2 border-rainbow-red/20 rounded-3xl p-8 text-center hover:border-rainbow-red/60 transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-rainbow-red/10 group">
+            <div class="text-5xl mb-4 group-hover:sticker-bounce">🖼️</div>
+            <h3 class="font-display font-bold text-xl text-text-dark mb-3">Limited Edition Print</h3>
+            <p class="text-text-muted font-body leading-relaxed">A gorgeous, professionally printed 5×7" art print. Each month features a brand new original illustration — never reprinted, always exclusive.</p>
+          </div>
+
+          <!-- Card 2: Hand Painted -->
+          <div class="bg-cream border-2 border-rainbow-purple/20 rounded-3xl p-8 text-center hover:border-rainbow-purple/60 transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-rainbow-purple/10 group">
+            <div class="text-5xl mb-4 group-hover:sticker-bounce">🎨</div>
+            <h3 class="font-display font-bold text-xl text-text-dark mb-3">Hand Painted Original</h3>
+            <p class="text-text-muted font-body leading-relaxed">A one-of-a-kind mini painting, hand-drawn and painted by me with real love. No two are ever the same. You're getting a tiny original artwork.</p>
+          </div>
+
+          <!-- Card 3: Stickers + Letter -->
+          <div class="bg-cream border-2 border-rainbow-yellow/20 rounded-3xl p-8 text-center hover:border-rainbow-yellow/60 transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-rainbow-yellow/10 group">
+            <div class="text-5xl mb-4 group-hover:sticker-bounce">💌</div>
+            <h3 class="font-display font-bold text-xl text-text-dark mb-3">Stickers & a Letter</h3>
+            <p class="text-text-muted font-body leading-relaxed">A sheet of cute die-cut stickers made from that month's artwork, plus a personal handwritten letter sharing the story behind the pieces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section id="how-it-works" class="py-28 px-6 relative overflow-hidden">
+      <!-- Rainbow wave divider at top -->
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-rainbow-red via-rainbow-yellow via-rainbow-green via-rainbow-blue via-rainbow-purple to-rainbow-pink"></div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-xs tracking-[0.3em] text-rainbow-blue uppercase font-semibold mb-4 block">Easy peasy</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-text-dark">
+            How it works 🌷
+          </h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6 items-start bg-cream rounded-2xl p-6 border-2 border-rainbow-red/15 hover:border-rainbow-red/40 transition-all">
+            <div class="flex-shrink-0 w-14 h-14 rounded-full bg-rainbow-red/10 flex items-center justify-center text-2xl">🛒</div>
+            <div>
+              <div class="text-xs font-semibold text-rainbow-red uppercase tracking-widest mb-1">Step 1</div>
+              <h3 class="font-display font-bold text-xl text-text-dark mb-2">Choose your plan</h3>
+              <p class="text-text-muted font-body">Pick monthly or save with a 3-month plan. Skip or cancel anytime — no drama, no fees.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6 items-start bg-cream rounded-2xl p-6 border-2 border-rainbow-purple/15 hover:border-rainbow-purple/40 transition-all">
+            <div class="flex-shrink-0 w-14 h-14 rounded-full bg-rainbow-purple/10 flex items-center justify-center text-2xl">📬</div>
+            <div>
+              <div class="text-xs font-semibold text-rainbow-purple uppercase tracking-widest mb-1">Step 2</div>
+              <h3 class="font-display font-bold text-xl text-text-dark mb-2">Your box ships</h3>
+              <p class="text-text-muted font-body">Every month on the 1st, your box ships out packed tight with your art print, hand painted piece, stickers, and a letter. Tracked shipping across Canada, baby.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6 items-start bg-cream rounded-2xl p-6 border-2 border-rainbow-yellow/15 hover:border-rainbow-yellow/40 transition-all">
+            <div class="flex-shrink-0 w-14 h-14 rounded-full bg-rainbow-yellow/10 flex items-center justify-center text-2xl">✨</div>
+            <div>
+              <div class="text-xs font-semibold text-rainbow-yellow uppercase tracking-widest mb-1">Step 3</div>
+              <h3 class="font-display font-bold text-xl text-text-dark mb-2">Open it like a gift</h3>
+              <p class="text-text-muted font-body">Tear it open, smell the paint, stick your new stickers everywhere. Your walls (and your soul) will thank you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MONTHLY PREVIEW ── -->
+    <section class="py-28 px-6 bg-text-dark text-cream relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30"></div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <span class="text-xs tracking-[0.3em] text-rainbow-pink uppercase font-semibold mb-4 block">Spoiler free zone</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-cream">
+            One month. <span class="rainbow-text">One story.</span>
+          </h2>
+          <p class="text-cream/60 mt-4 max-w-md mx-auto font-body">Every box has a theme inspired by the season, a mood, a memory. Here's a little taste.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <div class="text-4xl mb-3">🌸</div>
+            <h3 class="font-display font-bold text-lg text-cream mb-2">Cherry Blossom Season</h3>
+            <p class="text-cream/50 text-sm font-body">Painted cherry branches on a warm cream print. Hand painted koi fish mini on textured paper. Cherry blossom stickers x12.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <div class="text-4xl mb-3">☕</div>
+            <h3 class="font-display font-bold text-lg text-cream mb-2">Matcha & Mornings</h3>
+            <p class="text-cream/50 text-sm font-body">A still life of matcha + pastries on warm paper. Hand painted ceramic cup study. Strawberry sticker sheet x15.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <div class="text-4xl mb-3">🖤</div>
+            <h3 class="font-display font-bold text-lg text-cream mb-2">Dark Academia</h3>
+            <p class="text-cream/50 text-sm font-body">Vintage book stack illustration. Hand painted ink botanical. Gold foil star stickers + a letter on wax seal paper.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRICING / SUBSCRIBE ── -->
+    <section id="subscribe" class="py-28 px-6 relative">
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-rainbow-red via-rainbow-purple to-rainbow-pink"></div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-xs tracking-[0.3em] text-rainbow-red uppercase font-semibold mb-4 block">Join the club</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-text-dark">
+            Start your art collection 🌼
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-xl mx-auto">
+          <!-- Monthly -->
+          <div class="bg-cream border-2 border-text-muted/10 rounded-3xl p-8 hover:border-rainbow-blue/50 transition-all relative">
+            <div class="text-xs font-semibold text-rainbow-blue uppercase tracking-widest mb-4">Monthly</div>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="font-display font-bold text-5xl text-text-dark">$38</span>
+              <span class="text-text-muted text-sm">/box</span>
+            </div>
+            <p class="text-text-muted text-sm mb-6 font-body">Billed monthly. Cancel or skip anytime.</p>
+            <ul class="space-y-2 mb-8 text-sm text-text-muted font-body">
+              <li class="flex items-center gap-2">✓ Full art print</li>
+              <li class="flex items-center gap-2">✓ Hand painted original</li>
+              <li class="flex items-center gap-2">✓ Sticker sheet</li>
+              <li class="flex items-center gap-2">✓ Personal letter</li>
+              <li class="flex items-center gap-2">✓ Free Canadian shipping</li>
+            </ul>
+            <a href="#" class="block w-full py-4 text-center bg-rainbow-blue text-white font-display font-bold rounded-full hover:bg-rainbow-blue/90 transition-all hover:scale-105">
+              Subscribe Monthly
+            </a>
+          </div>
+
+          <!-- 3-Month (popular) -->
+          <div class="bg-text-dark border-2 border-rainbow-purple rounded-3xl p-8 hover:scale-[1.02] transition-all relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-rainbow-purple text-white text-xs font-bold rounded-full">MOST LOVED</div>
+            <div class="text-xs font-semibold text-rainbow-pink uppercase tracking-widest mb-4">3-Month Plan</div>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="font-display font-bold text-5xl text-cream">$33</span>
+              <span class="text-cream/50 text-sm">/box</span>
+            </div>
+            <p class="text-cream/50 text-sm mb-2">Save $15 — billed as $99 every 3 months</p>
+            <p class="text-rainbow-yellow text-xs font-semibold mb-6">✨ Best value — only $99 for 3 months!</p>
+            <ul class="space-y-2 mb-8 text-sm text-cream/70 font-body">
+              <li class="flex items-center gap-2">✓ Everything in monthly</li>
+              <li class="flex items-center gap-2">✓ Priority shipping</li>
+              <li class="flex items-center gap-2">✓ Early access to new drops</li>
+              <li class="flex items-center gap-2">✓ Surprise bonus sticker pack</li>
+              <li class="flex items-center gap-2">✓ Handwritten thank-you card</li>
+            </ul>
+            <a href="#" class="block w-full py-4 text-center bg-rainbow-purple text-white font-display font-bold rounded-full hover:bg-rainbow-purple/90 transition-all hover:scale-105">
+              Subscribe for 3 Months
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-text-muted text-sm mt-8 font-body">
+          Secure checkout via Shopify · Cancel anytime · Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-rainbow-purple underline">hello@oopsiedaisy.art</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── ABOUT / WHO'S BEHIND IT ── -->
+    <section class="py-24 px-6 bg-rainbow-yellow/10 border-t border-rainbow-yellow/20">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="text-5xl mb-6">👩‍🎨</div>
+        <h2 class="font-display font-bold text-3xl text-text-dark mb-4">Hi, I'm Tylah!</h2>
+        <p class="text-text-muted font-body leading-relaxed mb-6">
+          Artist, designer, and obsessive art-supply collector based in Canada. Oopsie Daisy started because I wanted to create something that felt like getting a letter from your most creative friend — personal, unexpected, and made entirely by hand.
+        </p>
+        <p class="text-text-muted font-body leading-relaxed">
+          Every print, every painting, every sticker — I make it all. No factories, no dropshipping, no shortcuts. Just me, my brushes, and a whole lot of matcha.
+        </p>
+        <div class="mt-6 text-3xl">🍵🖌️🇨🇦</div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="py-24 px-6">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-display font-bold text-3xl text-text-dark"> FAQs 🌼 </h2>
+        </div>
+        <div class="space-y-4" id="faq-list">
+          <details class="bg-cream border border-text-muted/10 rounded-xl p-5 group">
+            <summary class="font-display font-semibold text-text-dark cursor-pointer list-none flex justify-between items-center">
+              When does my box ship?
+              <span class="text-rainbow-purple group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-text-muted mt-3 font-body text-sm">Boxes ship on the 1st of every month. You'll get a tracking number as soon as it's on its way! For the 3-month plan, all 3 boxes ship on the 1st of the following months.</p>
+          </details>
+          <details class="bg-cream border border-text-muted/10 rounded-xl p-5 group">
+            <summary class="font-display font-semibold text-text-dark cursor-pointer list-none flex justify-between items-center">
+              Can I skip a month or cancel?
+              <span class="text-rainbow-purple group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-text-muted mt-3 font-body text-sm">Yes! You can skip any month or cancel anytime from your account dashboard. No fees, no guilt. Life happens — I get it.</p>
+          </details>
+          <details class="bg-cream border border-text-muted/10 rounded-xl p-5 group">
+            <summary class="font-display font-semibold text-text-dark cursor-pointer list-none flex justify-between items-center">
+              Do you ship outside Canada?
+              <span class="text-rainbow-purple group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-text-muted mt-3 font-body text-sm">Currently I only ship within Canada. International shipping is coming soon — drop your email and I'll let you know the second it's live! 🌎</p>
+          </details>
+          <details class="bg-cream border border-text-muted/10 rounded-xl p-5 group">
+            <summary class="font-display font-semibold text-text-dark cursor-none list-none flex justify-between items-center">
+              What if I don't like my box?
+              <span class="text-rainbow-purple group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-text-muted mt-3 font-body text-sm">I genuinely hope you love every piece — but if something's not right, email me within 7 days and we'll sort it out. I want you to be obsessed with your box.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="py-12 px-6 bg-text-dark text-cream">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
+              <circle cx="14" cy="28" r="10" fill="#FF6B8A"/>
+              <circle cx="26" cy="26" r="10" fill="#FF6B8A"/>
+              <path d="M20 2 C20 2 18 12 12 16" stroke="#6BCB77" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M20 2 C20 2 22 12 28 14" stroke="#6BCB77" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <ellipse cx="20" cy="2" rx="4" ry="2" fill="#6BCB77"/>
+            </svg>
+            <span class="font-display font-bold text-lg">
+              Oopsie <span class="text-rainbow-red">Daisy</span> — Art Club
+            </span>
+          </div>
+          <div class="flex gap-6 text-cream/50 text-sm font-body">
+            <a href="#subscribe" class="hover:text-rainbow-pink transition-colors">Subscribe</a>
+            <a href="mailto:hello@oopsiedaisy.art" class="hover:text-rainbow-pink transition-colors">Contact</a>
+            <a href="#" class="hover:text-rainbow-pink transition-colors">Instagram</a>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 text-center text-cream/30 text-xs font-body">
+          © 2025 Oopsie Daisy Art Club · Made with 🍵 and love in Canada · All artworks are original and copyrighted.
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
