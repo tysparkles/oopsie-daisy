@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
 @import "tailwindcss";
 
 /* ─── Custom Font Faces ─── */
@@ -17,17 +17,35 @@
   font-display: swap;
 }
 
-.font-marykate { font-family: 'MaryKate', cursive; }
-
-
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* ─── Brand CSS Variables ─── */
+:root {
+  --paper:          #FDF6EC;
+  --cake-batter:    #F7E4C4;
+  --dusty-pink:     #D45C74;
+  --lip-gloss:      #FA9DAA;
+  --coral-pink:     #DE7B5B;
+  --tangerine:      #FF9243;
+  --vine-green:     #A8BB3E;
+  --sky-blue:       #B5D4EB;
+  --soft-lavender:  #D5C6E8;
+  --espresso:       #4A4356;
+}
+
+/* MaryKate: softer, more editorial spacing */
+.font-marykate {
+  font-family: 'MaryKate', cursive;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+}
+
+
 body {
   background-color: #FDF6EC;
-  color: #3D2B2B;
+  color: #4A4356;
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
 }
@@ -38,9 +56,8 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Utility ─── */
 .font-display { font-family: 'Fat Kat', cursive; }
-.font-heading { font-family: 'Poppins', sans-serif; }
+.font-heading { font-family: 'Nunito', sans-serif; }
 .font-retro   { font-family: 'Fat Kat', cursive; }
-.font-marykate { font-family: 'MaryKate', cursive; }
 
 /* ─── Keyframes ─── */
 @keyframes float {
@@ -83,6 +100,11 @@ h1, h2, h3, h4, h5 {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes squiggle {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
 /* ─── Animations ─── */
 .animate-float-slow  { animation: float 8s ease-in-out infinite; }
 .animate-float-med   { animation: float 5s ease-in-out infinite; }
@@ -92,55 +114,14 @@ h1, h2, h3, h4, h5 {
 .animate-pulse-soft  { animation: pulse-soft 4s ease-in-out infinite; }
 .animate-blob        { animation: blob 8s ease-in-out infinite; }
 .animate-star-pop    { animation: star-pop 3s ease-in-out infinite; }
+.animate-squiggle    { animation: squiggle 5s ease-in-out infinite; }
 
 .float-delay-1 { animation-delay: 1s; }
 .float-delay-2 { animation-delay: 2s; }
 .float-delay-3 { animation-delay: 3s; }
 .float-delay-4 { animation-delay: 4s; }
 
-/* ─── Scroll-driven gradient sections ─── */
-/* Hero: warm cream + blush pink */
-.grad-hero {
-  background: linear-gradient(180deg, #FDF6EC 0%, #FDF6EC 40%, #FCE8EC 100%);
-  background-attachment: fixed;
-}
-
-/* What's inside: cake batter warm */
-.grad-inside {
-  background: linear-gradient(180deg, #FCE8EC 0%, #FBE8D0 50%, #F7E4C4 100%);
-  background-attachment: fixed;
-}
-
-/* Archive: soft lavender + sky */
-.grad-archive {
-  background: linear-gradient(180deg, #F7E4C4 0%, #EDE4F5 50%, #D5E4F0 100%);
-  background-attachment: fixed;
-}
-
-/* Love letters: blush + peach */
-.grad-love {
-  background: linear-gradient(180deg, #D5E4F0 0%, #FCE8EC 50%, #F9D5C0 100%);
-  background-attachment: fixed;
-}
-
-/* How it works: pale mint + cream */
-.grad-how {
-  background: linear-gradient(180deg, #F9D5C0 0%, #E8F5E8 50%, #FDF6EC 100%);
-  background-attachment: fixed;
-}
-
-/* Join/pricing: dreamy purple-pink gradient */
-.grad-join {
-  background: linear-gradient(135deg, #3D2B2B 0%, #5C3A5C 30%, #7A4A6A 60%, #8B5A7A 100%);
-  background-attachment: fixed;
-}
-
-/* About: soft mint cream */
-.grad-about {
-  background: linear-gradient(180deg, #FDF6EC 0%, #E8F0E0 100%);
-  background-attachment: fixed;
-}
-
+/* ─── Section gradients removed (now inline) ─── */
 /* ─── Grain overlay ─── */
 .grain-overlay {
   position: fixed;
@@ -154,7 +135,7 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Sticker button ─── */
 .sticker-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 14px 32px;
@@ -237,26 +218,26 @@ h1, h2, h3, h4, h5 {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 3px solid #D44A65;
+  border: 3px solid #D45C74;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
-  color: #D44A65;
+  color: #D45C74;
   background: #FDF6EC;
   flex-shrink: 0;
 }
 
 /* ─── Section label ─── */
 .section-label {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #D44A65;
+  color: #D45C74;
 }
 
 /* ─── Rainbow divider ─── */
@@ -428,7 +409,7 @@ h1, h2, h3, h4, h5 {
   border-radius: 16px;
   padding: 3px 12px;
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -450,7 +431,7 @@ h1, h2, h3, h4, h5 {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 11px;
   font-weight: 700;
   color: #D44A65;
@@ -484,5 +465,5 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ─── Text contrast helpers ─── */
-.text-contrast { color: #3D2B2B; }
+.text-contrast { color: #4A4356; }
 .text-contrast-muted { color: #5C4040; }

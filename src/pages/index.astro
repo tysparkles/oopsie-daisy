@@ -6,33 +6,33 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 <Layout title="Oopsie Daisy — Monthly Print Club">
 
   <!-- ── STICKY NAV ── -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-fdf6ec/90 backdrop-blur-md border-b-2 border-lip-gloss/30">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-warm-white/90 backdrop-blur-md border-b-2 border-lip-gloss/30">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <a href="/" class="flex items-center gap-2 group">
         <!-- Mini daisy SVG logo -->
         <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none">
-          <circle cx="25" cy="25" r="7" fill="#FF9243"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(0 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(45 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(90 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(135 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(180 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(225 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(270 25 25)"/>
-          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(315 25 25)"/>
-          <circle cx="25" cy="25" r="7" fill="#FF9243"/>
-          <circle cx="23" cy="23" r="2" fill="#F7E4C4" opacity="0.6"/>
+          <circle cx="25" cy="25" r="7" fill="#A55230"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(0 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(45 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(90 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(135 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(180 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(225 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(270 25 25)"/>
+          <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(315 25 25)"/>
+          <circle cx="25" cy="25" r="7" fill="#A55230"/>
+          <circle cx="23" cy="23" r="2" fill="#D4BB9D" opacity="0.6"/>
         </svg>
         <div>
           <span class="font-display text-xl text-text-dark leading-none">Oopsie Daisy</span>
-          <span class="block font-heading text-[9px] font-bold tracking-[0.25em] text-raspberry uppercase -mt-1">Monthly Print Club</span>
+          <span class="block font-heading text-[9px] font-bold tracking-[0.25em] text-dusty-pink uppercase -mt-1">Monthly Print Club</span>
         </div>
       </a>
       <div class="flex gap-6 items-center text-sm font-heading font-semibold">
-        <a href="#this-month" class="hidden sm:block text-text-muted hover:text-raspberry transition-colors">This Month</a>
-        <a href="#archive" class="hidden sm:block text-text-muted hover:text-raspberry transition-colors">Archive</a>
-        <a href="#love-letters" class="hidden sm:block text-text-muted hover:text-raspberry transition-colors">Love Letters</a>
-        <a href="#join" class="sticker-btn bg-raspberry text-white text-xs !py-2 !px-5 hover:bg-raspberry/90">Join the Club</a>
+        <a href="#this-month" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">This Month</a>
+        <a href="#archive" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">Archive</a>
+        <a href="#love-letters" class="hidden sm:block text-text-muted hover:text-dusty-pink transition-colors">Love Letters</a>
+        <a href="#join" class="sticker-btn bg-dusty-pink text-white text-xs !py-2 !px-5 hover:bg-dusty-pink/90">Join the Club</a>
       </div>
     </div>
   </nav>
@@ -42,7 +42,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
     <!-- ══════════════════════════════════════════
          HERO
     ══════════════════════════════════════════ -->
-    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6 grad-hero">
+    <section class="min-h-screen relative overflow-hidden pt-28 pb-20 px-6" style="background: linear-gradient(160deg, #FDF6EC 0%, #FCE8EC 38%, #FA9DAA 72%, #FF9243 100%);">
 
       <!-- ── HERO VIDEO / IMAGE BACKGROUND ── -->
       <!-- TO USE: Replace the src below with your video URL or local path like /media/hero-video.mp4 -->
@@ -77,7 +77,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
       <!-- Decorative squiggle line -->
       <svg class="absolute left-0 top-1/2 w-32 h-20 opacity-30 animate-squiggle" viewBox="0 0 100 60" fill="none">
-        <path d="M5 30 Q20 5 40 30 T80 30 T95 30" stroke="#D44A65" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M5 30 Q20 5 40 30 T80 30 T95 30" stroke="#D45C74" stroke-width="3" stroke-linecap="round" fill="none"/>
       </svg>
 
       <div class="relative z-10 max-w-3xl mx-auto text-center">
@@ -102,13 +102,13 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </p>
 
         <!-- Tagline -->
-        <p class="font-marykate italic text-2xl md:text-3xl text-white/80 max-w-lg mx-auto mb-12 leading-relaxed">
+        <p class="font-marykate italic text-xl md:text-2xl text-white/85 max-w-lg mx-auto mb-12">
           A little bundle of joy, delivered to your door. Art prints, hand-painted originals, stickers & love letters — made with matcha and soul.
         </p>
 
         <!-- CTA buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <a href="#join" class="sticker-btn bg-white text-raspberry text-base font-heading font-bold">
+          <a href="#join" class="sticker-btn bg-white text-dusty-pink text-base font-heading font-bold">
             Join the Club ✦
           </a>
           <a href="#this-month" class="sticker-btn bg-white/20 !text-white text-base border-white/40 !border border-white/30 backdrop-blur-sm">
@@ -146,7 +146,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="flex items-center gap-4 mb-8">
           <span class="section-label">This Month's Issue</span>
           <span class="flex-1 h-[2px] bg-lip-gloss/30 rounded"></span>
-          <span class="stamp text-raspberry font-heading text-xs font-bold">JUNE 2025</span>
+          <span class="stamp text-dusty-pink font-heading text-xs font-bold">JUNE 2025</span>
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-center">
@@ -154,16 +154,16 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <div class="lg:col-span-2">
             <h2 class="font-display text-5xl md:text-6xl text-contrast mb-4 leading-[0.95]">
               Cherry<br/>
-              <span class="text-raspberry">Blossom</span><br/>
+              <span class="text-dusty-pink">Blossom</span><br/>
               Season
             </h2>
-            <p class="font-marykate italic text-xl text-contrast-muted mb-8 leading-relaxed">
+            <p class="font-marykate italic text-lg md:text-xl text-contrast-muted mb-8">
               "There's something about spring that makes everything feel a little more tender."
             </p>
 
             <div class="space-y-3 mb-8">
               <div class="flex items-center gap-3">
-                <span class="text-raspberry font-heading font-bold">✦</span>
+                <span class="text-dusty-pink font-heading font-bold">✦</span>
                 <span class="font-body text-contrast">5×7" archival art print — cherry blossom still life</span>
               </div>
               <div class="flex items-center gap-3">
@@ -175,12 +175,12 @@ import ImageCarousel from '../components/ImageCarousel.astro';
                 <span class="font-body text-contrast">Die-cut cherry blossom sticker sheet × 12</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-raspberry font-heading font-bold">✦</span>
+                <span class="text-dusty-pink font-heading font-bold">✦</span>
                 <span class="font-body text-contrast">Handwritten love letter on wax seal paper</span>
               </div>
             </div>
 
-            <a href="#join" class="sticker-btn bg-raspberry text-white">
+            <a href="#join" class="sticker-btn bg-dusty-pink text-white">
               Get This Issue — Join the Club
             </a>
 
@@ -209,7 +209,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <section class="py-20 px-6 grad-inside relative overflow-hidden">
+    <section class="py-20 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #FDF6EC 0%, #F9D5C0 52%, #C5E4CB 100%);">
       <!-- Pastel blob decorations -->
       <div class="absolute top-10 right-20 w-72 h-72 blob-pink rounded-full blur-[80px] animate-blob"></div>
       <div class="absolute bottom-10 left-10 w-60 h-60 blob-peach rounded-full blur-[70px] animate-blob float-delay-2"></div>
@@ -218,7 +218,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
         <div class="text-center mb-14">
           <span class="section-label block mb-3">What's In The Box</span>
-          <h2 class="font-display text-5xl text-text-dark">Every Month,<br/><span class="text-raspberry">A Little Universe</span></h2>
+          <h2 class="font-display text-5xl text-text-dark">Every Month,<br/><span class="text-dusty-pink">A Little Universe</span></h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -227,9 +227,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <div class="paper-card p-8 hover-lift">
             <div class="w-16 h-16 rounded-full bg-lip-gloss/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <rect x="6" y="8" width="28" height="24" rx="3" stroke="#D44A65" stroke-width="2" fill="none"/>
-                <path d="M6 28 L14 20 L20 26 L26 19 L34 28" stroke="#D44A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="13" cy="14" r="3" stroke="#FA9DAA" stroke-width="1.5" fill="none"/>
+                <rect x="6" y="8" width="28" height="24" rx="3" stroke="#D45C74" stroke-width="2" fill="none"/>
+                <path d="M6 28 L14 20 L20 26 L26 19 L34 28" stroke="#D45C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="13" cy="14" r="3" stroke="#DE7B5B" stroke-width="1.5" fill="none"/>
               </svg>
             </div>
             <h3 class="font-display text-2xl text-contrast mb-3">Art Print</h3>
@@ -240,9 +240,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <div class="paper-card p-8 hover-lift">
             <div class="w-16 h-16 rounded-full bg-tangerine/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <path d="M8 12 L20 24 L32 12" stroke="#FF9243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="8" y="10" width="24" height="18" rx="2" stroke="#FF9243" stroke-width="2" fill="none"/>
-                <path d="M8 10 L20 23 L32 10" stroke="#FF9243" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M8 12 L20 24 L32 12" stroke="#A55230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="8" y="10" width="24" height="18" rx="2" stroke="#A55230" stroke-width="2" fill="none"/>
+                <path d="M8 10 L20 23 L32 10" stroke="#A55230" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
             </div>
             <h3 class="font-display text-2xl text-contrast mb-3">Handwritten Letter</h3>
@@ -253,9 +253,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
           <div class="paper-card p-8 hover-lift">
             <div class="w-16 h-16 rounded-full bg-vine-green/20 flex items-center justify-center mb-5">
               <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                <path d="M20 8 C20 8 10 15 10 24 C10 29 14 33 20 33" stroke="#A8BB3E" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <circle cx="17" cy="22" r="2" fill="#A8BB3E"/>
-                <circle cx="23" cy="24" r="1.5" fill="#A8BB3E"/>
+                <path d="M20 8 C20 8 10 15 10 24 C10 29 14 33 20 33" stroke="#8A8454" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="17" cy="22" r="2" fill="#8A8454"/>
+                <circle cx="23" cy="24" r="1.5" fill="#8A8454"/>
               </svg>
             </div>
             <h3 class="font-display text-2xl text-contrast mb-3">Surprise Gift</h3>
@@ -265,12 +265,12 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <section id="archive" class="py-24 px-6 grad-archive relative overflow-hidden">
+    <section id="archive" class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #F7E4C4 0%, #D5C6E8 55%, #B5D4EB 100%);">
       <!-- Blob decorations -->
       <div class="absolute top-0 right-0 w-80 h-80 blob-lavender rounded-full blur-[100px] animate-blob"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 blob-sky rounded-full blur-[80px] animate-blob float-delay-3"></div>
       <!-- Decorative bg -->
-      <div class="absolute top-0 right-0 text-[200px] text-raspberry/5 font-display leading-none select-none pointer-events-none">❀</div>
+      <div class="absolute top-0 right-0 text-[200px] text-dusty-pink/5 font-display leading-none select-none pointer-events-none">❀</div>
 
       <div class="max-w-5xl mx-auto">
         <div class="flex items-center gap-4 mb-4">
@@ -345,11 +345,11 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
 
         <div class="text-center mt-10">
-          <p class="font-marykate italic text-text-muted text-xl">More issues added every month — join to collect them all.</p>
+          <p class="font-marykate italic text-text-muted text-lg">More issues added every month — join to collect them all.</p>
         </div>
       </div>
     </section>
-    <section class="py-24 px-6 grad-about relative overflow-hidden">
+    <section class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #FDF6EC 0%, #E8F0E0 100%);">
 
       <!-- Background decorations -->
       <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
@@ -361,9 +361,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="text-center mb-16">
           <span class="section-label block mb-3">Behind the Studio</span>
           <h2 class="font-display text-5xl text-contrast mb-3">
-            Hi, I'm <span class="text-raspberry">Tylah</span>
+            Hi, I'm <span class="text-dusty-pink">Tylah</span>
           </h2>
-          <p class="font-marykate italic text-contrast-muted text-xl">
+          <p class="font-marykate italic text-contrast-muted text-lg md:text-xl">
             Artist, printmaker, and obsessive flower sketcher — making each issue from my studio with messy hands and a whole lot of care.
           </p>
         </div>
@@ -395,7 +395,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Introduction text -->
           <div>
-            <h3 class="font-display text-3xl text-contrast mb-4">The Story Behind<br/><span class="text-raspberry">Oopsie Daisy</span></h3>
+            <h3 class="font-display text-3xl text-contrast mb-4">The Story Behind<br/><span class="text-dusty-pink">Oopsie Daisy</span></h3>
             <p class="font-body text-contrast-muted leading-relaxed mb-4">
               Oopsie Daisy started with a simple idea: what if receiving art felt just as special as the art itself? A package that feels like unwrapping a letter from your most creative friend — personal, unexpected, and made entirely by hand.
             </p>
@@ -404,7 +404,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             </p>
             <!-- Process tags -->
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-raspberry text-xs font-heading">Hand-drawn</span>
+              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-dusty-pink text-xs font-heading">Hand-drawn</span>
               <span class="px-3 py-1 rounded-full bg-tangerine/15 text-tangerine text-xs font-heading">Watercolor</span>
               <span class="px-3 py-1 rounded-full bg-vine-green/15 text-vine-green text-xs font-heading">Archival Print</span>
               <span class="px-3 py-1 rounded-full bg-soft-lavender/20 text-purple-600 text-xs font-heading">Handwritten</span>
@@ -414,12 +414,12 @@ import ImageCarousel from '../components/ImageCarousel.astro';
     <section id="join" class="py-28 px-6 relative overflow-hidden">
 
       <!-- Deep layered pink/raspberry background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-[#C93652] via-[#D44A65] to-[#B8304F]"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-[#C93652] via-[#D45C74] to-[#B8304F]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-[#1a0510]/60 via-transparent to-[#2d0a1a]/40"></div>
       <!-- Dramatic blob layers -->
       <div class="absolute inset-0">
-        <div class="absolute top-0 left-[-120px] w-[500px] h-[500px] bg-[#FA9DAA]/20 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-0 right-[-80px] w-[400px] h-[400px] bg-[#FF9243]/15 rounded-full blur-[100px]"></div>
+        <div class="absolute top-0 left-[-120px] w-[500px] h-[500px] bg-[#DE7B5B]/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-[-80px] w-[400px] h-[400px] bg-[#A55230]/15 rounded-full blur-[100px]"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FCE8EC]/5 rounded-full blur-[150px]"></div>
       </div>
 
@@ -428,7 +428,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
       <!-- Floating decorative flowers (brighter for dark bg) -->
       <div class="absolute top-20 left-10 animate-float-slow text-4xl opacity-50" style="color:#FCE8EC;">✿</div>
-      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-50" style="color:#FA9DAA;">❀</div>
+      <div class="absolute bottom-32 right-16 animate-float-med text-5xl opacity-50" style="color:#DE7B5B;">❀</div>
       <div class="absolute top-1/3 right-1/4 animate-drift text-3xl opacity-35" style="color:#FFD6A5;">✿</div>
       <div class="absolute bottom-20 left-1/4 animate-wiggle text-4xl opacity-35" style="color:#FCE8EC;">✧</div>
       <div class="absolute top-16 right-1/3 animate-float-fast float-delay-2 text-3xl opacity-45" style="color:#D5C6E8;">★</div>
@@ -439,10 +439,10 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             <span class="text-lip-gloss text-sm">✿</span>
             <span class="section-label text-lip-gloss">Join the Club</span>
           </span>
-          <h2 class="font-display text-6xl text-contrast mb-3">
-            Start Your <span class="text-raspberry">Collection</span>
+          <h2 class="font-display text-6xl text-white mb-3">
+            Start Your <span class="text-cake-batter">Collection</span>
           </h2>
-          <p class="font-retro italic text-contrast-muted text-lg">Cancel anytime. No drama. Just art.</p>
+          <p class="font-marykate italic text-white/75 text-lg">Cancel anytime. No drama. Just art.</p>
         </div>
 
         <!-- 3-Column Pricing -->
@@ -453,25 +453,25 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             <div class="membership-badge mb-5 mx-auto">Monthly</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$8</span>
-              <span class="font-display text-3xl text-raspberry">.88</span>
+              <span class="font-display text-3xl text-dusty-pink">.88</span>
             </div>
             <p class="font-heading text-contrast-muted text-xs mb-1">per month</p>
             <p class="font-body text-contrast-muted/70 text-xs mb-8">Billed monthly · Cancel anytime</p>
             <ul class="text-left space-y-3 mb-8">
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-raspberry font-bold">✦</span> Full archival art print
+                <span class="text-dusty-pink font-bold">✦</span> Full archival art print
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-raspberry font-bold">✦</span> Hand painted original
+                <span class="text-dusty-pink font-bold">✦</span> Hand painted original
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-raspberry font-bold">✦</span> Sticker sheet
+                <span class="text-dusty-pink font-bold">✦</span> Sticker sheet
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-raspberry font-bold">✦</span> Handwritten love letter
+                <span class="text-dusty-pink font-bold">✦</span> Handwritten love letter
               </li>
               <li class="flex items-center gap-2 font-body text-sm text-contrast">
-                <span class="text-raspberry font-bold">✦</span> Shipping worldwide
+                <span class="text-dusty-pink font-bold">✦</span> Shipping worldwide
               </li>
             </ul>
             <a href="#" class="sticker-btn sticker-btn-pink w-full text-center block">
@@ -481,10 +481,10 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- 3-Month -->
           <div class="bg-white/95 border-2 border-raspberry/40 rounded-3xl p-8 text-center relative hover-lift shadow-xl shadow-raspberry/15">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-raspberry text-white font-heading font-bold text-xs px-5 py-1.5 rounded-full shadow-lg">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-dusty-pink text-white font-heading font-bold text-xs px-5 py-1.5 rounded-full shadow-lg">
               Most Popular
             </div>
-            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#D44A65,#FF9243);">3 Months</div>
+            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#D45C74,#A55230);">3 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$24</span>
               <span class="font-display text-3xl text-tangerine">.44</span>
@@ -518,7 +518,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vine-green text-white font-heading font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
               Best Value
             </div>
-            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#A8BB3E,#6BCB77);">6 Months</div>
+            <div class="membership-badge mb-5 mx-auto" style="background:linear-gradient(135deg,#8A8454,#6BCB77);">6 Months</div>
             <div class="flex items-baseline justify-center gap-1 mb-1">
               <span class="font-display text-5xl text-contrast">$46</span>
               <span class="font-display text-3xl text-vine-green">.66</span>
@@ -551,18 +551,18 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
         <!-- Club perks strip -->
         <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm font-heading text-contrast-muted">
-          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Secure checkout</span>
-          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Cancel anytime</span>
-          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Worldwide shipping</span>
-          <span class="flex items-center gap-1"><span class="text-raspberry">✦</span> Made with love</span>
+          <span class="flex items-center gap-1"><span class="text-dusty-pink">✦</span> Secure checkout</span>
+          <span class="flex items-center gap-1"><span class="text-dusty-pink">✦</span> Cancel anytime</span>
+          <span class="flex items-center gap-1"><span class="text-dusty-pink">✦</span> Worldwide shipping</span>
+          <span class="flex items-center gap-1"><span class="text-dusty-pink">✦</span> Made with love</span>
         </div>
 
         <p class="text-center text-contrast-muted/60 text-xs mt-6 font-body">
-          Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-raspberry underline hover:text-raspberry/70 transition-colors">hello@oopsiedaisy.art</a>
+          Questions? <a href="mailto:hello@oopsiedaisy.art" class="text-dusty-pink underline hover:text-dusty-pink/70 transition-colors">hello@oopsiedaisy.art</a>
         </p>
       </div>
     </section>
-    <section id="love-letters" class="py-24 px-6 grad-love relative">
+    <section id="love-letters" class="py-24 px-6 relative" style="background: linear-gradient(160deg, #FDF6EC 0%, #FA9DAA 48%, #FF9243 100%);">
       <!-- Blob decorations -->
       <div class="absolute top-0 left-0 w-72 h-72 blob-pink rounded-full blur-[90px] animate-blob"></div>
       <div class="absolute bottom-0 right-0 w-60 h-60 blob-lavender rounded-full blur-[70px] animate-blob float-delay-2"></div>
@@ -571,7 +571,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="text-center mb-14">
           <span class="section-label block mb-3">Love Letters</span>
           <h2 class="font-display text-5xl text-contrast">
-            What Collectors <span class="text-raspberry">Say</span>
+            What Collectors <span class="text-dusty-pink">Say</span>
           </h2>
         </div>
 
@@ -664,17 +664,17 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="flex flex-col md:flex-row justify-between items-center gap-6">
           <div class="flex items-center gap-2">
             <svg class="w-8 h-8" viewBox="0 0 50 50" fill="none">
-              <circle cx="25" cy="25" r="7" fill="#FF9243"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(0 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(45 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(90 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(135 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(180 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(225 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(270 25 25)"/>
-              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#FA9DAA" transform="rotate(315 25 25)"/>
-              <circle cx="25" cy="25" r="7" fill="#FF9243"/>
-              <circle cx="23" cy="23" r="2" fill="#F7E4C4" opacity="0.6"/>
+              <circle cx="25" cy="25" r="7" fill="#A55230"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(0 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(45 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(90 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(135 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(180 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(225 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(270 25 25)"/>
+              <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(315 25 25)"/>
+              <circle cx="25" cy="25" r="7" fill="#A55230"/>
+              <circle cx="23" cy="23" r="2" fill="#D4BB9D" opacity="0.6"/>
             </svg>
             <div>
               <span class="font-display text-lg text-white">Oopsie Daisy</span>

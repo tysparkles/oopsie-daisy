@@ -4,38 +4,47 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ─── Core palette ───
-        'cake-batter':  '#F7E4C4',  // warm cream background
+        // ─── Core paper palette ───
+        'cake-batter':  '#F7E4C4',
         'warm-white':   '#FDF6EC',
+        'warm-cream':   '#F6DFC6',
+        'tan':          '#D4BB9D',
 
         // ─── Brand colours ───
-        'vine-green':   '#A8BB3E',
-        'lip-gloss':    '#FA9DAA',
-        'tangerine':    '#FF9243',
-        'raspberry':    '#D44A65',
+        'dusty-pink':    '#D45C74',
+        'raspberry':     '#D44A65',
+        'lip-gloss':     '#FA9DAA',
+        'coral-pink':    '#DE7B5B',
+        'tangerine':     '#FF9243',
+        'burnt-cinnamon':'#A55230',
+        'olive-green':   '#8A8454',
+        'vine-green':    '#A8BB3E',
 
         // ─── Accents ───
+        'sky-lavender': '#C5B5D4',
         'sky-blue':      '#B5D4EB',
         'soft-lavender': '#D5C6E8',
         'pale-mint':     '#C5E4CB',
-        'peach-cream':   '#F9D5C0',
+        'soft-peach':    '#F9D5C0',
+        'pale-rose':    '#E8C4B8',
 
         // ─── Text ───
-        'text-dark':    '#3D2B2B',
-        'text-muted':   '#7A6464',
+        'espresso':      '#4A4356',
+        'text-dark':     '#3D2B2B',
+        'text-muted':    '#7A6464',
         'text-raspberry':'#D44A65',
       },
       fontFamily: {
-        display: ['Fat Kat', 'cursive'],
-        retro:   ['Fat Kat', 'cursive'],
-        heading: ['Poppins', 'sans-serif'],
-        body:    ['Nunito', 'sans-serif'],
+        display:   ['Fat Kat', 'cursive'],
+        marykate:  ['MaryKate', 'cursive'],
+        heading:   ['Nunito', 'sans-serif'],
+        body:      ['Nunito', 'sans-serif'],
       },
       boxShadow: {
-        'soft':   '0 4px 20px rgba(212, 74, 101, 0.12)',
-        'float':  '0 8px 32px rgba(212, 74, 101, 0.18)',
+        'soft':   '0 4px 20px rgba(74, 67, 86, 0.10)',
+        'float':  '0 8px 32px rgba(74, 67, 86, 0.15)',
         'sticker':'0 2px 8px rgba(0,0,0,0.15)',
-        'paper':  '4px 4px 0 rgba(61,43,43,0.08)',
+        'paper':  '4px 4px 0 rgba(74, 67, 86, 0.08)',
       },
       animation: {
         'float-slow':  'float 8s ease-in-out infinite',
