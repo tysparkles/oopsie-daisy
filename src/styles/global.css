@@ -480,3 +480,273 @@ h1, h2, h3, h4, h5 {
 /* ─── Text contrast helpers ─── */
 .text-contrast { color: #4A4336; }
 .text-contrast-muted { color: #5F5044; }
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMATION REFINEMENT PASS
+   Dreamy scrapbook / tactile / handmade feel
+══════════════════════════════════════════════════════════════ */
+
+/* ─── 1. Daisy Logo Animations ─── */
+
+/* Petal bloom on load */
+@keyframes petal-bloom {
+  0%   { transform: scale(0.3) rotate(var(--r, 0deg)); opacity: 0; }
+  60%  { transform: scale(1.15) rotate(var(--r, 0deg)); opacity: 1; }
+  80%  { transform: scale(0.95) rotate(var(--r, 0deg)); }
+  100% { transform: scale(1) rotate(var(--r, 0deg)); }
+}
+
+/* Warm glow behind logo */
+@keyframes logo-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(212,92,116,0.2); }
+  50%       { box-shadow: 0 0 28px rgba(212,92,116,0.45), 0 0 60px rgba(231,199,175,0.2); }
+}
+
+/* Tiny organic wobble on hover */
+@keyframes logo-wobble {
+  0%, 100% { transform: rotate(-2deg) scale(1); }
+  25%       { transform: rotate(1.5deg) scale(1.02); }
+  75%       { transform: rotate(-1deg) scale(0.99); }
+}
+
+.logo-daisy {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.logo-daisy:hover {
+  animation: logo-wobble 2s ease-in-out infinite;
+}
+.logo-daisy-wrap {
+  animation: logo-glow 3s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* ─── 2. Handwritten / Mary Kate Effects ─── */
+
+/* Animated imperfect underline on hover */
+@keyframes scribble-underline {
+  0%   { background-size: 0% 2px; }
+  50%  { background-size: 105% 2px; }
+  75%  { background-size: 98% 2px; }
+  100% { background-size: 100% 2px; }
+}
+
+/* Ink jitter reveal */
+@keyframes ink-jitter {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20%       { transform: translateY(-1px) rotate(0.3deg); }
+  40%       { transform: translateY(0.5px) rotate(-0.2deg); }
+  60%       { transform: translateY(-0.5px) rotate(0.1deg); }
+  80%       { transform: translateY(0.3px) rotate(-0.1deg); }
+}
+
+/* Handwritten underline class */
+.hw-underline {
+  position: relative;
+  display: inline-block;
+}
+.hw-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #D45C74 0px, #D45C74 4px,
+    transparent 4px, transparent 7px
+  );
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.hw-underline:hover::after {
+  background-size: 100% 2px;
+  animation: ink-jitter 0.5s ease-out;
+}
+
+/* Mary Kate text jitter */
+.font-marykate-animated {
+  animation: ink-jitter 4s ease-in-out infinite;
+}
+
+/* ─── 3. Petal / Flower Motion ─── */
+
+/* Slow falling petal */
+@keyframes petal-fall {
+  0%   { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(110vh) rotate(360deg) translateX(40px); opacity: 0; }
+}
+
+/* Flower sway */
+@keyframes flower-sway {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50%       { transform: rotate(8deg) scale(1.05); }
+}
+
+/* Tiny petal drift */
+@keyframes petal-drift {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.7; }
+  33%  { transform: translateY(-30px) translateX(15px) rotate(120deg); opacity: 0.9; }
+  66%  { transform: translateY(-60px) translateX(-10px) rotate(240deg); opacity: 0.7; }
+  100% { transform: translateY(-100px) translateX(20px) rotate(360deg); opacity: 0; }
+}
+
+.animate-petal-fall {
+  animation: petal-fall 14s linear infinite;
+}
+.animate-petal-drift {
+  animation: petal-drift 10s ease-out infinite;
+}
+.animate-flower-sway {
+  animation: flower-sway 6s ease-in-out infinite;
+}
+.petal-delay-1 { animation-delay: 3s; }
+.petal-delay-2 { animation-delay: 7s; }
+.petal-delay-3 { animation-delay: 11s; }
+
+/* ─── 4. Paper / Scrapbook Effects ─── */
+
+/* Paper tilt on hover */
+.paper-tilt {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+.paper-tilt:hover {
+  transform: rotate(-1.5deg) translateY(-6px) scale(1.01);
+  box-shadow: 6px 8px 0 rgba(74,67,54,0.12), 0 16px 40px rgba(165,82,48,0.14);
+}
+
+/* Corner peel hint */
+.paper-peel {
+  position: relative;
+}
+.paper-peel::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 24px; height: 24px;
+  background: linear-gradient(135deg, transparent 50%, rgba(231,199,175,0.4) 50%);
+  border-radius: 0 0 4px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.paper-peel:hover::after {
+  opacity: 1;
+}
+
+/* ─── 5. Button / Sticker Interactions ─── */
+
+.sticker-btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: 3px solid #4A4356;
+  box-shadow: 4px 4px 0 #4A4356;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.sticker-btn:hover {
+  transform: translate(-2px, -5px) rotate(-1.5deg) scale(1.04);
+  box-shadow: 7px 10px 0 #4A4356;
+}
+
+.sticker-btn:active {
+  transform: translate(2px, 2px) rotate(0.5deg) scale(0.97);
+  box-shadow: 2px 2px 0 #4A4356;
+}
+
+/* ─── 6. Hero Film Grain ─── */
+
+@keyframes film-grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-1%, -1%); }
+  20%       { transform: translate(1%, 1%); }
+  30%       { transform: translate(-0.5%, 1%); }
+  40%       { transform: translate(1%, -0.5%); }
+  50%       { transform: translate(-1%, 0.5%); }
+  60%       { transform: translate(0.5%, -1%); }
+  70%       { transform: translate(-0.5%, 0.5%); }
+  80%       { transform: translate(1%, 1%); }
+  90%       { transform: translate(0%, -0.5%); }
+}
+
+.hero-film-grain {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.06;
+  animation: film-grain 0.4s steps(1) infinite;
+  mix-blend-mode: overlay;
+}
+
+/* Bloom / dreamy haze on hero */
+.hero-bloom {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(231,199,175,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(212,92,116,0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 80%, rgba(165,82,48,0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── 7. Scroll Reveal ─── */
+
+/* Fade-up on scroll via IntersectionObserver (applied via JS) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── 8. Micro Details ─── */
+
+/* Sparkle twinkle */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+.sparkle-delay-1 { animation-delay: 1s; }
+.sparkle-delay-2 { animation-delay: 2s; }
+
+/* Soft shadow pulse for cards */
+@keyframes shadow-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(165,82,48,0.1); }
+  50%       { box-shadow: 0 4px 30px rgba(165,82,48,0.22); }
+}
+
+.shadow-pulse {
+  animation: shadow-pulse 4s ease-in-out infinite;
+}
+
+/* ─── 9. Section entrance stagger ─── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+

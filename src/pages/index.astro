@@ -8,9 +8,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
   <!-- ── STICKY NAV ── -->
   <nav class="fixed top-0 left-0 right-0 z-50 border-b border-warm-cream/15" style="background:linear-gradient(180deg,rgba(74,67,54,0.62),rgba(74,67,54,0.28) 70%,rgba(74,67,54,0));backdrop-filter:blur(10px);">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="/" class="flex items-center gap-2 group">
+      <a href="/" class="flex items-center gap-2 group logo-daisy-wrap">
         <!-- Mini daisy SVG logo -->
-        <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none">
+        <svg class="w-10 h-10 logo-daisy" viewBox="0 0 50 50" fill="none">
           <circle cx="25" cy="25" r="7" fill="#A55230"/>
           <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(0 25 25)"/>
           <ellipse cx="25" cy="11" rx="6" ry="9" fill="#DE7B5B" transform="rotate(45 25 25)"/>
@@ -29,9 +29,9 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </a>
       <div class="flex gap-6 items-center text-sm font-heading font-semibold">
-        <a href="#this-month" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">This Month</a>
-        <a href="#archive" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">Archive</a>
-        <a href="#love-letters" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors">Love Letters</a>
+        <a href="#this-month" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors hw-underline">This Month</a>
+        <a href="#archive" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors hw-underline">Archive</a>
+        <a href="#love-letters" class="hidden sm:block text-warm-cream/85 hover:text-warm-cream transition-colors hw-underline">Love Letters</a>
         <a href="#join" class="sticker-btn bg-warm-cream text-espresso text-xs !py-2 !px-5">Join the Club</a>
       </div>
     </div>
@@ -60,6 +60,11 @@ import ImageCarousel from '../components/ImageCarousel.astro';
       <!-- <img class="hero-media-bg" src="/media/hero-image.jpg" alt="" aria-hidden="true" /> -->
       <!-- Gradient overlay for text readability -->
       <div class="hero-media-overlay"></div>
+      <!-- Film grain overlay -->
+      <div class="hero-film-grain"></div>
+      <!-- Dreamy bloom haze -->
+      <div class="hero-bloom"></div>
+
 
       <!-- Background blobs (shown when no hero media) -->
       <div class="absolute top-20 left-[-80px] w-96 h-96 bg-coral-pink/20 rounded-full blur-[80px] animate-blob"></div>
@@ -102,7 +107,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </p>
 
         <!-- Tagline -->
-        <p class="font-marykate italic text-xl md:text-2xl text-white/85 max-w-lg mx-auto mb-12">
+        <p class="font-marykate font-marykate-animated italic text-xl md:text-2xl text-white/85 max-w-lg mx-auto mb-12">
           A little bundle of joy, delivered to your door. Art prints, hand-painted originals, stickers & love letters — made with matcha and soul.
         </p>
 
@@ -294,7 +299,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Archive item 1 — MATCHA 2 -->
           <div class="group">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-dusty-pink/10 border-2 border-coral-pink/20">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden relative mb-4 hover-lift shadow-lg shadow-dusty-pink/10 border-2 border-coral-pink/20 paper-tilt paper-peel">
               <img
                 src="/media/prints/MATCHA 2.png"
                 alt="Matcha & Mornings — May 2025 print"
@@ -382,7 +387,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
 
           <!-- Portrait / Studio image -->
           <div class="relative">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-dusty-pink/10 border-2 border-coral-pink/20">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-dusty-pink/10 border-2 border-coral-pink/20 paper-tilt paper-peel">
               <img
                 src="/media/photos/about me.png"
                 alt="Tylah's studio workspace with watercolors and flowers"

@@ -24,5 +24,31 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
   <body>
     <div class="grain-overlay"></div>
     <slot />
-  </body>
+  
+<script>
+  // ─── Scroll Reveal ───
+  const revealEls = document.querySelectorAll('.scroll-reveal');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
+
+  // ─── Petal parallax on scroll ───
+  const petals = document.querySelectorAll('.animate-petal-fall');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    petals.forEach((p, i) => {
+      p.style.transform = `translateY(${scrolled * (0.05 + i * 0.02)}px)`;
+    });
+  }, { passive: true });
+</script>
+
+</body>
 </html>
