@@ -30,7 +30,7 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
   (function() {
     var wrap=document.getElementById("archive-gallery-wrap"),strip=document.getElementById("archive-gallery-strip"),lbtn=document.getElementById("gallery-left"),rbtn=document.getElementById("gallery-right");
     if(!wrap||!strip)return;
-    var pos=0,speed=1.0,hovered=false,raf=null;
+    var pos=0,speed=0.5,hovered=false,raf=null;
     function cw(){return(window.innerWidth<640?13:16)*16+24;}
     if(lbtn)lbtn.onclick=function(){wrap.scrollLeft-=cw();};
     if(rbtn)rbtn.onclick=function(){wrap.scrollLeft+=cw();};
