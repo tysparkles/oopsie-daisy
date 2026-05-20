@@ -7,7 +7,6 @@ export default {
         cream: '#FFF8F0',
         'warm-white': '#FFFCF7',
 
-        // Rainbow palette — soft & playful
         'rainbow-red': '#FF6B8A',
         'rainbow-orange': '#FFA552',
         'rainbow-yellow': '#FFD93D',
@@ -20,7 +19,9 @@ export default {
         'text-muted': '#7A7166',
       },
       fontFamily: {
-        display: ['Quicksand', 'sans-serif'],
+        display: ['Retro Mother', 'cursive'],
+        retro: ['Retro Mother', 'cursive'],
+        magic: ['Magic Retro', 'cursive'],
         body: ['Nunito', 'sans-serif'],
       },
     },

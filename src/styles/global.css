@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ─── Custom Font Faces ─── */
+@font-face {
+  font-family: 'Retro Mother';
+  src: url('/fonts/RetroMother-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Magic Retro';
+  src: url('/fonts/Magic Retro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -13,7 +30,12 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Retro Mother', cursive;
+}
+
+/* ─── Utility Classes ─── */
+.font-magic {
+  font-family: 'Magic Retro', cursive;
 }
 
 /* Rainbow text gradient */
@@ -24,7 +46,7 @@ h1, h2, h3, h4, h5 {
   background-clip: text;
 }
 
-/* Rainbow border gradient */
+/* Rainbow border */
 .rainbow-border {
   border-image: linear-gradient(90deg, #FF6B8A, #FFA552, #FFD93D, #6BCB77, #4D96FF, #C77DFF, #FF8FAB) 1;
 }
@@ -34,11 +56,7 @@ h1, h2, h3, h4, h5 {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
 }
-
-.float {
-  animation: float 4s ease-in-out infinite;
-}
-
+.float { animation: float 4s ease-in-out infinite; }
 .float-delay-1 { animation-delay: 1s; }
 .float-delay-2 { animation-delay: 2s; }
 .float-delay-3 { animation-delay: 3s; }
@@ -48,21 +66,14 @@ h1, h2, h3, h4, h5 {
   0%, 100% { transform: rotate(-3deg); }
   50% { transform: rotate(3deg); }
 }
+.wiggle { animation: wiggle 2s ease-in-out infinite; }
 
-.wiggle {
-  animation: wiggle 2s ease-in-out infinite;
+/* Pulse scale */
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
-
-/* Sticker bounce */
-@keyframes sticker-bounce {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  25% { transform: scale(1.1) rotate(-5deg); }
-  75% { transform: scale(1.05) rotate(3deg); }
-}
-
-.sticker-bounce {
-  animation: sticker-bounce 3s ease-in-out infinite;
-}
+.pulse-scale { animation: pulse-scale 3s ease-in-out infinite; }
 
 /* Grain overlay */
 .grain-overlay {
@@ -74,4 +85,18 @@ h1, h2, h3, h4, h5 {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 128px;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FFFCF7; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF6B8A, #C77DFF);
+  border-radius: 4px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: #FF6B8A;
+  color: white;
 }
