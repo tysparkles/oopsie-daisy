@@ -136,12 +136,7 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         <div class="w-px h-8 bg-gradient-to-b from-text-muted/40 to-transparent"></div>
       </div>
     </section>
-    <div class="rainbow-divider mx-6 rounded-full"></div>
-<!-- ══════════════════════════════════════════
-         THIS MONTH'S ISSUE
-    ══════════════════════════════════════════ -->
     <section id="this-month" class="py-24 px-6 relative">
-
       <!-- Background decorative -->
       <div class="absolute top-10 right-10 text-[120px] text-lip-gloss/10 font-display leading-none select-none pointer-events-none">✿</div>
       <div class="absolute bottom-20 left-0 w-64 h-64 bg-sky-blue/10 rounded-full blur-[60px] animate-blob"></div>
@@ -214,9 +209,6 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <!-- ══════════════════════════════════════════
-         WHAT'S INSIDE THE BOX
-    ══════════════════════════════════════════ -->
     <section class="py-20 px-6 grad-inside relative overflow-hidden">
       <!-- Pastel blob decorations -->
       <div class="absolute top-10 right-20 w-72 h-72 blob-pink rounded-full blur-[80px] animate-blob"></div>
@@ -273,9 +265,6 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <!-- ══════════════════════════════════════════
-         ARCHIVE / PAST DROPS
-    ══════════════════════════════════════════ -->
     <section id="archive" class="py-24 px-6 grad-archive relative overflow-hidden">
       <!-- Blob decorations -->
       <div class="absolute top-0 right-0 w-80 h-80 blob-lavender rounded-full blur-[100px] animate-blob"></div>
@@ -360,9 +349,68 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-<!-- ══════════════════════════════════════════
-         JOIN / PRICING — deep raspberry, high contrast conversion section
-    ══════════════════════════════════════════ -->
+    <section class="py-24 px-6 grad-about relative overflow-hidden">
+
+      <!-- Background decorations -->
+      <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 blob-lavender rounded-full blur-[80px] animate-blob float-delay-2"></div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+
+        <!-- Section header -->
+        <div class="text-center mb-16">
+          <span class="section-label block mb-3">Behind the Studio</span>
+          <h2 class="font-display text-5xl text-contrast mb-3">
+            Hi, I'm <span class="text-raspberry">Tylah</span>
+          </h2>
+          <p class="font-retro italic text-contrast-muted text-lg">
+            Artist, printmaker, and obsessive flower sketcher — making each issue from my studio with messy hands and a whole lot of care.
+          </p>
+        </div>
+
+        <!-- ── EDITORIAL COLLAGE LAYOUT ── -->
+
+        <!-- Row 1: Main portrait + text side-by-side -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+
+          <!-- Portrait / Studio image -->
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/10 border-2 border-lip-gloss/20">
+              <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=750&fit=crop"
+                alt="Tylah's studio workspace with watercolors and flowers"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <!-- Washi tape decoration -->
+            <div class="absolute -top-3 -left-3 w-24 h-6 rounded-sm"
+              style="background:repeating-linear-gradient(45deg,rgba(250,157,170,0.6),rgba(250,157,170,0.6) 3px,rgba(250,157,170,0.2) 3px,rgba(250,157,170,0.2) 6px);transform:rotate(-8deg);box-shadow:2px 2px 8px rgba(0,0,0,0.1);">
+            </div>
+            <!-- Floating sticker -->
+            <div class="absolute -bottom-4 -right-4 bg-white/90 border border-lip-gloss/30 rounded-2xl px-3 py-2 shadow-lg">
+              <p class="font-retro italic text-xs text-contrast-muted">My happy place ✿</p>
+            </div>
+          </div>
+
+          <!-- Introduction text -->
+          <div>
+            <h3 class="font-display text-3xl text-contrast mb-4">The Story Behind<br/><span class="text-raspberry">Oopsie Daisy</span></h3>
+            <p class="font-body text-contrast-muted leading-relaxed mb-4">
+              Oopsie Daisy started with a simple idea: what if receiving art felt just as special as the art itself? A package that feels like unwrapping a letter from your most creative friend — personal, unexpected, and made entirely by hand.
+            </p>
+            <p class="font-body text-contrast-muted leading-relaxed mb-6">
+              I design, paint, print, package, and write every single issue myself. No factories, no shortcuts — just me, my brushes, a whole lot of matcha, and way too many reference photos of flowers.
+            </p>
+            <!-- Process tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-raspberry text-xs font-heading">Hand-drawn</span>
+              <span class="px-3 py-1 rounded-full bg-tangerine/15 text-tangerine text-xs font-heading">Watercolor</span>
+              <span class="px-3 py-1 rounded-full bg-vine-green/15 text-vine-green text-xs font-heading">Archival Print</span>
+              <span class="px-3 py-1 rounded-full bg-soft-lavender/20 text-purple-600 text-xs font-heading">Handwritten</span>
+</div>
+      </div>
+    </section>
     <section id="join" class="py-28 px-6 relative overflow-hidden">
 
       <!-- Deep layered pink/raspberry background -->
@@ -514,74 +562,6 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </p>
       </div>
     </section>
-    <!-- ══════════════════════════════════════════
-         ABOUT / BEHIND THE SCENES / MEET THE MAKER
-    ══════════════════════════════════════════ -->
-    <section class="py-24 px-6 grad-about relative overflow-hidden">
-
-      <!-- Background decorations -->
-      <div class="absolute top-0 right-0 w-80 h-80 blob-mint rounded-full blur-[100px] animate-blob"></div>
-      <div class="absolute bottom-0 left-0 w-64 h-64 blob-lavender rounded-full blur-[80px] animate-blob float-delay-2"></div>
-
-      <div class="max-w-5xl mx-auto relative z-10">
-
-        <!-- Section header -->
-        <div class="text-center mb-16">
-          <span class="section-label block mb-3">Behind the Studio</span>
-          <h2 class="font-display text-5xl text-contrast mb-3">
-            Hi, I'm <span class="text-raspberry">Tylah</span>
-          </h2>
-          <p class="font-retro italic text-contrast-muted text-lg">
-            Artist, printmaker, and obsessive flower sketcher — making each issue from my studio with messy hands and a whole lot of care.
-          </p>
-        </div>
-
-        <!-- ── EDITORIAL COLLAGE LAYOUT ── -->
-
-        <!-- Row 1: Main portrait + text side-by-side -->
-        <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
-
-          <!-- Portrait / Studio image -->
-          <div class="relative">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-raspberry/10 border-2 border-lip-gloss/20">
-              <img
-                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=750&fit=crop"
-                alt="Tylah's studio workspace with watercolors and flowers"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <!-- Washi tape decoration -->
-            <div class="absolute -top-3 -left-3 w-24 h-6 rounded-sm"
-              style="background:repeating-linear-gradient(45deg,rgba(250,157,170,0.6),rgba(250,157,170,0.6) 3px,rgba(250,157,170,0.2) 3px,rgba(250,157,170,0.2) 6px);transform:rotate(-8deg);box-shadow:2px 2px 8px rgba(0,0,0,0.1);">
-            </div>
-            <!-- Floating sticker -->
-            <div class="absolute -bottom-4 -right-4 bg-white/90 border border-lip-gloss/30 rounded-2xl px-3 py-2 shadow-lg">
-              <p class="font-retro italic text-xs text-contrast-muted">My happy place ✿</p>
-            </div>
-          </div>
-
-          <!-- Introduction text -->
-          <div>
-            <h3 class="font-display text-3xl text-contrast mb-4">The Story Behind<br/><span class="text-raspberry">Oopsie Daisy</span></h3>
-            <p class="font-body text-contrast-muted leading-relaxed mb-4">
-              Oopsie Daisy started with a simple idea: what if receiving art felt just as special as the art itself? A package that feels like unwrapping a letter from your most creative friend — personal, unexpected, and made entirely by hand.
-            </p>
-            <p class="font-body text-contrast-muted leading-relaxed mb-6">
-              I design, paint, print, package, and write every single issue myself. No factories, no shortcuts — just me, my brushes, a whole lot of matcha, and way too many reference photos of flowers.
-            </p>
-            <!-- Process tags -->
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-lip-gloss/15 text-raspberry text-xs font-heading">Hand-drawn</span>
-              <span class="px-3 py-1 rounded-full bg-tangerine/15 text-tangerine text-xs font-heading">Watercolor</span>
-              <span class="px-3 py-1 rounded-full bg-vine-green/15 text-vine-green text-xs font-heading">Archival Print</span>
-              <span class="px-3 py-1 rounded-full bg-soft-lavender/20 text-purple-600 text-xs font-heading">Handwritten</span>
-</div>
-      </div>
-    </section>
-<!-- ══════════════════════════════════════════
-         LOVE LETTERS / TESTIMONIALS
-    ══════════════════════════════════════════ -->
     <section id="love-letters" class="py-24 px-6 grad-love relative">
       <!-- Blob decorations -->
       <div class="absolute top-0 left-0 w-72 h-72 blob-pink rounded-full blur-[90px] animate-blob"></div>
@@ -679,9 +659,6 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
-    <!-- ══════════════════════════════════════════
-         FOOTER
-    ══════════════════════════════════════════ -->
     <footer class="py-12 px-6 bg-text-dark text-white/50">
       <div class="max-w-5xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6">
