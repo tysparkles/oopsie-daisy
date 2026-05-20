@@ -9,6 +9,17 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'MaryKate';
+  src: url('/fonts/MaryKate.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-marykate { font-family: 'MaryKate', cursive; }
+
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -29,6 +40,7 @@ h1, h2, h3, h4, h5 {
 .font-display { font-family: 'Fat Kat', cursive; }
 .font-heading { font-family: 'Poppins', sans-serif; }
 .font-retro   { font-family: 'Fat Kat', cursive; }
+.font-marykate { font-family: 'MaryKate', cursive; }
 
 /* ─── Keyframes ─── */
 @keyframes float {
@@ -36,29 +48,35 @@ h1, h2, h3, h4, h5 {
   33%       { transform: translateY(-10px) rotate(2deg); }
   66%       { transform: translateY(-5px) rotate(-1deg); }
 }
+
 @keyframes drift {
   0%, 100% { transform: translateX(0) translateY(0); }
   25%  { transform: translateX(10px) translateY(-8px); }
   50%  { transform: translateX(-4px) translateY(-14px); }
   75%  { transform: translateX(6px) translateY(-6px); }
 }
+
 @keyframes wiggle {
   0%, 100% { transform: rotate(-3deg); }
   50%       { transform: rotate(3deg); }
 }
+
 @keyframes pulse-soft {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50%       { opacity: 1; transform: scale(1.05); }
 }
+
 @keyframes blob {
   0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
 }
+
 @keyframes star-pop {
   0%   { transform: scale(1) rotate(0deg); opacity: 0.7; }
   50%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
   100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
 }
+
 @keyframes gradient-shift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -86,31 +104,37 @@ h1, h2, h3, h4, h5 {
   background: linear-gradient(180deg, #FDF6EC 0%, #FDF6EC 40%, #FCE8EC 100%);
   background-attachment: fixed;
 }
+
 /* What's inside: cake batter warm */
 .grad-inside {
   background: linear-gradient(180deg, #FCE8EC 0%, #FBE8D0 50%, #F7E4C4 100%);
   background-attachment: fixed;
 }
+
 /* Archive: soft lavender + sky */
 .grad-archive {
   background: linear-gradient(180deg, #F7E4C4 0%, #EDE4F5 50%, #D5E4F0 100%);
   background-attachment: fixed;
 }
+
 /* Love letters: blush + peach */
 .grad-love {
   background: linear-gradient(180deg, #D5E4F0 0%, #FCE8EC 50%, #F9D5C0 100%);
   background-attachment: fixed;
 }
+
 /* How it works: pale mint + cream */
 .grad-how {
   background: linear-gradient(180deg, #F9D5C0 0%, #E8F5E8 50%, #FDF6EC 100%);
   background-attachment: fixed;
 }
+
 /* Join/pricing: dreamy purple-pink gradient */
 .grad-join {
   background: linear-gradient(135deg, #3D2B2B 0%, #5C3A5C 30%, #7A4A6A 60%, #8B5A7A 100%);
   background-attachment: fixed;
 }
+
 /* About: soft mint cream */
 .grad-about {
   background: linear-gradient(180deg, #FDF6EC 0%, #E8F0E0 100%);
@@ -142,40 +166,48 @@ h1, h2, h3, h4, h5 {
   display: inline-block;
   text-decoration: none;
 }
+
 .sticker-btn:hover {
   transform: translate(-2px, -4px) rotate(-1deg);
   box-shadow: 7px 8px 0 #3D2B2B;
 }
+
 .sticker-btn:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #3D2B2B;
 }
+
 .sticker-btn-pink {
   background: #FA9DAA;
   color: #fff;
   border-color: #D44A65;
   box-shadow: 4px 4px 0 #D44A65;
 }
+
 .sticker-btn-pink:hover {
   background: #D44A65;
   box-shadow: 7px 8px 0 #A83050;
 }
+
 .sticker-btn-orange {
   background: #FF9243;
   color: #fff;
   border-color: #C46020;
   box-shadow: 4px 4px 0 #C46020;
 }
+
 .sticker-btn-orange:hover {
   background: #C46020;
   box-shadow: 7px 8px 0 #8B3A10;
 }
+
 .sticker-btn-green {
   background: #A8BB3E;
   color: #fff;
   border-color: #6B7A0A;
   box-shadow: 4px 4px 0 #6B7A0A;
 }
+
 .sticker-btn-green:hover {
   background: #6B7A0A;
   box-shadow: 7px 8px 0 #3D4A05;
@@ -190,6 +222,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   backdrop-filter: blur(8px);
 }
+
 .paper-card::before {
   content: '';
   position: absolute;
@@ -248,10 +281,12 @@ h1, h2, h3, h4, h5 {
   filter: brightness(0.55) saturate(1.2);
   /* dreamy blur — lower = sharper, 8-15px = soft blur feel */
 }
+
 /* When a video/image is present, fade out blobs slightly */
 .hero-media-bg ~ .absolute {
   opacity: 0.4;
 }
+
 .hero-media-overlay {
   position: absolute;
   inset: 0;
@@ -283,6 +318,7 @@ h1, h2, h3, h4, h5 {
 .hover-lift {
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
+
 .hover-lift:hover {
   transform: translateY(-5px) rotate(0.5deg);
   box-shadow: 0 16px 40px rgba(212,74,101,0.14);
@@ -313,6 +349,7 @@ h1, h2, h3, h4, h5 {
 .washi-left {
   position: relative;
 }
+
 .washi-tape-green {
   position: absolute;
   top: -10px; left: -5px;
@@ -328,6 +365,7 @@ h1, h2, h3, h4, h5 {
   transform: rotate(8deg);
   pointer-events: none;
 }
+
 .washi-tape-pink {
   position: absolute;
   top: -10px; right: 20px;
@@ -343,6 +381,7 @@ h1, h2, h3, h4, h5 {
   transform: rotate(-5deg);
   pointer-events: none;
 }
+
 .washi-tape-orange {
   position: absolute;
   top: -10px; right: 20px;
@@ -367,15 +406,18 @@ h1, h2, h3, h4, h5 {
   backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 .pricing-card:hover {
   transform: translateY(-6px) rotate(-1deg);
   border-color: rgba(255,255,255,0.35);
   box-shadow: 0 24px 60px rgba(0,0,0,0.3);
 }
+
 .pricing-card-featured {
   background: rgba(250,157,170,0.15);
   border: 2px solid rgba(250,157,170,0.4);
 }
+
 .pricing-card-featured:hover {
   border-color: rgba(250,157,170,0.7);
 }
@@ -420,18 +462,23 @@ h1, h2, h3, h4, h5 {
 .blob-pink {
   background: radial-gradient(circle, rgba(250,157,170,0.3) 0%, transparent 70%);
 }
+
 .blob-peach {
   background: radial-gradient(circle, rgba(249,213,192,0.4) 0%, transparent 70%);
 }
+
 .blob-lavender {
   background: radial-gradient(circle, rgba(213,198,232,0.35) 0%, transparent 70%);
 }
+
 .blob-mint {
   background: radial-gradient(circle, rgba(197,228,203,0.35) 0%, transparent 70%);
 }
+
 .blob-sky {
   background: radial-gradient(circle, rgba(181,212,235,0.35) 0%, transparent 70%);
 }
+
 .blob-yellow {
   background: radial-gradient(circle, rgba(247,228,196,0.5) 0%, transparent 70%);
 }
