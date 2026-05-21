@@ -1,6 +1,110 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ImageCarousel from '../components/ImageCarousel.astro';
+import CollectionCard from '../components/CollectionCard.astro';
+
+// ── Collection data ──────────────────────────────────────────────
+const collections = [
+  {
+    title: 'STIR ME UP',
+    description: 'A soft morning ritual disguised as emotional support. Slow matcha mornings, warm pastries, and the quiet beauty of doing absolutely nothing.',
+    mood: 'slow mornings · matcha rituals · emotionally unavailable girl energy',
+    accentColor: '#8A8454',
+    accentBg: 'linear-gradient(160deg, #E7C7AF 0%, #8A8454 100%)',
+    issueNumber: 7,
+    soldOut: false,
+    images: [
+      'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80',
+      'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=80',
+      'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80',
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80',
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80',
+    ],
+  },
+  {
+    title: 'FORBIDDEN FRUIT',
+    description: 'Sweetness with danger. Cherries, peaches, papayas and a little bit of "Pop Your Cherry" energy. Suggestive but artistic — flirtatious but artistic.',
+    mood: 'cherries · desire · hot pink everything · tongue-in-cheek',
+    accentColor: '#D45C74',
+    accentBg: 'linear-gradient(160deg, #FA9DAA 0%, #D45C74 100%)',
+    issueNumber: 8,
+    soldOut: false,
+    images: [
+      'https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=600&q=80',
+      'https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=600&q=80',
+      'https://images.unsplash.com/photo-1595743825637-cdafc8ad4173?w=600&q=80',
+      'https://images.unsplash.com/photo-1585669974765-9f3d4e534df6?w=600&q=80',
+      'https://images.unsplash.com/photo-1563237027-900f9d879d0e?w=600&q=80',
+    ],
+  },
+  {
+    title: "I'M JUST A GIRL!",
+    description: 'A scrapbook of modern girlhood. Mirrors, tulips, journals, candles, ribbons and the deeply romanticised art of soft domestic femininity.',
+    mood: 'girlhood · mirrors · soft clutter · bedroom diaries',
+    accentColor: '#DE7B5B',
+    accentBg: 'linear-gradient(160deg, #E7C7AF 0%, #DE7B5B 100%)',
+    issueNumber: 6,
+    soldOut: true,
+    images: [
+      'https://images.unsplash.com/photo-1522780550166-d8cb41c87f69?w=600&q=80',
+      'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&q=80',
+      'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80',
+      'https://images.unsplash.com/photo-1549471013-3bc84f3c8af0?w=600&q=80',
+      'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&q=80',
+    ],
+  },
+  {
+    title: 'BREAKFAST IN BED',
+    description: 'A lazy Sunday morning turned into an art journal. Toast, avocado, jam, butter, ceramics, and the sacred ritual of not leaving the house.',
+    mood: 'lazy sunday · warm light · toast studies · cozy domesticity',
+    accentColor: '#A55230',
+    accentBg: 'linear-gradient(160deg, #E7C7AF 0%, #A55230 100%)',
+    issueNumber: 9,
+    soldOut: false,
+    images: [
+      'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80',
+      'https://images.unsplash.com/photo-1504472478235-9bc48ba4d60f?w=600&q=80',
+      'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80',
+      'https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=600&q=80',
+      'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80',
+    ],
+  },
+  {
+    title: 'CHAMPAGNE PROBLEMS',
+    description: "A dreamy editorial making fun of old-money aesthetics while still absolutely loving them. Tennis courts, pearls, roses and a deep appreciation for being ridiculous.",
+    mood: 'old money satire · pearls · tennis · rich-girl delusion',
+    accentColor: '#8A8454',
+    accentBg: 'linear-gradient(160deg, #D4BB9D 0%, #A8BB3E 100%)',
+    issueNumber: 5,
+    soldOut: true,
+    images: [
+      'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80',
+      'https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+      'https://images.unsplash.com/photo-1560611462-d6f1c1e92c8d?w=600&q=80',
+      'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?w=600&q=80',
+    ],
+  },
+  {
+    title: "HAPPY HOUR",
+    description: "It's 5 o'clock somewhere. Dirty martinis, cherries, olives, lipstick marks, satin textures and the cinematic last hour of a glamorous night out captured through soft film grain.",
+    mood: 'cocktails · satin · bar lighting · cinematic femininity',
+    accentColor: '#D44A65',
+    accentBg: 'linear-gradient(160deg, #D44A65 0%, #A55230 100%)',
+    issueNumber: 10,
+    soldOut: false,
+    images: [
+      'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',
+      'https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=600&q=80',
+      'https://images.unsplash.com/photo-1566566257547-9ef0d3a9c4c9?w=600&q=80',
+      'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80',
+      'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80',
+    ],
+  },
+];
+
+// Music state
+const musicEnabled = true;
 ---
 
 <Layout title="Oopsie Daisy — Monthly Print Club">
@@ -379,63 +483,77 @@ import ImageCarousel from '../components/ImageCarousel.astro';
         </div>
       </div>
     </section>
+    <section     <!-- ═══════════════════════════════════════════════════════
+         IMMERSIVE COLLECTIONS — dreamy scrapbook gallery
+    ═══════════════════════════════════════════════════════ -->
     <section id="archive" class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 56%, #D45C74 100%);">
-      <!-- Blob decorations -->
+      <!-- Ambient blob decorations -->
       <div class="absolute top-0 right-0 w-80 h-80 blob-coral rounded-full blur-[100px] animate-blob"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 blob-cinnamon rounded-full blur-[80px] animate-blob float-delay-3"></div>
-      <!-- Decorative bg -->
+      <!-- Decorative bg emoji -->
       <div class="absolute top-0 right-0 text-[200px] text-dusty-pink/5 font-display leading-none select-none pointer-events-none">❀</div>
+      <div class="absolute bottom-12 left-8 text-[120px] text-coral-pink/5 font-display leading-none select-none pointer-events-none animate-flower-sway">✿</div>
 
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto relative z-10">
+
+        <!-- Section header -->
         <div class="flex items-center gap-4 mb-4">
-          <span class="text-dusty-pink animate-sparkle inline-block">✦</span> <span class="section-label">Club Archive</span> <span class="text-dusty-pink animate-sparkle inline-block">✦</span> <svg width="28" height="28" viewBox="0 0 50 50" fill="none" class="inline-block animate-flower-sway"><circle cx="25" cy="25" r="6" fill="#A55230"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(0 25 25)"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(60 25 25)"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(120 25 25)"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(180 25 25)"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(240 25 25)"/><ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(300 25 25)"/><circle cx="25" cy="25" r="6" fill="#A55230"/><circle cx="23.5" cy="23.5" r="2" fill="#D4BB9D" opacity="0.5"/></svg>
+          <span class="text-dusty-pink animate-sparkle inline-block">✦</span>
+          <span class="section-label">Club Archive</span>
+          <span class="text-dusty-pink animate-sparkle inline-block">✦</span>
+          <svg width="28" height="28" viewBox="0 0 50 50" fill="none" class="inline-block animate-flower-sway">
+            <circle cx="25" cy="25" r="6" fill="#A55230"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(0 25 25)"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(60 25 25)"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(120 25 25)"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(180 25 25)"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(240 25 25)"/>
+            <ellipse cx="25" cy="10" rx="5" ry="8" fill="#DE7B5B" transform="rotate(300 25 25)"/>
+            <circle cx="25" cy="25" r="6" fill="#A55230"/>
+            <circle cx="23.5" cy="23.5" r="2" fill="#D4BB9D" opacity="0.5"/>
+          </svg>
           <span class="flex-1 h-[2px] bg-coral-pink/30 rounded"></span>
           <span class="font-heading text-xs text-text-muted">Past Print Drops</span>
         </div>
 
-        <h2 class="font-display text-5xl text-text-dark mb-14 mt-4">
+        <h2 class="font-display text-5xl text-text-dark mb-3 mt-4">
           The Collection
         </h2>
+        <p class="font-marykate italic text-text-muted text-lg mb-14">
+          Wander through emotional worlds &mdash; each issue a little piece of magic.
+        </p>
 
+        <!-- ── INTERACTIVE COLLECTION CARDS ── -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
 
+          {collections.map((c) => (
+            <CollectionCard {...c} />
+          ))}
 
-        <!-- ── ROTATING IMAGE GALLERY (endless loop) ── -->
-        <div class="relative">
-
-          <button id="gallery-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-warm-cream/90 border-2 border-coral-pink/40 text-coral-pink shadow-lg hover:bg-coral-pink hover:text-white flex items-center justify-center gallery-nav-btn" style="--rot:-5deg;" aria-label="Previous">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button id="gallery-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-warm-cream/90 border-2 border-coral-pink/40 text-coral-pink shadow-lg hover:bg-coral-pink hover:text-white flex items-center justify-center gallery-nav-btn" style="--rot:5deg;" aria-label="Next">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-
-          <div class="archive-gallery-wrap" id="archive-gallery-wrap">
-            <div class="archive-gallery-strip" id="archive-gallery-strip">
-<div class="rotate-img-wrap" style="transform:rotate(-1.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-dusty-pink/15 border-2 border-coral-pink/20" style="transform:rotate(1deg);height:100%;"><img src="/media/prints/girl .png" alt="Matcha & Mornings" class="w-full h-full object-cover" loading="eager"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(138,132,84)0.6) 3px,rgba(231,199,175,0.6)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">May 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 3</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Matcha & Mornings</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Warm pastry still life · Coffee cup study · Strawberry stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(0.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-coral-pink/15 border-2 border-coral-pink/20" style="transform:rotate(-0.5deg);height:100%;"><img src="/media/prints/tulip selfie.png" alt="Sunday Reset" class="w-full h-full object-cover" loading="eager"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(212,92,116)0.5) 3px,rgba(231,199,175,0.5)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">April 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 2</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Sunday Reset</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Soft mornings · Tulip study · Self-care stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(1.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-burnt-cinnamon/15 border-2 border-burnt-cinnamon/20" style="transform:rotate(-1deg);height:100%;"><img src="/media/prints/toastt.png" alt="First Bloom" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(222,123,91)0.58) 3px,rgba(231,199,175,0.58)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">March 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 1</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">First Bloom</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Wildflower collage · Pressed flower card · Leaf stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(-1deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-olive-green/15 border-2 border-olive-green/30" style="transform:rotate(0.5deg);height:100%;"><img src="/media/prints/matcha.png" alt="Warmth & Wonder" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(138,132,84)0.5) 3px,rgba(231,199,175,0.5)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">February 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 4</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Warmth & Wonder</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Morning ritual · Matcha study · Green tea stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(0.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-dusty-pink/15 border-2 border-coral-pink/20" style="transform:rotate(-0.5deg);height:100%;"><img src="/media/prints/cherry blossom.png" alt="First Blossom" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(212,92,116)0.45) 3px,rgba(231,199,175,0.45)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">January 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 5</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">First Blossom</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Cherry blossom study · Soft pink petals · Floral stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(-1.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-dusty-pink/15 border-2 border-coral-pink/20" style="transform:rotate(1deg);height:100%;"><img src="/media/prints/girl .png" alt="Matcha & Mornings" class="w-full h-full object-cover" loading="eager"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(138,132,84)0.6) 3px,rgba(231,199,175,0.6)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">May 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 3</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Matcha & Mornings</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Warm pastry still life · Coffee cup study · Strawberry stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(0.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-coral-pink/15 border-2 border-coral-pink/20" style="transform:rotate(-0.5deg);height:100%;"><img src="/media/prints/tulip selfie.png" alt="Sunday Reset" class="w-full h-full object-cover" loading="eager"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(212,92,116)0.5) 3px,rgba(231,199,175,0.5)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">April 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 2</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Sunday Reset</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Soft mornings · Tulip study · Self-care stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(1.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-burnt-cinnamon/15 border-2 border-burnt-cinnamon/20" style="transform:rotate(-1deg);height:100%;"><img src="/media/prints/toastt.png" alt="First Bloom" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(222,123,91)0.58) 3px,rgba(231,199,175,0.58)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">March 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 1</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">First Bloom</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Wildflower collage · Pressed flower card · Leaf stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(-1deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-olive-green/15 border-2 border-olive-green/30" style="transform:rotate(0.5deg);height:100%;"><img src="/media/prints/matcha.png" alt="Warmth & Wonder" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(138,132,84)0.5) 3px,rgba(231,199,175,0.5)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">February 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 4</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">Warmth & Wonder</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Morning ritual · Matcha study · Green tea stickers</p></div></div>
-<div class="rotate-img-wrap" style="transform:rotate(0.5deg);"><div class="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-xl shadow-dusty-pink/15 border-2 border-coral-pink/20" style="transform:rotate(-0.5deg);height:100%;"><img src="/media/prints/cherry blossom.png" alt="First Blossom" class="w-full h-full object-cover" loading="lazy"/><div class="absolute top-3 right-3 stamp text-[9px] font-bold text-text-muted bg-warm-cream/90">SOLD OUT</div><div class="absolute top-0 left-0 w-16 h-5" style="background:repeating-linear-gradient(45deg,rgba(212,92,116)0.45) 3px,rgba(231,199,175,0.45)) 6px);transform:rotate(-8deg);margin-top:6px;margin-left:6px;"></div><div class="absolute bottom-3 left-3 bg-warm-cream/90 rounded-xl px-3 py-1.5 shadow"><p class="text-[10px] font-marykate text-coral-pink mb-0.5">January 2025</p><p class="font-body text-[10px] text-text-muted">&#x2716; Sold Out</p></div><div class="absolute bottom-3 right-3"><p class="text-[9px] font-marykate italic text-white/80 bg-black/30 rounded px-2 py-0.5">Issue No. 5</p></div></div><div class="pt-2 px-1"><h4 class="font-display text-base text-text-dark leading-tight">First Blossom</h4><p class="font-body text-[10px] text-text-muted mt-0.5 leading-tight">Cherry blossom study · Soft pink petals · Floral stickers</p></div></div>
-            </div>
-          </div>
-
-          <div class="mt-4 flex items-center justify-center gap-2">
-            <span class="text-coral-pink/40 text-xs animate-float-slow">&#x2726;</span>
-            <p class="font-heading text-[10px] text-text-muted/50 tracking-widest uppercase">Rotating collection &middot; 5 images</p>
-            <span class="text-coral-pink/40 text-xs animate-float-slow" style="animation-delay:1s;">&#x2726;</span>
-          </div>
         </div>
 
-        <div class="text-center mt-8">
-          <p class="font-marykate italic text-text-muted text-lg">More issues added every month &mdash; join to collect them all.</p>
+        <!-- Scrapbook-style divider -->
+        <div class="flex items-center gap-3 my-10">
+          <div class="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-coral-pink/40 to-transparent rounded-full"></div>
+          <span class="text-coral-pink/50 text-sm animate-float-slow">✿</span>
+          <div class="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-coral-pink/40 to-transparent rounded-full"></div>
+        </div>
+
+        <!-- Footer tagline -->
+        <div class="text-center">
+          <p class="font-marykate italic text-text-muted text-lg">
+            More issues bloom every month &mdash; join the club to collect them all.
+          </p>
+          <div class="flex justify-center gap-2 mt-3">
+            <span class="text-dusty-pink/40 text-xs animate-float-slow">✦</span>
+            <span class="text-dusty-pink/40 text-xs animate-float-slow" style="animation-delay:.5s">✦</span>
+            <span class="text-dusty-pink/40 text-xs animate-float-slow" style="animation-delay:1s">✦</span>
+          </div>
         </div>
       </div>
     </section>
+
+
     <section class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(160deg, #D4BB9D 0%, #E7C7AF 100%);">
 
       <!-- Background decorations -->

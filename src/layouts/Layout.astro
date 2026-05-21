@@ -24,34 +24,74 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
   <body>
     <div class="grain-overlay"></div>
     <slot />
-  
+
+    <!-- ── Background Music ── -->
+    <audio id="site-music" src="/media/music/this-side-of-heaven.m4a" loop preload="none"></audio>
+
+    <!-- ── Music Toggle Button ── -->
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle music" title="Play / Pause music">
+      <span class="music-icon" id="music-icon">
+        <!-- Music note SVG -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V5l12-2v13"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
+        </svg>
+      </span>
+      <span class="music-label">Music</span>
+    </button>
 
 <script>
   (function() {
-    var wrap=document.getElementById("archive-gallery-wrap"),strip=document.getElementById("archive-gallery-strip"),lbtn=document.getElementById("gallery-left"),rbtn=document.getElementById("gallery-right");
-    if(!wrap||!strip)return;
-    var pos=0,speed=0.5,hovered=false,raf=null;
-    function cw(){return(window.innerWidth<640?13:16)*16+24;}
-    if(lbtn)lbtn.onclick=function(){wrap.scrollLeft-=cw();};
-    if(rbtn)rbtn.onclick=function(){wrap.scrollLeft+=cw();};
-    wrap.onmouseenter=function(){hovered=true;cancelAnimationFrame(raf);};
-    wrap.onmouseleave=function(){hovered=false;raf=requestAnimationFrame(tick);};
-    wrap.ontouchstart=function(){hovered=true;cancelAnimationFrame(raf);},{passive:true};
-    wrap.ontouchend=function(){hovered=false;raf=requestAnimationFrame(tick);},{passive:true};
-    wrap.onscroll=function(){
-      var max=strip.scrollWidth-wrap.clientWidth;
-      if(wrap.scrollLeft>=max-2){wrap.scrollLeft=1;pos=1;}
-      if(wrap.scrollLeft<=0){wrap.scrollLeft=max-wrap.clientWidth-1;pos=wrap.scrollLeft;}
-    };
-    function tick(){if(!hovered){pos+=speed;var max=strip.scrollWidth-wrap.clientWidth;if(pos>=max)pos=1;wrap.scrollLeft=pos;}raf=requestAnimationFrame(tick);}
-    raf=requestAnimationFrame(tick);
-  })();
-  var r=document.querySelectorAll(".scroll-reveal");
-  if(r.length){var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("is-visible");o.unobserve(x.target);}});},{threshold:0.1,rootMargin:"0px 0px -40px 0px"});r.forEach(function(el){o.observe(el);});}
-  var p=document.querySelectorAll(".animate-petal-fall");
-  window.onscroll=function(){var s=window.scrollY;p.forEach(function(pet,i){pet.style.transform="translateY("+(s*(0.05+i*0.02))+"px)";});},{passive:true};
-</script>
+    // ── Scroll reveal ──
+    var r = document.querySelectorAll('.scroll-reveal');
+    if (r.length) {
+      var o = new IntersectionObserver(function(e) {
+        e.forEach(function(x) {
+          if (x.isIntersecting) {
+            x.target.classList.add('is-visible');
+            o.unobserve(x.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      r.forEach(function(el) { o.observe(el); });
+    }
 
+    // ── Petal fall parallax ──
+    var petalEls = document.querySelectorAll('.animate-petal-fall');
+    window.addEventListener('scroll', function() {
+      var s = window.scrollY;
+      petalEls.forEach(function(pet, i) {
+        pet.style.transform = 'translateY(' + (s * (0.05 + i * 0.02)) + 'px)';
+      });
+    }, { passive: true });
+
+    // ── Music toggle ──
+    var music = document.getElementById('site-music') as HTMLAudioElement;
+    var toggle = document.getElementById('music-toggle');
+    var icon = document.getElementById('music-icon');
+    var playing = false;
+
+    if (music && toggle) {
+      toggle.addEventListener('click', function() {
+        if (!playing) {
+          music.play().then(function() {
+            playing = true;
+            icon?.classList.add('playing');
+            toggle?.classList.add('active');
+          }).catch(function() {
+            // Autoplay blocked — stay silent
+          });
+        } else {
+          music.pause();
+          playing = false;
+          icon?.classList.remove('playing');
+          toggle?.classList.remove('active');
+        }
+      });
+    }
+  })();
+</script>
 
 </body>
 </html>

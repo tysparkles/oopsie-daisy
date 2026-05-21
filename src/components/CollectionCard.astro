@@ -1,0 +1,775 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  accentColor?: string;
+  accentBg?: string;
+  images: string[];
+  issueNumber?: number;
+  soldOut?: boolean;
+  mood?: string;
+}
+
+const {
+  title,
+  description,
+  accentColor = '#D45C74',
+  accentBg = 'linear-gradient(160deg, #E7C7AF 0%, #DE7B5B 100%)',
+  images = [],
+  issueNumber,
+  soldOut = false,
+  mood = '',
+} = Astro.props;
+
+// Ensure we have 5 images (cycle if fewer)
+const galleryImages = images.length >= 5
+  ? images.slice(0, 5)
+  : [...images, ...images.slice(0, 5 - images.length)];
+---
+
+<div
+  class="collection-card"
+  data-gallery-images={JSON.stringify(galleryImages)}
+  style={`--accent: ${accentColor}; --accent-bg: ${accentBg};`}
+  role="button"
+  tabindex="0"
+  aria-label={`Explore ${title} collection — ${galleryImages.length} artworks`}
+>
+  <!-- Scrapbook paper layers -->
+  <div class="paper-layers">
+    <div class="paper-layer layer-back"></div>
+    <div class="paper-layer layer-mid"></div>
+    <div class="paper-layer layer-front"></div>
+  </div>
+
+  <!-- Main image viewport -->
+  <div class="card-image-viewport">
+    <!-- Image stack — slides like a zine -->
+    <div class="image-stack" data-image-stack>
+      {galleryImages.map((img, i) => (
+        <div class={`image-frame ${i === 0 ? 'active' : ''}`} data-frame={i}>
+          <img
+            src={img}
+            alt={`${title} — artwork ${i + 1}`}
+            class="card-img"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Sold out stamp -->
+    {soldOut && (
+      <div class="sold-out-stamp stamp">
+        SOLD OUT
+      </div>
+    )}
+
+    <!-- Issue label -->
+    {issueNumber && (
+      <div class="issue-tag">
+        <span class="font-marykate italic text-[10px] text-white/80">Issue No. {issueNumber}</span>
+      </div>
+    )}
+
+    <!-- Floating decorative doodles -->
+    <div class="floating-doodle doodle-1">✿</div>
+    <div class="floating-doodle doodle-2">✦</div>
+    <div class="floating-doodle doodle-3">❋</div>
+  </div>
+
+  <!-- Card info panel -->
+  <div class="card-info">
+    <div class="washi-tape-accent"></div>
+    <h3 class="font-display text-xl text-contrast leading-tight mb-1">{title}</h3>
+    {mood && (
+      <p class="font-marykate italic text-[11px] text-dusty-pink/80 mb-2">{mood}</p>
+    )}
+    <p class="font-body text-[11px] text-contrast-muted leading-snug">{description}</p>
+  </div>
+
+  <!-- Mini progress dots -->
+  <div class="mini-dots" data-mini-dots>
+    {galleryImages.map((_, i) => (
+      <span class={`mini-dot ${i === 0 ? 'active' : ''}`} data-dot={i}></span>
+    ))}
+  </div>
+
+  <!-- Swipe/click hint -->
+  <div class="swipe-hint">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+    <span class="font-heading text-[9px] font-bold uppercase tracking-widest text-contrast-muted/60">swipe to explore</span>
+  </div>
+
+  <!-- Hover glow overlay -->
+  <div class="card-glow"></div>
+</div>
+
+<!-- Immersive Gallery Modal -->
+<div class="immersive-gallery-modal" id={`gallery-${title.toLowerCase().replace(/\s+/g, '-')}`} data-immersive-modal>
+  <div class="modal-backdrop" data-modal-backdrop></div>
+  <div class="modal-content">
+
+    <!-- Close button -->
+    <button class="modal-close" data-modal-close aria-label="Close gallery">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Floating flowers -->
+    <div class="modal-doodle modal-doodle-1">✿</div>
+    <div class="modal-doodle modal-doodle-2">✦</div>
+    <div class="modal-doodle modal-doodle-3">❋</div>
+    <div class="modal-doodle modal-doodle-4">✿</div>
+
+    <!-- Collection header -->
+    <div class="modal-header">
+      <div class="modal-issue font-marykate italic text-dusty-pink text-sm">
+        {issueNumber ? `Issue No. ${issueNumber}` : 'Collection'}
+      </div>
+      <h2 class="font-display text-3xl text-contrast">{title}</h2>
+      {mood && (
+        <p class="font-marykate italic text-contrast-muted text-base">{mood}</p>
+      )}
+      <p class="font-body text-sm text-contrast-muted mt-2 max-w-sm mx-auto leading-relaxed">{description}</p>
+    </div>
+
+    <!-- Full gallery viewport -->
+    <div class="gallery-viewport" data-modal-viewport>
+      <!-- Image slides -->
+      <div class="gallery-slides" data-gallery-slides>
+        {galleryImages.map((img, i) => (
+          <div class={`gallery-slide ${i === 0 ? 'active' : ''}`} data-slide={i}>
+            <img
+              src={img}
+              alt={`${title} — artwork ${i + 1} of ${galleryImages.length}`}
+              class="gallery-img"
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+            <!-- Image number badge -->
+            <div class="slide-counter">
+              <span class="font-heading text-xs text-white/60">{i + 1} / {galleryImages.length}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Prev / Next arrows -->
+      <button class="gallery-arrow gallery-prev" data-gallery-prev aria-label="Previous artwork">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <button class="gallery-arrow gallery-next" data-gallery-next aria-label="Next artwork">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Progress dots -->
+    <div class="gallery-progress" data-gallery-progress>
+      {galleryImages.map((_, i) => (
+        <button
+          class={`progress-dot ${i === 0 ? 'active' : ''}`}
+          data-progress-dot={i}
+          aria-label={`Go to artwork ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+
+    <!-- Collection label footer -->
+    <div class="modal-footer">
+      <span class="font-marykate italic text-dusty-pink/70 text-xs">Explore the full collection &middot; {galleryImages.length} artworks</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Per-card mini gallery interaction (inside the card)
+  document.querySelectorAll('.collection-card').forEach((card) => {
+    const imagesRaw = card.getAttribute('data-gallery-images');
+    if (!imagesRaw) return;
+    const images: string[] = JSON.parse(imagesRaw);
+    let current = 0;
+
+    const stack = card.querySelector('[data-image-stack]') as HTMLElement;
+    const dots = card.querySelectorAll('[data-dot]') as NodeListOf<HTMLElement>;
+
+    function goTo(idx: number) {
+      if (idx < 0) idx = images.length - 1;
+      if (idx >= images.length) idx = 0;
+      current = idx;
+      // Update frames
+      stack?.querySelectorAll('[data-frame]').forEach((frame, i) => {
+        frame.classList.toggle('active', i === current);
+      });
+      // Update dots
+      dots?.forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    // Touch/drag swipe on card
+    let touchStartX = 0;
+    card.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e: TouchEvent) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 30) {
+        diff > 0 ? goTo(current + 1) : goTo(current - 1);
+      }
+    }, { passive: true });
+
+    // Click to open immersive modal
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h3')?.textContent || '';
+      const modalId = `gallery-${title.toLowerCase().replace(/\s+/g, '-')}`;
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    card.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const title = card.querySelector('h3')?.textContent || '';
+        const modalId = `gallery-${title.toLowerCase().replace(/\s+/g, '-')}`;
+        const modal = document.getElementById(modalId);
+        if (modal) modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Immersive modal interaction
+  document.querySelectorAll('[data-immersive-modal]').forEach((modal) => {
+    const modalEl = modal as HTMLElement;
+    const backdrop = modalEl.querySelector('[data-modal-backdrop]') as HTMLElement;
+    const closeBtn = modalEl.querySelector('[data-modal-close]') as HTMLElement;
+    const slides = modalEl.querySelectorAll('[data-slide]') as NodeListOf<HTMLElement>;
+    const progressDots = modalEl.querySelectorAll('[data-progress-dot]') as NodeListOf<HTMLElement>;
+    const prevBtn = modalEl.querySelector('[data-gallery-prev]') as HTMLElement;
+    const nextBtn = modalEl.querySelector('[data-gallery-next]') as HTMLElement;
+    const viewport = modalEl.querySelector('[data-modal-viewport]') as HTMLElement;
+
+    let current = 0;
+    const total = slides.length;
+
+    function goToSlide(idx: number) {
+      if (idx < 0) idx = total - 1;
+      if (idx >= total) idx = 0;
+      current = idx;
+
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      progressDots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    // Close
+    function closeModal() {
+      modalEl.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+
+    prevBtn?.addEventListener('click', () => goToSlide(current - 1));
+    nextBtn?.addEventListener('click', () => goToSlide(current + 1));
+
+    progressDots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.getAttribute('data-progress-dot'));
+        goToSlide(idx);
+      });
+    });
+
+    // Touch/drag swipe inside modal
+    let touchStartX = 0;
+    viewport?.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    viewport?.addEventListener('touchend', (e: TouchEvent) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        diff > 0 ? goToSlide(current + 1) : goToSlide(current - 1);
+      }
+    }, { passive: true });
+
+    // Keyboard navigation
+    modalEl.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowRight') goToSlide(current + 1);
+      if (e.key === 'ArrowLeft') goToSlide(current - 1);
+    });
+  });
+</script>
+
+<style>
+  /* ── Collection Card ── */
+  .collection-card {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .collection-card:hover {
+    transform: translateY(-6px) rotate(0deg) scale(1.02);
+  }
+
+  /* Paper layer depths */
+  .paper-layers {
+    position: absolute;
+    inset: -8px;
+    pointer-events: none;
+  }
+
+  .paper-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    border: 1.5px solid rgba(212, 187, 157, 0.3);
+  }
+
+  .layer-back {
+    transform: rotate(-2.5deg) translateY(4px);
+    background: rgba(231, 199, 175, 0.5);
+  }
+
+  .layer-mid {
+    transform: rotate(1.5deg) translateY(-2px);
+    background: rgba(222, 123, 91, 0.12);
+  }
+
+  .layer-front {
+    background: var(--accent-bg);
+  }
+
+  /* Image viewport */
+  .card-image-viewport {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+      0 8px 32px rgba(74, 67, 54, 0.15),
+      0 2px 8px rgba(165, 82, 48, 0.1);
+    border: 2px solid rgba(231, 199, 175, 0.4);
+  }
+
+  /* Image stack — zine-like slides */
+  .image-stack {
+    position: absolute;
+    inset: 0;
+  }
+
+  .image-frame {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.96);
+    transition:
+      opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.55s cubic-bezier(0.34, 1.2, 0.64, 1);
+    pointer-events: none;
+  }
+
+  .image-frame.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+  }
+
+  /* Decorative elements */
+  .sold-out-stamp {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    font-size: 9px;
+    background: rgba(253, 246, 236, 0.92) !important;
+  }
+
+  .issue-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(74, 67, 54, 0.65);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 4px 10px;
+    z-index: 10;
+  }
+
+  .floating-doodle {
+    position: absolute;
+    font-size: 14px;
+    color: rgba(231, 199, 175, 0.5);
+    pointer-events: none;
+    z-index: 5;
+    animation: doodle-float 5s ease-in-out infinite;
+  }
+
+  .doodle-1 { top: 8px; right: 8px; animation-delay: 0s; }
+  .doodle-2 { bottom: 48px; right: 10px; font-size: 11px; animation-delay: 1.5s; }
+  .doodle-3 { top: 50%; left: 8px; font-size: 12px; animation-delay: 0.8s; }
+
+  @keyframes doodle-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-5px) rotate(10deg); opacity: 0.8; }
+  }
+
+  /* Card info */
+  .card-info {
+    position: relative;
+    background: #FDF6EC;
+    border-radius: 16px;
+    padding: 14px 16px 10px;
+    margin-top: -4px;
+    border: 1.5px solid rgba(231, 199, 175, 0.6);
+    box-shadow: 0 4px 16px rgba(74, 67, 54, 0.08);
+  }
+
+  .washi-tape-accent {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 56px;
+    height: 16px;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(212, 92, 116, 0.5),
+      rgba(212, 92, 116, 0.5) 3px,
+      rgba(231, 199, 175, 0.3) 3px,
+      rgba(231, 199, 175, 0.3) 6px
+    );
+    border-radius: 2px;
+  }
+
+  /* Mini dots */
+  .mini-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .mini-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(212, 92, 116, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .mini-dot.active {
+    background: var(--accent);
+    transform: scale(1.4);
+  }
+
+  /* Swipe hint */
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: rgba(74, 67, 54, 0.4);
+  }
+
+  .collection-card:hover .swipe-hint {
+    opacity: 1;
+  }
+
+  /* Card glow on hover */
+  .card-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(212, 92, 116, 0.15), rgba(222, 123, 91, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .collection-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     IMMERSIVE GALLERY MODAL
+  ═══════════════════════════════════════════════════════ */
+
+  .immersive-gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .immersive-gallery-modal.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(74, 67, 54, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: min(92vw, 680px);
+    max-height: 92vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 32px 24px 24px;
+    z-index: 1;
+    scrollbar-width: none;
+  }
+
+  .modal-content::-webkit-scrollbar { display: none; }
+
+  /* Close button */
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(231, 199, 175, 0.9);
+    border: 2px solid rgba(165, 82, 48, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4A4336;
+    transition: all 0.25s ease;
+    z-index: 10;
+  }
+
+  .modal-close:hover {
+    background: #D45C74;
+    color: white;
+    border-color: #D45C74;
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  /* Modal decorative doodles */
+  .modal-doodle {
+    position: fixed;
+    font-size: 32px;
+    color: rgba(231, 199, 175, 0.2);
+    pointer-events: none;
+    animation: doodle-float 6s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .modal-doodle-1 { top: 8%; left: 8%; animation-delay: 0s; }
+  .modal-doodle-2 { top: 12%; right: 8%; animation-delay: 2s; }
+  .modal-doodle-3 { bottom: 18%; left: 6%; font-size: 24px; animation-delay: 1s; }
+  .modal-doodle-4 { bottom: 12%; right: 10%; animation-delay: 3s; }
+
+  /* Modal header */
+  .modal-header {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .modal-issue {
+    display: inline-block;
+    background: rgba(231, 199, 175, 0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+  }
+
+  /* Gallery viewport */
+  .gallery-viewport {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    max-height: 55vh;
+    background: #E7C7AF;
+    box-shadow:
+      0 24px 64px rgba(74, 67, 54, 0.3),
+      0 8px 24px rgba(165, 82, 48, 0.15);
+    border: 2px solid rgba(231, 199, 175, 0.5);
+    cursor: grab;
+  }
+
+  .gallery-viewport:active { cursor: grabbing; }
+
+  /* Gallery slides */
+  .gallery-slides {
+    position: absolute;
+    inset: 0;
+  }
+
+  .gallery-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+      opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.6s cubic-bezier(0.34, 1.1, 0.64, 1);
+    pointer-events: none;
+  }
+
+  .gallery-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Slide counter */
+  .slide-counter {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: rgba(74, 67, 54, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 4px 10px;
+  }
+
+  /* Gallery navigation arrows */
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(231, 199, 175, 0.92);
+    border: 2px solid rgba(165, 82, 48, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4A4336;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
+    opacity: 0;
+  }
+
+  .gallery-viewport:hover .gallery-arrow { opacity: 1; }
+
+  .gallery-prev { left: 12px; }
+  .gallery-next { right: 12px; }
+
+  .gallery-arrow:hover {
+    background: #D45C74;
+    color: white;
+    border-color: #D45C74;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .gallery-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  /* Progress dots */
+  .gallery-progress {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(212, 92, 116, 0.3);
+    border: 1.5px solid rgba(212, 92, 116, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .progress-dot.active {
+    background: #D45C74;
+    border-color: #D45C74;
+    transform: scale(1.35);
+  }
+
+  .progress-dot:hover:not(.active) {
+    background: rgba(212, 92, 116, 0.6);
+    transform: scale(1.15);
+  }
+
+  /* Modal footer */
+  .modal-footer {
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .collection-card {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .modal-content {
+      padding: 24px 16px 20px;
+    }
+
+    .gallery-viewport {
+      aspect-ratio: 3 / 4;
+      max-height: 50vh;
+    }
+
+    .gallery-arrow {
+      width: 38px;
+      height: 38px;
+      opacity: 1;
+    }
+
+    .modal-doodle { display: none; }
+  }
+</style>
