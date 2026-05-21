@@ -53,6 +53,30 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
       });
     }, { passive: true });
 
+    // ── Rotating archive gallery auto-scroll ──
+    (function() {
+      var wrap = document.getElementById('archive-gallery-wrap');
+      var strip = document.getElementById('archive-gallery-strip');
+      var lbtn = document.getElementById('gallery-left');
+      var rbtn = document.getElementById('gallery-right');
+      if (!wrap || !strip) return;
+      var pos = 0, speed = 0.5, hovered = false, raf = null;
+      function cw() { return (window.innerWidth < 640 ? 13 : 16) * 16 + 24; }
+      if (lbtn) lbtn.onclick = function() { wrap.scrollLeft -= cw(); };
+      if (rbtn) rbtn.onclick = function() { wrap.scrollLeft += cw(); };
+      wrap.addEventListener('mouseenter', function() { hovered = true; cancelAnimationFrame(raf); }, { passive: true });
+      wrap.addEventListener('mouseleave', function() { hovered = false; raf = requestAnimationFrame(tick); }, { passive: true });
+      wrap.addEventListener('touchstart', function() { hovered = true; cancelAnimationFrame(raf); }, { passive: true });
+      wrap.addEventListener('touchend', function() { hovered = false; raf = requestAnimationFrame(tick); }, { passive: true });
+      wrap.addEventListener('scroll', function() {
+        var max = strip.scrollWidth - wrap.clientWidth;
+        if (wrap.scrollLeft >= max - 2) { wrap.scrollLeft = 1; pos = 1; }
+        if (wrap.scrollLeft <= 0) { wrap.scrollLeft = max - wrap.clientWidth - 1; pos = wrap.scrollLeft; }
+      }, { passive: true });
+      function tick() { if (!hovered) { pos += speed; var max = strip.scrollWidth - wrap.clientWidth; if (pos >= max) pos = 1; wrap.scrollLeft = pos; } raf = requestAnimationFrame(tick); }
+      raf = requestAnimationFrame(tick);
+    })();
+
     // ── Autoplay music on first user interaction ──
     var music = document.getElementById('site-music') as HTMLAudioElement;
     var played = false;

@@ -8,6 +8,7 @@ interface Props {
   issueNumber?: number;
   soldOut?: boolean;
   mood?: string;
+  coverOnly?: boolean;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   issueNumber,
   soldOut = false,
   mood = '',
+  coverOnly = false,
 } = Astro.props;
 
 // Ensure we have 5 images (cycle if fewer)
@@ -28,7 +30,7 @@ const galleryImages = images.length >= 5
 ---
 
 <div
-  class="collection-card"
+  class={"collection-card" + (coverOnly ? " cover-only" : "")}
   data-gallery-images={JSON.stringify(galleryImages)}
   style={`--accent: ${accentColor}; --accent-bg: ${accentBg};`}
   role="button"
@@ -47,10 +49,10 @@ const galleryImages = images.length >= 5
     <!-- Image stack — slides like a zine -->
     <div class="image-stack" data-image-stack>
       {galleryImages.map((img, i) => (
-        <div class={`image-frame ${i === 0 ? 'active' : ''}`} data-frame={i}>
+        <div class={`image-frame ${i === 0 ? 'active' : ''}`} data-frame={i} style={coverOnly && i > 0 ? 'display:none' : ''}>
           <img
             src={img}
-            alt={`${title} — artwork ${i + 1}`}
+            alt={coverOnly ? title : `${title} — artwork ${i + 1}`}
             class="card-img"
             loading={i === 0 ? 'eager' : 'lazy'}
           />
@@ -89,14 +91,14 @@ const galleryImages = images.length >= 5
   </div>
 
   <!-- Mini progress dots -->
-  <div class="mini-dots" data-mini-dots>
+  <div class="mini-dots" data-mini-dots style={coverOnly ? "display:none" : ""}>
     {galleryImages.map((_, i) => (
       <span class={`mini-dot ${i === 0 ? 'active' : ''}`} data-dot={i}></span>
     ))}
   </div>
 
   <!-- Swipe/click hint -->
-  <div class="swipe-hint">
+  <div class="swipe-hint" style={coverOnly ? "display:none" : ""}>
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M5 12h14M12 5l7 7-7 7"/>
     </svg>
@@ -515,6 +517,22 @@ const galleryImages = images.length >= 5
 
   .collection-card:hover .card-glow {
     opacity: 1;
+  }
+
+
+  /* Cover-only cards: subtle hover, cover overlay icon */
+  .collection-card.cover-only:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+  .collection-card.cover-only .card-image-viewport::after {
+    content: '✦';
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    animation: doodle-float 2.5s ease-in-out infinite;
+    pointer-events: none;
   }
 
   /* ═══════════════════════════════════════════════════════
