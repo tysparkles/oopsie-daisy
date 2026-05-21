@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'white': '#DCD3D1',
+        'white': 'rgb(220, 211, 209)',
         'tan': '#D4BB9D',
         'dusty-pink': '#D45C74',
         'coral-pink': '#DE7B5B',
