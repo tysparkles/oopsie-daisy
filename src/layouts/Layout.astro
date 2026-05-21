@@ -50,6 +50,36 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
       r.forEach(function(el) { o.observe(el); });
     }
 
+    // ── Hero Video Rotation ──
+    (function() {
+      var videos = document.querySelectorAll('.hero-video');
+      if (!videos.length) return;
+      var current = 0;
+
+      // Start first video
+      videos[0].classList.add('active');
+      videos[0].play().catch(function() {});
+
+      function playNext() {
+        var prev = videos[current];
+        current = (current + 1) % videos.length;
+        var next = videos[current];
+
+        // Crossfade: next fades in while prev fades out
+        next.classList.add('active');
+        next.play().catch(function() {});
+
+        // Remove active from previous after transition
+        setTimeout(function() {
+          prev && prev.classList.remove('active');
+        }, 1600);
+      }
+
+      videos.forEach(function(v) {
+        v.addEventListener('ended', playNext);
+      });
+    })();
+
     // ── Petal fall parallax ──
     var petalEls = document.querySelectorAll('.animate-petal-fall');
     window.addEventListener('scroll', function() {

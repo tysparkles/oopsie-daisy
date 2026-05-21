@@ -151,15 +151,13 @@ const musicEnabled = true;
       <!-- ── HERO VIDEO / IMAGE BACKGROUND ── -->
       <!-- TO USE: Replace the src below with your video URL or local path like /media/hero-video.mp4 -->
       <!-- Leave src empty to show the abstract animated background instead -->
-      <video
-        class="hero-media-bg"
-        src="/media/photos/opening.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        aria-hidden="true"
-      ></video>
+      <div class="hero-video-container">
+        <video class="hero-video" src="/media/photos/opening.mp4" muted playsinline aria-hidden="true"></video>
+        <video class="hero-video" src="/media/photos/drawing.mp4" muted playsinline aria-hidden="true"></video>
+        <video class="hero-video" src="/media/photos/opening lying.mp4" muted playsinline aria-hidden="true"></video>
+        <video class="hero-video" src="/media/photos/daisies.mp4" muted playsinline aria-hidden="true"></video>
+        <video class="hero-video" src="/media/photos/opening run.mp4" muted playsinline aria-hidden="true"></video>
+      </div>
       <!-- Fallback: large static image (shown if no video src) -->
       <!-- <img class="hero-media-bg" src="/media/hero-image.jpg" alt="" aria-hidden="true" /> -->
       <!-- Gradient overlay for text readability -->

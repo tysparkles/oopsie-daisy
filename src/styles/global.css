@@ -262,8 +262,22 @@ h1, h2, h3, h4, h5 {
   border-radius: 2px;
 }
 
-/* ─── Hero Video / Image Background ─── */
-.hero-media-bg {
+/* ─── Hero Video Container ─── */
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* When video container is present, fade out blobs slightly */
+.hero-video-container ~ .absolute {
+  opacity: 0.4;
+}
+
+.hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -271,14 +285,14 @@ h1, h2, h3, h4, h5 {
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  /* Blur + colour grade — remove or adjust to taste */
+  opacity: 0;
   filter: brightness(0.55) saturate(1.2);
-  /* dreamy blur — lower = sharper, 8-15px = soft blur feel */
+  transition: opacity 1.6s ease;
+  pointer-events: none;
 }
 
-/* When a video/image is present, fade out blobs slightly */
-.hero-media-bg ~ .absolute {
-  opacity: 0.4;
+.hero-video.active {
+  opacity: 1;
 }
 
 .hero-media-overlay {
