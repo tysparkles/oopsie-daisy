@@ -15,6 +15,10 @@ export default {
         'text-dark': '#4A4336',
         'text-muted': '#6E5D50',
       },
+      maxWidth: {
+        'editorial': '88rem',   // 1408px — immersive wide sections
+        'immersive': '96rem',    // 1536px — full editorial spread
+      },
       fontFamily: {
         display:   ['Fat Kat', 'cursive'],
         marykate:  ['MaryKate', 'cursive'],
