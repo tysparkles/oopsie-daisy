@@ -29,6 +29,11 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
     <!-- ── Background Music ── -->
     <audio id="site-music" src="/media/music/this-side-of-heaven.m4a" loop preload="auto"></audio>
 
+    <!-- ── Music Toggle Button ── -->
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle music">
+      <span class="music-toggle-icon">♪</span>
+    </button>
+
 <script>
   (function() {
     // ── Scroll reveal ──
@@ -78,20 +83,41 @@ const { title, description = 'Oopsie Daisy — A monthly collectible print club.
       raf = requestAnimationFrame(tick);
     })();
 
-    // ── Autoplay music on first user interaction ──
+    // ── Music Toggle ──
     var music = document.getElementById('site-music') as HTMLAudioElement;
-    var played = false;
+    var toggleBtn = document.getElementById('music-toggle');
+    var isPlaying = false;
+
     function startMusic() {
-      if (played || !music) return;
-      played = true;
+      if (!music || isPlaying) return;
+      isPlaying = true;
+      toggleBtn && toggleBtn.classList.add('is-playing');
       music.play().catch(function() {});
       document.removeEventListener('touchstart', startMusic);
       document.removeEventListener('click', startMusic);
     }
+
+    // Autoplay on first interaction
     document.addEventListener('touchstart', startMusic, { once: true, passive: true });
     document.addEventListener('click', startMusic, { once: true });
     // Attempt direct autoplay (browsers may block it)
     music.play().catch(function() {});
+
+    // Toggle button
+    if (toggleBtn && music) {
+      toggleBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (!isPlaying) {
+          isPlaying = true;
+          toggleBtn.classList.add('is-playing');
+          music.play().catch(function() {});
+        } else {
+          isPlaying = false;
+          toggleBtn.classList.remove('is-playing');
+          music.pause();
+        }
+      });
+    }
   })();
 </script>
 

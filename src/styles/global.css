@@ -1266,3 +1266,46 @@ nav {
     font-size: 14px;
   }
 }
+
+/* ── Music Toggle Button ── */
+.music-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212, 74, 101, 0.35);
+  background: rgba(253, 246, 236, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(212, 74, 101, 0.15);
+}
+
+.music-toggle:hover {
+  background: rgba(253, 246, 236, 0.95);
+  box-shadow: 0 4px 20px rgba(212, 74, 101, 0.25);
+  transform: scale(1.05);
+}
+
+.music-toggle-icon {
+  font-size: 18px;
+  color: #D44A65;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
+
+.music-toggle.is-playing .music-toggle-icon {
+  animation: music-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.92); }
+}
