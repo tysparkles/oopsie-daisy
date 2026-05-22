@@ -16,8 +16,8 @@ export default {
         'text-muted': '#6E5D50',
       },
       maxWidth: {
-        'editorial': '88rem',   // 1408px — immersive wide sections
-        'immersive': '82rem',    // 1312px — balanced widescreen (scaled back ~15%)
+        'editorial': '88rem',   // 1408px — for hero/reading text only
+        'immersive': '80rem',    // 1280px — slightly reduced from 82rem
       },
       fontFamily: {
         display:   ['Fat Kat', 'cursive'],
