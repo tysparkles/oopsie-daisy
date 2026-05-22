@@ -1332,7 +1332,7 @@ nav {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  opacity: 0.50;
+  opacity: 0.75;
   z-index: 0;
   pointer-events: none;
   /* Slight dreamy desaturation */
