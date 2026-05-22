@@ -17,7 +17,7 @@ export default {
       },
       maxWidth: {
         'editorial': '88rem',   // 1408px — immersive wide sections
-        'immersive': '96rem',    // 1536px — full editorial spread
+        'immersive': '82rem',    // 1312px — balanced widescreen (scaled back ~15%)
       },
       fontFamily: {
         display:   ['Fat Kat', 'cursive'],
